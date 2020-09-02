@@ -1,6 +1,32 @@
 @extends('layouts.app')
 
 @section('header')
+<meta name="keywords" content="{{ $product->name }}">
+<meta name="title" content="{{ $product->name }} | dibisnis.id">
+<?php 
+    $taglessBody = strip_tags($product->description);
+    $images = explode('|', $product->image);
+?>
+<meta name="description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
+
+<link rel="canonical" href="https://dibisnis.id/" /> 
+<!-- Search Engine -->
+<meta name="description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
+<meta name="image" content="{{ asset('storage/products/'.$images[0]) }}">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="{{ $product->name }} | dibisnis.id">
+<meta itemprop="description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
+<meta itemprop="image" content="{{ asset('storage/products/'.$images[0]) }}">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="{{ $product->name }} | dibisnis.id">
+<meta name="og:description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
+<meta name="og:type" content="article">
+
+<meta property="og:title" content="{{ $product->name }} | dibisnis.id" />
+<meta property="og:url" content="https://dibisnis.id/" />
+<meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}">
+<meta property="og:type" content="article" />
+
 <title>{{ $product->name }} | dibisnis.id</title>
 @endsection
 
