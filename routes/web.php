@@ -1,0 +1,59 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', 'FrontController@index')->name('home');
+Route::get('/home', 'FrontController@index')->name('home');
+Route::get('/product/show/{slug}', 'FrontController@showProduct')->name('product.show');
+Route::get('/category', 'FrontController@category')->name('category');
+Route::get('/category/{id}/{slug}', 'FrontController@categoryProduct')->name('category.list');
+Route::get('/product/filter', 'FrontController@filter')->name('product.filter');
+Route::get('/product/search', 'FrontController@search')->name('product.search');
+
+
+Auth::routes();
+
+/*
+|--------------------------------------------------------------------------
+|   ADMIN
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/admin/home', 'Admin\AdminController@index')->name('admin.dashboard');
+});
+
+/*
+|--------------------------------------------------------------------------
+|   MEMBER
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::group(['middleware' => 'member'], function () {
+    Route::get('/member', 'Member\MemberController@index')->name('member.home');
+    Route::get('/member/profile', 'Member\MemberController@profile')->name('member.profile');
+    Route::get('/member/profile/edit', 'Member\MemberController@edit')->name('member.edit');
+    Route::post('/member/profile/update', 'Member\MemberController@update')->name('member.update');
+
+    Route::get('/member/product/create', 'Member\ProductController@create')->name('member.product.create');
+    Route::post('/member/product/store', 'Member\ProductController@store')->name('member.product.store');
+    
+    Route::get('/member/preview/product/{slug}', 'Member\MemberController@preview_product')->name('member.preview_product');
+});
