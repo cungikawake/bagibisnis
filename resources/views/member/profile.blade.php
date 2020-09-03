@@ -59,7 +59,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-4">
-                        <h3 style="color:#212529;">Postingan Anda</h3>
+                        <h3 style="color:#212529;">Bisnis Anda</h3>
                         <hr>
                     </div>
                     <div class="col-8 text-right">
@@ -70,7 +70,17 @@
                     </div>
                 </div>
                 @forelse($products as $row)  
-                <div class="row">
+                
+                @if($row->status == 1)
+                <div class="alert alert-success">
+                    <p>Produk sudah aktif </p> 
+                </div>
+                @else
+                <div class="alert alert-warning">
+                    <p>Produk sedang di periksa oleh tim kami, mohon menunggu konfirmasi. </p> 
+                </div>
+                @endif
+                <div class="row"> 
                     <div class="col-md-12 mobile">
                         <p>
                         <a href="{{ url('/product/show/' . $row->slug) }}">

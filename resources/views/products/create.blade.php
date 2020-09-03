@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('header')
-<title>posting produk baru, media pilihan bisnis | dibisnis.id</title>
+<title>Penawaran produk baru, media pilihan bisnis | dibisnis.id</title>
 @endsection
 @section('content')
 <link rel="stylesheet" href="https://selectize.github.io/selectize.js/css/selectize.bootstrap3.css" data-theme="bootstrap3">

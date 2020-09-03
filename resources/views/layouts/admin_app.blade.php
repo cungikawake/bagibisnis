@@ -251,14 +251,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-3 text-center main-fitur {{ (Request::segment(2) == 'home' )? 'active': '' }}">
-					<a href="{{route('home')}}">
+					<a href="{{route('admin.dashboard')}}">
 						<h2 class="text-black"><i class="fas fa-home"></i></h2>
 						<h4 class="mt-1 text-black">Home</h4>
 					</a>
 				</div>
-				<div class="col-3 text-center main-fitur {{ (Request::segment(1) == 'product' && Request::segment(2) == 'filter')? 'active': '' }}">
-					<a href="{{ route('category') }}">
-					<a href="{{route('product.filter')}}">
+				<div class="col-3 text-center main-fitur {{ (Request::segment(2) == 'product' )? 'active': '' }}">
+					 
+					<a href="{{route('admin.product')}}">
 						<h2 class="text-black"><i class="fa fa-box"></i></h2>
 						<h4 class="mt-1 text-black">Produk</h4>
 					</a>

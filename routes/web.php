@@ -34,6 +34,10 @@ Auth::routes();
 */
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/home', 'Admin\AdminController@index')->name('admin.dashboard');
+    Route::get('/admin/product', 'Admin\ProductController@index')->name('admin.product');
+    Route::get('/admin/product/search', 'Admin\ProductController@search')->name('admin.product.search');
+    Route::get('/admin/product/nonactive/{id}', 'Admin\ProductController@nonactive')->name('admin.product.nonactive');
+    Route::get('/admin/product/active/{id}', 'Admin\ProductController@active')->name('admin.product.active');
 });
 
 /*
