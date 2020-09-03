@@ -10,7 +10,7 @@ use App\Product;
 use App\PageCounter;
 use App\Subcribe;
 
-class Admincontroller extends Controller
+class AdminController extends Controller
 {
     public function index(){
         $member = Member::count();
