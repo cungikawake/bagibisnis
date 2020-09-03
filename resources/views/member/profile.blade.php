@@ -71,6 +71,7 @@
                 </div>
                 @forelse($products as $row)  
                 
+                
                 @if($row->status == 1)
                 <div class="alert alert-success">
                     <p>Produk sudah aktif </p> 
