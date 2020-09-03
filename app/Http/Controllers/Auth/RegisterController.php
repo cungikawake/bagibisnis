@@ -65,12 +65,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-         
+        $today = date('Y-m-d');
+
         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'role' => 2,
-            'exp_date' => date('Y-m-d', strtotime('+1 mount')),
+            'exp_date' => date('Y-m-d', strtotime('+1 month', strtotime($today))),
             'password' => Hash::make($data['password']),
         ]);
 
