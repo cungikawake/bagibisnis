@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('header')
-<title>Pendaftaran baru, media pilihan bisnis | dibisnis.id</title>
+<title>Pendaftaran akun baru | dibisnis.id</title>
 @endsection
 @section('content')
 <div class="container">

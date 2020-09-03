@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('header')
+
+<title>{{ $product->name }} | dibisnis.id</title>
 <meta name="keywords" content="{{ $product->name }}">
 <meta name="title" content="{{ $product->name }} | dibisnis.id">
 <?php 
@@ -27,7 +29,6 @@
 <meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}">
 <meta property="og:type" content="article" />
 
-<title>{{ $product->name }} | dibisnis.id</title>
 @endsection
 
 @section('content')
@@ -117,7 +118,7 @@
                                 $data = substr($product->member->phone_number, 1);
                                 $phone_number = '62'. $data;
                             ?>
-                            <a href="https://api.whatsapp.com/send?phone={{ $phone_number }}&text=Saya%20tertarik%20untuk%20menjadi%20reseller%20produk%20ini%0A%0A Via%20%20https://gentamasbali.com" class="btn btn-primary">
+                            <a href="https://api.whatsapp.com/send?phone={{ $phone_number }}&text=Saya%20tertarik%20untuk%20menjadi%20reseller%20produk%20ini%0A%0A Via%20%20{{ url('/product/show/' . $product->slug) }}" class="btn btn-primary">
                             <i class="fab fa-whatsapp"></i> Pesan Sekarang
                             </a>
 

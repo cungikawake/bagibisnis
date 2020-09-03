@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('header')
+<title>Confirm Password| dibisnis.id</title>
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

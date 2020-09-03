@@ -83,7 +83,7 @@
                                     $data = substr($row->phone_number, 1);
                                     $phone_number = '62'. $data;
                                 ?>
-                                <a href="https://api.whatsapp.com/send?phone={{ $phone_number }}&text=Saya%20tertarik%20untuk%20menjadi%20reseller%20produk%20ini%0A%0A Via%20%20https://gentamasbali.com" class="btn btn-primary">
+                                <a href="https://api.whatsapp.com/send?phone={{ $phone_number }}&text=Saya%20tertarik%20untuk%20menjadi%20reseller%20produk%20ini%0A%0A Via%20%20{{ url('/product/show/' . $row->slug) }}" class="btn btn-primary">
                                 <i class="fab fa-whatsapp"></i> Pesan Sekarang
                                 </a>
                             </h4>
