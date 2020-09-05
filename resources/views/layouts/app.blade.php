@@ -162,9 +162,9 @@
 							<div class="dropdown">
 								<p data-toggle="dropdown" id="menu1" class="text-white"><i class="fas fa-ellipsis-v"></i></p>	 
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="#">Tentang Kami</a>
-									<a class="dropdown-item" href="#">Syarat & Ketentuan</a>
-									<a class="dropdown-item" href="#">Tutorial</a>
+									<a class="dropdown-item" href="{{route('about_us')}}">Tentang Kami</a>
+									<a class="dropdown-item" href="{{route('term_condition')}}">Syarat & Ketentuan</a>
+									<a class="dropdown-item" href="{{route('tutorial')}}">Tutorial</a>
 									<a class="dropdown-item " href="{{ route('logout') }}"
 										onclick="event.preventDefault();
 												document.getElementById('logout-form').submit();"> Logout
@@ -189,8 +189,8 @@
 						<div class="row w-100" style="margin: 0 auto;"> 
 							<div class="col-3 mt-10 text-center text-black" data-toggle="modal" data-target="#myModal">
 								 
-                                    <h2><i class="fas fa-search"></i></h2>
-								    <h5 style="margin-top: -10px;" class="text-black" >Search</h5>
+                                    <h2 class="text-white"><i class="fas fa-search"></i></h2>
+								    <h5 style="margin-top: -10px;" class="text-white" >Search</h5>
 								 
 							</div>
 							<div class="col-6 text-center mt-10">
@@ -199,8 +199,8 @@
 							<div class="col-3 text-center mt-10">
 							@guest
 								<a href="{{ route('login') }}" class="icons">
-                                    <h2><i class="fas fa-user"></i></h2>
-                                    <h5 style="margin-top: -10px;" class="text-black">Login</h5> 
+                                    <h2 class="text-white"><i class="fas fa-user"></i></h2>
+                                    <h5 style="margin-top: -10px;" class="text-white">Login</h5> 
                                 </a>
 							@else
 								<!-- <a href="{{ route('logout') }}"
@@ -214,8 +214,8 @@
 									{{ csrf_field() }}
 								</form> --> 
 								<a href="{{ route('member.profile') }}">
-									<h2><i class="fas fa-user-tie"></i></h2>
-									<h5 style="margin-top: -10px;" class="text-black">Halo, {{auth()->guard('web')->user()->name}}</h5>
+									<h2 class="text-white"><i class="fas fa-user-tie"></i></h2>
+									<h5 style="margin-top: -10px;" class="text-white">Halo, {{auth()->guard('web')->user()->name}}</h5>
 								</a>
 							@endguest
 							</div>

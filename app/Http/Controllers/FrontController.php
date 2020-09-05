@@ -157,4 +157,19 @@ class FrontController extends Controller
         $orders = Order::where('ref', $user->id)->where('status', 4)->paginate(10);
         return view('ecommerce.affiliate', compact('orders'));
     }
+
+    public function about_us()
+    { 
+        return view('about_us');
+    }
+
+    public function term_condition()
+    { 
+        return view('term_condition');
+    }
+
+    public function tutorial()
+    { 
+        return view('tutorial');
+    }
 }
