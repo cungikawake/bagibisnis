@@ -1,6 +1,34 @@
 @extends('layouts.app')
 @section('header')
-<title>Modal terendah, media pilihan bisnis | dibisnis.id</title>
+<title>Modal terendah, media pilihan bisnis | joinjob.id</title>
+
+
+<meta name="keywords" content="Joinjob website yang menyediakan fasilitas pemasaran digital">
+<meta name="title" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+ 
+<meta name="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+
+<link rel="canonical" href="https://joinjob.id/" /> 
+
+<!-- Search Engine -->
+<meta name="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta name="image" content="https://joinjob.id/asset/logo.png">
+
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Modal terendah, joinjob.id">
+<meta itemprop="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta itemprop="image" content="https://joinjob.id/asset/logo.png">
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Modal terendah, joinjob.id">
+<meta name="og:description" content="Modal terendah, Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta name="og:type" content="article">
+
+<meta property="og:title" content="Modal terendah, joinjob.id" />
+<meta property="og:url" content="{{ url('product/filter') }}" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.png">
+<meta property="og:type" content="article" />
+
 @endsection
 
 @section('content')
@@ -51,7 +79,7 @@
                                             <!--First slide-->
                                             <div class="carousel-item @if($key == 0) active @endif">
                                                 <img class="d-block w-100" src="{{ asset('storage/products/'.$image) }}"
-                                                alt="image dibisnis" style="max-height:350px;">
+                                                alt="image joinjob" style="max-height:350px;">
                                             </div>
                                             <!--/First slide--> 
                                             @endforeach
@@ -154,7 +182,7 @@
                                             <!--First slide-->
                                             <div class="carousel-item @if($key == 0) active @endif">
                                                 <img class="d-block w-100" src="{{ asset('storage/products/'.$image) }}"
-                                                alt="image dibisnis" style="max-height:350px;">
+                                                alt="image joinjob" style="max-height:350px;">
                                             </div>
                                             <!--/First slide--> 
                                             @endforeach

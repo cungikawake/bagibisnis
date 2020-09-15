@@ -22,6 +22,14 @@ class Member extends Model
         'address'
     ];
 
+    public function province()
+    {
+        return $this->belongsTo(Province::class);
+    }
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
     public function district()
     {
         return $this->belongsTo(District::class);

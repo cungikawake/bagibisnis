@@ -17,20 +17,50 @@ use Auth;
 class FrontController extends Controller
 {
     public function index()
-    {    
-        $products = Product::select('*','products.name as product_name')->join('members', 'members.id', '=', 'products.member_id')
+    {   
+        $provinces = Province::get();
+        
+        $products = Product::select('*','products.name as product_name')
+            ->join('members', 'members.id', '=', 'products.member_id')
             ->orderBy('products.created_at', 'DESC')->paginate(20);
-          
-        return view('home', compact('products'));
-    }
+        
+        
 
+        return view('home', compact('products', 'provinces'));
+    }
+ 
     public function search(Request $request)
     {    
-        $products = Product::select('*','products.name as product_name')->join('members', 'members.id', '=', 'products.member_id')
+        $provinces = Province::get();
+        $province_search = $request->province;
+        $keyword = $request->keyword;
+
+        if($province_search != '' && $keyword !=''){
+            $products = Product::select('*','products.name as product_name')
+            ->join('members', 'members.id', '=', 'products.member_id')
             ->where('products.name', 'like', "%{$request->keyword}%")
+            ->where('products.tag', 'like', "%{$request->province}%")
             ->orderBy('products.created_at', 'DESC')->paginate(20);
-          
-        return view('home', compact('products'));
+
+        }else if($province_search != ''){
+            $products = Product::select('*','products.name as product_name')
+            ->join('members', 'members.id', '=', 'products.member_id') 
+            ->where('products.tag', 'like', "%{$request->province}%")
+            ->orderBy('products.created_at', 'DESC')->paginate(20);
+
+        }else if($keyword !=''){
+            $products = Product::select('*','products.name as product_name')
+            ->join('members', 'members.id', '=', 'products.member_id')
+            ->where('products.name', 'like', "%{$request->keyword}%") 
+            ->orderBy('products.created_at', 'DESC')->paginate(20);
+
+        }else{
+            $products = Product::select('*','products.name as product_name')
+            ->join('members', 'members.id', '=', 'products.member_id')
+            ->orderBy('products.created_at', 'DESC')->paginate(20);
+        } 
+
+        return view('home', compact('products', 'keyword', 'provinces', 'province_search'));
     }
 
     public function product()

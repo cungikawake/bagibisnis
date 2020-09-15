@@ -36,7 +36,7 @@
             height:auto;
         }
 		.main-fitur.active{
-			border:2px solid #212529;
+			background:#fff;
 		}
         h2 .fas, h2 .fa{
             font-size:35px; 
@@ -120,9 +120,35 @@
 			margin-left:10px;
 
 		}
-
+		.viewer{ 
+			background: #aaaaaa9e;
+			color: #3fc7af;
+			padding: 5px;
+			position: absolute;
+			z-index: 99;
+			width: 20%;
+			text-align: right;
+			right: 0;
+			font-size: 10px;
+			max-height: 35px;
+		}
+		.footer{
+			border-top:3px solid #3fc7af;
+			padding-top:15px;
+		}
         @media (max-width: 900px){
-             
+            .viewer{ 
+				background: #aaaaaa9e;
+				color: #3fc7af;
+				padding: 5px;
+				position: absolute;
+				z-index: 99;
+				width: 45%;
+				text-align: right;
+				right: 0;
+				font-size: 10px;
+				max-height: 35px;
+			}
             h2 .fas, h2 .fa{
                 font-size:25px; 
             }
@@ -147,60 +173,24 @@
 <body>
     <!--================Header Menu Area =================-->
 	<header class="header_area">
-		<div style="width:100%;">
-			<div class="top_menu m0" style="background:#00cccb;">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-2"></div>
-						<div class="col-8 text-center text-white mt-2">
-							<h4>Media Pilihan Bisnis</h4>
-						</div>
-						<div class="col-2">
-							@guest
-							@else
-
-							<div class="dropdown">
-								<p data-toggle="dropdown" id="menu1" class="text-white"><i class="fas fa-ellipsis-v"></i></p>	 
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="{{route('about_us')}}">Tentang Kami</a>
-									<a class="dropdown-item" href="{{route('term_condition')}}">Syarat & Ketentuan</a>
-									<a class="dropdown-item" href="{{route('tutorial')}}">Tutorial</a>
-									<a class="dropdown-item " href="{{ route('logout') }}"
-										onclick="event.preventDefault();
-												document.getElementById('logout-form').submit();"> Logout
-									</a>
-
-									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-										{{ csrf_field() }}
-									</form> 
-								</div>
-							</div>
- 
-							
-							@endguest
-						</div>
-					</div>
-				</div>
-			</div>
-
+		<div style="width:100%;"> 
 			<div class="main_menu text-black">
-				<nav class="navbar navbar-expand-lg navbar-light" style="background: #43ded0; ">
+				<nav class="navbar navbar-expand-lg navbar-light" style="background: #fff; border-bottom:3px solid #3fc7af; ">
 					<div class="container offset">
 						<div class="row w-100" style="margin: 0 auto;"> 
-							<div class="col-3 mt-10 text-center text-black" data-toggle="modal" data-target="#myModal">
-								 
-                                    <h2 class="text-white"><i class="fas fa-search"></i></h2>
-								    <h5 style="margin-top: -10px;" class="text-white" >Search</h5>
-								 
+							<div class="col-3 mt-10 text-center text-black">
+								<a href="{{ url('/') }}">
+									<img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:70px;"> 
+								</a>
 							</div>
 							<div class="col-6 text-center mt-10">
-								<img src="{{ asset('asset/logo.png') }}"  alt="logo" style="max-height:70px;"> 
+								 
 							</div>
 							<div class="col-3 text-center mt-10">
 							@guest
 								<a href="{{ route('login') }}" class="icons">
-                                    <h2 class="text-white"><i class="fas fa-user"></i></h2>
-                                    <h5 style="margin-top: -10px;" class="text-white">Login</h5> 
+                                    <h2 class="text-black"><i class="fas fa-user"></i></h2>
+                                    <h5 style="margin-top: -10px;" class="text-black">Login</h5> 
                                 </a>
 							@else
 								<!-- <a href="{{ route('logout') }}"
@@ -212,10 +202,10 @@
 
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 									{{ csrf_field() }}
-								</form> --> 
+								</form> -->
 								<a href="{{ route('member.profile') }}">
-									<h2 class="text-white"><i class="fas fa-user-tie"></i></h2>
-									<h5 style="margin-top: -10px;" class="text-white">Halo, {{auth()->guard('web')->user()->name}}</h5>
+									<h2 class="text-black"><i class="fas fa-user-tie"></i></h2>
+									<h5 style="margin-top: -10px;" class="text-black">Halo, {{auth()->guard('web')->user()->name}}</h5>
 								</a>
 							@endguest
 							</div>
@@ -225,6 +215,7 @@
 			</div>
 		</div>
 	</header>
+
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document" style="max-width:100%;">
@@ -249,50 +240,32 @@
 	</div>
 	<!--================Header Menu Area =================-->
 	
-	<!--================Hot Deals Area =================-->
-	<section id="main_menu" class="hot_deals_area section_gap" style="margin-top:30px; padding-bottom:20px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-3 text-center main-fitur {{ (Request::segment(1) == null)? 'active': '' }}">
-					<a href="{{route('home')}}">
-						<h2 class="text-black"><i class="fas fa-boxes"></i></h2>
-						<h4 class="mt-1 text-black">Semua Bisnis</h4>
-					</a>
-				</div>
-				<div class="col-3 text-center main-fitur {{ (Request::segment(1) == 'product' && Request::segment(2) == 'filter')? 'active': '' }}">
-					<a href="{{ route('category') }}">
-					<a href="{{route('product.filter')}}">
-						<h2 class="text-black"><i class="fa fa-calendar-check-o"></i></h2>
-						<h4 class="mt-1 text-black">Modal Terendah</h4>
-					</a>
-				</div>
-				<div class="col-3 text-center main-fitur {{ (Request::segment(1) == 'category')? 'active': '' }}">
-					<a href="{{ route('category') }}">
-						<h2 class="text-black"><i class="fas fa-tasks"></i></h2>
-						<h4 class="mt-1 text-black">Kategori</h4>
-					</a>
-				</div>
-				<div class="col-3 text-center main-fitur {{ (Request::segment(2) == 'product' && Request::segment(3) == 'create')? 'active': ''}}">
-					<a href="{{route('member.product.create')}}">
-						<h2 class="text-black"><i class="fas fa-folder-plus"></i></h2>
-						<h4 class="mt-1 text-black">Tawarkan Bisnis</h4>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================End Hot Deals Area =================-->
-
+	
 
     <main class="py-4">
         @yield('content')
     </main>
+	<footer class="footer">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p><img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:30px;"></p>
+				<p style="margin-top:-20px; color:#3fc7af;">JOINJOB</p>
+				<p style="margin-top:-25px; color:#3fc7af;">Copyright 2020</p>
+				<p style="margin-top:-25px; color:#3fc7af;">Join Bisnis Indonesia</p>
+			</div>
+		</div>
+	</footer>
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- 
+
+<script>
+function search(){
+	document.getElementById("Search").submit();
+}
+</script>
 @yield('script')
 </html>
