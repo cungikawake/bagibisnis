@@ -139,6 +139,13 @@
 			border-top:3px solid #3fc7af;
 			padding-top:15px;
 		}
+		/* The sticky class is added to the header with JS when it reaches its scroll position */
+		.sticky-top {
+			position: fixed;
+			top: 0;
+			z-index: 1020;
+		}
+ 
         @media (max-width: 900px){
 			.img-product{
 				height:150px;
@@ -176,12 +183,11 @@
 	@yield('styles')
 </head>
  
-<body>
-    <!--================Header Menu Area =================-->
+<body> 
 	<header class="header_area">
 		<div style="width:100%;"> 
 			<div class="main_menu text-black">
-				<nav class="navbar navbar-expand-lg navbar-light" style="background: #fff; border-bottom:3px solid #3fc7af; ">
+				<nav  class="navbar navbar-expand-lg  navbar-dark sticky-top" style="background: #fff; border-bottom:3px solid #3fc7af; ">
 					<div class="container offset">
 						<div class="row w-100" style="margin: 0 auto;"> 
 							<div class="col-3 mt-10 text-center text-black">
@@ -223,45 +229,13 @@
 		</div>
 	</header>
 
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document" style="max-width:100%;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-				</div>
-				<div class="modal-body">
-
-					<h1>Cari Produk</h1>
-					<form action="/product/search" method="GET">
-						<div class="form-group">
-							<input class="form-control" type="text" name="keyword" placeholder="Nama produk..." value="{{ old('keyword') }}">
-						</div>
-						<input type="submit" class="btn btn-primary" value="CARI">
-					</form>
-
-				</div> 
-			</div>
-		</div>
-	</div>
-	<!--================Header Menu Area =================-->
-	
 	
 
-    <main class="py-4">
+    <main class="py-4 content" style="margin-top:50px;">
         @yield('content')
     </main>
-	<footer class="footer">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<p><img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:30px;"></p>
-				<p style="margin-top:-20px; color:#3fc7af;">JOINJOB</p>
-				<p style="margin-top:-25px; color:#3fc7af;">Copyright 2020</p>
-				<p style="margin-top:-25px; color:#3fc7af;">Join Bisnis Indonesia</p>
-			</div>
-		</div>
-	</footer>
+	
+ 
 </body>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -272,7 +246,8 @@
 <script>
 function search(){
 	document.getElementById("Search").submit();
-}
-</script>
+} 
+ 
+</script> 
 @yield('script')
 </html>
