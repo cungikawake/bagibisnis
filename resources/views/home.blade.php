@@ -147,16 +147,16 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
                             </div>
                             <div class="col-md-12">
                                 <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                    <h4 style="background: #aaaaaa2e;margin-top:5px;padding: 5px;">{{ $row->product_name }} </h4>
+                                    <h4 style="background: #aaaaaa2e;margin-top:5px;padding: 10px;">{{ $row->product_name }} </h4>
                                 </a>
                             </div>
                             <div class="col-md-12">
-                                <h4>Modal Rp. {{number_format($row->modal)}}</h4>
-                                <h4>Provit Rp. {{ number_format($row->provit) }}/{{$row->satuan}}</h4>
+                                <h4 style="padding: 10px; color:#3fc7af;">Modal Rp. {{number_format($row->modal)}}</h4>
+                                <h4 style="padding: 10px; color:#3fc7af;margin-top:-20px;">Provit Rp. {{ number_format($row->provit) }}/{{$row->satuan}}</h4>
                                     
                             </div>
                             <div class="col-md-12">
-                                <h4 class="mt-2 text-black" style="background: #aaaaaa2e;margin-top:5px;padding: 5px;">
+                                <h4 class="mt-2 text-black" style="background: #aaaaaa2e;margin-top:5px;padding: 10px;">
                                     <i class="fas fa-home"></i>
                                     {{$row->shop_name}} - {{$row->address}}
                                 </h4>
