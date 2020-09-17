@@ -45,11 +45,8 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
 @section('content')
     <div class="container"> 
         <!--slider-->
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>Join Bisnis Indonesia</h2>
-            </div>
-            <div  class="carousel slide" data-ride="carousel">
+        <div class="row"> 
+            <div  class="carousel slide" data-ride="carousel" style="padding-left:15px; padding-right:15px;">
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
                     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -112,61 +109,57 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
                 
                 <div class="row">
                 @foreach($products as $row)  
-                    <div class="col-6 col-md-6">
+                    <div class="col-6 col-md-6" style="padding:2px;">
                         <h4 class="mt-2 text-black">
                             <i class="fas fa-map-marker-alt"></i>
                             {{$row->member->province->name}} - {{$row->member->city->name}}
                         </h4>
-                        <div class="card">
-                            <div class="card-body" style="padding: 0.25rem;">
-                                <div class="row"> 
-                                    <div class="col-md-12">
-                                        <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                            <div class="viewer">
-                                                <p><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</p>
+                        <div class="row"> 
+                            <div class="col-md-12">
+                                <a href="{{ url('/product/show/' . $row->slug) }}" >
+                                    <div class="viewer">
+                                        <p><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</p>
+                                    </div>
+                                    <div  class="carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ul class="carousel-indicators">
+                                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                            <li data-target="#demo" data-slide-to="1"></li>
+                                            <li data-target="#demo" data-slide-to="2"></li>
+                                        </ul>       
+                                        <!--Slides-->
+                                        <div class="carousel-inner" role="listbox">
+                                            <?php 
+                                                $images = explode('|', $row->image);
+                                            ?>
+                                            @foreach($images as $key => $image)
+                                            <!--First slide-->
+                                            <div class="carousel-item @if($key == 0) active @endif">
+                                                <img class="d-block w-100 img-product" src="{{ asset('storage/products/'.$image) }}"
+                                                alt="image Joinjob">
                                             </div>
-                                            <div  class="carousel slide" data-ride="carousel">
-                                                <!-- Indicators -->
-                                                <ul class="carousel-indicators">
-                                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                                    <li data-target="#demo" data-slide-to="1"></li>
-                                                    <li data-target="#demo" data-slide-to="2"></li>
-                                                </ul>       
-                                                <!--Slides-->
-                                                <div class="carousel-inner" role="listbox">
-                                                    <?php 
-                                                        $images = explode('|', $row->image);
-                                                    ?>
-                                                    @foreach($images as $key => $image)
-                                                    <!--First slide-->
-                                                    <div class="carousel-item @if($key == 0) active @endif">
-                                                        <img class="d-block w-100" src="{{ asset('storage/products/'.$image) }}"
-                                                        alt="image Joinjob" style="max-height:350px;">
-                                                    </div>
-                                                    <!--/First slide--> 
-                                                    @endforeach
-                                                </div>
-                                                <!--/.Slides--> 
-                                            </div> 
-                                        </a>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                            <h4 style="background: #aaaaaa2e;margin-top:5px;padding: 5px;">{{ $row->product_name }} </h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <h4>Modal Rp. {{number_format($row->modal)}}</h4>
-                                        <h4>Provit Rp. {{ number_format($row->provit) }}/{{$row->satuan}}</h4>
-                                         
-                                    </div>
-                                    <div class="col-md-12">
-                                        <h4 class="mt-2 text-black" style="background: #aaaaaa2e;margin-top:5px;padding: 5px;">
-                                            <i class="fas fa-home"></i>
-                                            {{$row->shop_name}} - {{$row->address}}
-                                        </h4>
-                                    </div>
-                                </div>
+                                            <!--/First slide--> 
+                                            @endforeach
+                                        </div>
+                                        <!--/.Slides--> 
+                                    </div> 
+                                </a>
+                            </div>
+                            <div class="col-md-12">
+                                <a href="{{ url('/product/show/' . $row->slug) }}" >
+                                    <h4 style="background: #aaaaaa2e;margin-top:5px;padding: 5px;">{{ $row->product_name }} </h4>
+                                </a>
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Modal Rp. {{number_format($row->modal)}}</h4>
+                                <h4>Provit Rp. {{ number_format($row->provit) }}/{{$row->satuan}}</h4>
+                                    
+                            </div>
+                            <div class="col-md-12">
+                                <h4 class="mt-2 text-black" style="background: #aaaaaa2e;margin-top:5px;padding: 5px;">
+                                    <i class="fas fa-home"></i>
+                                    {{$row->shop_name}} - {{$row->address}}
+                                </h4>
                             </div>
                         </div>
                     </div> 

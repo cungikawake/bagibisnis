@@ -128,15 +128,21 @@
 			z-index: 99;
 			width: 20%;
 			text-align: right;
-			right: 0;
+			right: 15px;
 			font-size: 10px;
 			max-height: 35px;
+		}
+		.img-product{
+			height:300px;
 		}
 		.footer{
 			border-top:3px solid #3fc7af;
 			padding-top:15px;
 		}
         @media (max-width: 900px){
+			.img-product{
+				height:150px;
+			}
             .viewer{ 
 				background: #aaaaaa9e;
 				color: #3fc7af;
@@ -145,7 +151,7 @@
 				z-index: 99;
 				width: 45%;
 				text-align: right;
-				right: 0;
+				right: 15px;
 				font-size: 10px;
 				max-height: 35px;
 			}
@@ -180,7 +186,8 @@
 						<div class="row w-100" style="margin: 0 auto;"> 
 							<div class="col-3 mt-10 text-center text-black">
 								<a href="{{ url('/') }}">
-									<img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:70px;"> 
+									<img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:30px;">
+									<h3 style="color:#3fc7af;">FAQ</h3> 
 								</a>
 							</div>
 							<div class="col-6 text-center mt-10">
