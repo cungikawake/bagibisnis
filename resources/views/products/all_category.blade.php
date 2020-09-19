@@ -31,27 +31,64 @@
 @endsection
 @section('content')
 <style>
-.box{
-    border:1px solid #aaa;
+.box{ 
     padding:10px;
     margin-bottom:15px;
     text-align:center;
+}
+.box img{
+    border:2px solid #aaa;
+    border-radius:15%;
 }
 .box:hover{
     background:#3AAB9F;
     cursor:pointer;
 }
 </style>
+    <div class="container"> 
+        <!--slider-->
+        <div class="row"> 
+            <div  class="carousel slide" data-ride="carousel" style="padding-left:15px; padding-right:15px;">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>       
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                    <!--First slide-->
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?local-business"
+                        alt="image Joinjob" style="max-height:500px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?retail-shopping"
+                        alt="image Joinjob" style="max-height:500px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?product"
+                        alt="image Joinjob" style="max-height:500px;">
+                    </div>
+                    <!--/First slide--> 
+                </div>
+                <!--/.Slides--> 
+            </div> 
+        </div>
+
+        @include('layouts.main-menu')
+    </div>
 
     <div class="container"> 
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     @foreach($categories as $category)
-                        <div class="col-md-4 col-6">
+                        <div class="col-md-3 col-6">
                             <a href="{{ url('category/'.$category->id.'/'.$category->slug) }}">
                                 <div class="box">
-                                    <h3 style="color:#212529;">{{ $category->name }}</h3>
+                                    <img src="https://n7.nextpng.com/sticker-png/884/784/sticker-png-food-icon-grilled-steak-meat-with-sliced-tomato-in-plate-illustration-beef-fruit-barbecue-grill-product.png" alt="{{ $category->name }}" style="max-width:100px;">
+                                    <p style="color:#212529;">{{ $category->name }}</p>
                                 </div> 
                             </a>
                         </div>

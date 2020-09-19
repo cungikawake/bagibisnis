@@ -53,7 +53,7 @@
                         <div class="col-8">
                             <h4 class="mt-2 text-black">
                                 <i class="fas fa-map-marker-alt"></i>
-                                {{$product->member->province->name}} - {{$product->member->city->name}}
+                                {{$product->member->city->name}} - {{$product->member->province->name}} 
                             </h4>
                         </div>
                         <div class="col-4 text-right">
@@ -126,7 +126,7 @@
                         <h3 style="color:#3fc7af;">Provit</h3>
                     </div>
                     <div class="col-8"> 
-                        <h3 style="color:#3fc7af;">Rp. {{number_format($product->provit)}}</h3>
+                        <h3 style="color:#3fc7af;">Rp. {{number_format($product->provit)}}/{{$product->satuan}}</h3>
                     </div> 
                 </div>
                   
@@ -161,7 +161,7 @@
                         </a>
                     </div>
                     <div class="col-4 text-right" style="margin-top:-8px;">
-                        <a href="#" style="background:#aaa; padding:5px; margin-right:-26px;">
+                        <a href="{{route('shop_detail', $product->member->shop_name)}}" style="background:#aaa; padding:5px; margin-right:-26px;">
                             <small>Lihat profil</small>
                         </a>
                     </div>

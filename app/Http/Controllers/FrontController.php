@@ -78,17 +78,21 @@ class FrontController extends Controller
     }
 
     public function category(){
+        $provinces = Province::get();
         $categories = Category::get();
-        return view('products.all_category', compact('categories'));
+        return view('products.all_category', compact('categories', 'provinces'));
     }
 
     public function categoryProduct($id, $slug)
     {
+        $provinces = Province::get();
+
         $category = Category::select('*', 'categories.name as categori_name')->where('slug', $slug)->where('id', $id)->first();
 
-        $products = Category::select('*', 'categories.name as categori_name')->where('slug', $slug)->where('id', $id)->first()->product()->with('member')->orderBy('created_at', 'DESC')->paginate(12);
+        $products = Category::select('*', 'categories.name as categori_name')
+        ->where('slug', $slug)->where('id', $id)->first()->product()->with('member')->orderBy('created_at', 'DESC')->paginate(12);
           
-        return view('products.list', compact('products', 'category'));
+        return view('products.list', compact('products', 'category', 'provinces'));
     }
 
     public function filter(Request $request)

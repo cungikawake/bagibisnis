@@ -112,7 +112,7 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
                     <div class="col-6 col-md-6" style="padding:2px;">
                         <h4 class="mt-2 text-black">
                             <i class="fas fa-map-marker-alt"></i>
-                            {{$row->member->province->name}} - {{$row->member->city->name}}
+                             {{$row->member->city->name}} - {{$row->member->province->name}}
                         </h4>
                         <div class="row"> 
                             <div class="col-md-12">
