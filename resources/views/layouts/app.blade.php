@@ -206,7 +206,7 @@
                                     <h5 style="margin-top: -10px;" class="text-black">Login</h5> 
                                 </a>
 							@else
-								<!-- <a href="{{ route('logout') }}"
+								<a href="{{ route('logout') }}"
 									onclick="event.preventDefault();
 											document.getElementById('logout-form').submit();">
 									<h2><i class="fas fa-user-tie"></i></h2>
@@ -215,7 +215,7 @@
 
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 									{{ csrf_field() }}
-								</form> -->
+								</form>
 								<a href="{{ route('member.profile') }}">
 									<h2 class="text-black"><i class="fas fa-user-tie"></i></h2>
 									<h5 style="margin-top: -10px;" class="text-black">Halo, {{auth()->guard('web')->user()->name}}</h5>

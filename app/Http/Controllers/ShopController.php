@@ -20,6 +20,7 @@ class ShopController extends Controller
     {   
         $member = User::select(
             '*',
+            'members.id as member_id',
             'cities.name as city_name',
             'provinces.name as province_name'
         )
@@ -29,7 +30,7 @@ class ShopController extends Controller
         ->where('members.shop_name', $shop_name)
         ->first(); 
      
-        $products = Product::where('member_id', $member->id)->orderBy('created_at', 'DESC')->paginate(10);
+        $products = Product::where('member_id', $member->member_id)->orderBy('created_at', 'DESC')->paginate(10);
         
         return view('shop.profile', compact('member', 'products'));
     }
