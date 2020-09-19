@@ -93,6 +93,8 @@ class FrontController extends Controller
 
     public function filter(Request $request)
     {
+        $provinces = Province::get();
+
         $products = Product::select('*','products.name as product_name')
         ->join('members', 'members.id', '=', 'products.member_id')
         ->orderBy('products.created_at', 'DESC')
@@ -131,7 +133,7 @@ class FrontController extends Controller
                 ->paginate(20);
         }
         
-        return view('products.filter', compact('products'));
+        return view('products.filter', compact('products', 'provinces'));
     }
     
     public function verifyCustomerRegistration($token)

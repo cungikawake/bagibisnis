@@ -202,7 +202,7 @@
 							<div class="col-3 text-center mt-10">
 							@guest
 								<a href="{{ route('login') }}" class="icons">
-                                    <h2 class="text-black"><i class="fas fa-user"></i></h2>
+                                    <h2 class="text-black"><i class="fas fa-user-lock"></i></h2>
                                     <h5 style="margin-top: -10px;" class="text-black">Login</h5> 
                                 </a>
 							@else
@@ -233,6 +233,17 @@
 
     <main class="py-4 content" style="margin-top:50px;">
         @yield('content')
+
+		<div class="row">
+			<div class="col-md-12 text-center" style="background: #fff; border-top:3px solid #3fc7af;">
+				<a href="{{ url('/') }}">
+					<img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:30px;">
+					<h3 style="color:#3fc7af;">JOINJOB</h3> 
+					<P style="color:#3fc7af; margin-top:-10px;">Copyright 2020</P> 
+					<P style="color:#3fc7af; margin-top:-25px;">Join Bisnis Indonesia</P> 
+				</a>
+			</div>
+		</div>
     </main>
 	
  
