@@ -135,9 +135,17 @@
 		.img-product{
 			height:300px;
 		}
-		.footer{
-			border-top:3px solid #3fc7af;
-			padding-top:15px;
+		main{
+			margin-bottom:-100px;
+		}
+		section:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		footer {
+			clear: both; 
+			width: 100%; 
 		}
 		/* The sticky class is added to the header with JS when it reaches its scroll position */
 		.sticky-top {
@@ -231,12 +239,11 @@
 
 	
 
-    <main class="py-4 content" style="margin-top:50px;">
-        <div style="margin-top:20px;">
-		@yield('content')
-		</div>
+    <section class="py-4 content" style="margin-top:75px;"> 
+		@yield('content') 
+    </section>
 
-		<div style="bottom:0; position:fixed; width:100%;">
+	<footer class="footer">
 		<div class="row">
 			<div class="col-md-12 text-center" style="background: #fff; border-top:3px solid #3fc7af;">
 				<a href="{{ url('/') }}">
@@ -246,9 +253,9 @@
 					<P style="color:#3fc7af; margin-top:-25px;">Join Bisnis Indonesia</P> 
 				</a>
 			</div>
-		</div>
-		</div>
-    </main>
+		</div> 
+	</footer>
+	
 	
  
 </body>
