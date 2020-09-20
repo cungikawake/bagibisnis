@@ -166,10 +166,10 @@
                 font-size:25px; 
             }
             h4, h5{
-                font-size:0.6rem;
+                font-size:1.0rem;
             }
             .h3, h3{
-                font-size:1.0rem;
+                font-size:1.3rem;
             }
 
             .dekstop{
@@ -191,7 +191,7 @@
 					<div class="container offset">
 						<div class="row w-100" style="margin: 0 auto;"> 
 							<div class="col-3 mt-10 text-center text-black">
-								<a href="{{ url('/') }}">
+								<a href="{{ url('/faq') }}">
 									<img src="{{ asset('asset/joinjob.png') }}"  alt="logo" style="max-height:30px;">
 									<h3 style="color:#3fc7af;">FAQ</h3> 
 								</a>
@@ -232,8 +232,11 @@
 	
 
     <main class="py-4 content" style="margin-top:50px;">
-        @yield('content')
+        <div style="margin-top:20px;">
+		@yield('content')
+		</div>
 
+		<div style="bottom:0; position:fixed; width:100%;">
 		<div class="row">
 			<div class="col-md-12 text-center" style="background: #fff; border-top:3px solid #3fc7af;">
 				<a href="{{ url('/') }}">
@@ -243,6 +246,7 @@
 					<P style="color:#3fc7af; margin-top:-25px;">Join Bisnis Indonesia</P> 
 				</a>
 			</div>
+		</div>
 		</div>
     </main>
 	

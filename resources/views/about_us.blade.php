@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('header')
-<title>Tentang Kami | dibisnis.id</title>
+<title>Tentang Kami | joinjob.id</title>
 @endsection
 @section('content')
     <div class="container"> 

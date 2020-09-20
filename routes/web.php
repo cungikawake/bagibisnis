@@ -20,7 +20,7 @@ Route::get('/product/filter', 'FrontController@filter')->name('product.filter');
 Route::get('/product/search', 'FrontController@search')->name('product.search');
 Route::get('/about_us', 'FrontController@about_us')->name('about_us');
 Route::get('/term_condition', 'FrontController@term_condition')->name('term_condition');
-Route::get('/tutorial', 'FrontController@tutorial')->name('tutorial');
+Route::get('/faq', 'FrontController@tutorial')->name('tutorial');
 Route::get('/shop/profile/{shop_name}', 'ShopController@shop_detail')->name('shop_detail');
 
 
