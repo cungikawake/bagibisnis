@@ -3,7 +3,7 @@
 <title>Profil bisnis, media pilihan bisnis | dibisnis.id</title>
 @endsection
 @section('content')
-    <div class="container"> 
+    <div class="container" style="margin-top:100px;"> 
         <div class="card">
             <div class="card-body">
                 <div class="row">

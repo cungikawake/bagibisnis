@@ -3,12 +3,12 @@
 <title>Profil {{$member->shop_name}} | dibisnis.id</title>
 @endsection
 @section('content')
-    <div class="container"> 
+    <div class="container" style="margin-top:100px;"> 
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h3 style="color:#212529;">Detail Profil - {{$member->shop_name}}</h3> 
+                        <h3 style="color:#212529;">Detail Profil - {{$member->member_name}}</h3> 
                         <hr>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                     <div class="col-8">  
                         <h4 class="mt-2 text-black">
                             <i class="fas fa-user"></i>
-                            {{$member->name}}
+                            {{$member->member_name}}
                         </h4>
                          
                         <h4 class="mt-2 text-black">
@@ -90,7 +90,7 @@
                                             </div> 
                                         </a>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 text-center">
                                         <a href="{{ url('/product/show/' . $row->slug) }}" >
                                             <h4 style="margin-top:5px;padding: 10px;">{{ $row->name }} </h4>
                                         </a>

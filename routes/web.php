@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/coba', function(){
+    return view('theme');
+});
 
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/home', 'FrontController@index')->name('home');
@@ -23,6 +26,7 @@ Route::get('/term_condition', 'FrontController@term_condition')->name('term_cond
 Route::get('/faq', 'FrontController@tutorial')->name('tutorial');
 Route::get('/shop/profile/{shop_name}', 'ShopController@shop_detail')->name('shop_detail');
 
+Route::get('/notif/{name}', 'NotifController@index')->name('notif');
 
 Auth::routes();
 

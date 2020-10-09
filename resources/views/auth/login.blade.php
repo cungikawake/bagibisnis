@@ -1,13 +1,17 @@
 @extends('layouts.app')
 @section('header')
-<title>Login akun | dibisnis.id</title>
+<title>Login akun | joinjob.id</title>
 @endsection
 @section('content')
-<div class="container">
+<div class="container" style="margin-top:100px;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">
+                    <div class="text-center" style="width: 100%; color:#d97e3f;">
+                        <h2>{{ __('Login Bisnis') }}</h2>
+                    </div>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -68,7 +72,7 @@
                                 </button>
                                 <a href="{{ route('register') }}">
                                     <button type="button" class="btn btn-danger">
-                                        {{ __('Register Baru') }}
+                                        {{ __('Daftar Baru') }}
                                     </button>
                                 </a>
                                 <p>

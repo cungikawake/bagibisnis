@@ -35,13 +35,14 @@
     padding:10px;
     margin-bottom:15px;
     text-align:center;
+    color:#5abdc0;
 }
-.box img{
-    border:2px solid #aaa;
+.box img{ 
     border-radius:15%;
 }
 .box:hover{
     background:#3AAB9F;
+    color:#fff;
     cursor:pointer;
 }
 </style>
@@ -57,17 +58,9 @@
                 </ul>       
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
-                    <!--First slide-->
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?local-business"
-                        alt="image Joinjob" style="max-height:500px;">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?retail-shopping"
-                        alt="image Joinjob" style="max-height:500px;">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://source.unsplash.com/1600x900/?product"
+                    <!--First slide--> 
+                    <div class="carousel-item active  ">
+                        <img class="d-block w-100" src="{{ asset('asset/4.jpeg') }}"
                         alt="image Joinjob" style="max-height:500px;">
                     </div>
                     <!--/First slide--> 
@@ -84,11 +77,11 @@
             <div class="card-body">
                 <div class="row">
                     @foreach($categories as $category)
-                        <div class="col-md-3 col-6">
+                        <div class="col-md-4 col-6">
                             <a href="{{ url('category/'.$category->id.'/'.$category->slug) }}">
                                 <div class="box">
-                                    <img src="https://n7.nextpng.com/sticker-png/884/784/sticker-png-food-icon-grilled-steak-meat-with-sliced-tomato-in-plate-illustration-beef-fruit-barbecue-grill-product.png" alt="{{ $category->name }}" style="max-width:100px;">
-                                    <p style="color:#212529;">{{ $category->name }}</p>
+                                    <img src="{{ asset('asset/'.$category->icon) }}" alt="{{ $category->name }}" style="max-width:100px;">
+                                    <h4>{{ $category->name }}</h4>
                                 </div> 
                             </a>
                         </div>

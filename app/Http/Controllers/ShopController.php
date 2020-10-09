@@ -20,6 +20,7 @@ class ShopController extends Controller
     {   
         $member = User::select(
             '*',
+            'members.name as member_name',
             'members.id as member_id',
             'cities.name as city_name',
             'provinces.name as province_name'

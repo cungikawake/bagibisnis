@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
-
+        App\Providers\BroadcastServiceProvider::class,
     ],
 
     /*
