@@ -20,14 +20,29 @@
 <meta itemprop="image" content="https://joinjob.id/asset/logo.png">
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="Sortir Modal terendah | joinjob.id">
-<meta name="og:description" content="Modal terendah, Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
-<meta name="og:type" content="article">
-
-<meta property="og:title" content="Sortir Modal terendah | joinjob.id" />
-<meta property="og:url" content="{{ url('product/filter') }}" />
-<meta property="og:image" content="https://joinjob.id/asset/logo.png">
-<meta property="og:type" content="article" />
+<!--meta-->
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Urutkan Biaya Modal terendah  - joinjob.id" />
+<meta property="og:description" content="@yield('title'), JOINJOB merupakan media untuk melakukan penawaran dengan
+bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dalam satu media website." />
+<meta property="og:url" content="https://joinjob.id/" />
+<meta property="og:site_name" content="joinjob.id" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
+bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dalam satu media website." />
+<meta name="twitter:title" content="Urutkan Biaya Modal terendah  - joinjob.id" />
+<meta name="twitter:image" content="https://joinjob.id/asset/logo.jpg" />
 
 @endsection
 

@@ -9,6 +9,8 @@
     <meta name="theme-color" content="#100DD1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    
     <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
     <!-- Title-->
     <title>Join job - join job indonesia</title>

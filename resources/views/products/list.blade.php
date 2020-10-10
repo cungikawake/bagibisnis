@@ -24,16 +24,30 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
 <meta itemprop="image" content="https://dibisnis.id/asset/logo.png">
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="Produk Kategori {{ $category->name }}, Join Informasi Antar Provinsi | Joinjob.id">
-<meta name="og:description" content="Produk Kategori {{ $category->name }}, Joinjob hadir sebagai tempat berbagi informasi dan
-memberikan kemudahan mencari berbagai keperluan anda untuk
-melakukan kegiatan interaksi dan transaksi dalam satu media website.">
-<meta name="og:type" content="article">
-
-<meta property="og:title" content="Produk Kategori {{ $category->name }}, Join Informasi Antar Provinsi | Joinjob.id" />
-<meta property="og:url" content="https://Joinjob.id/" />
-<meta property="og:image" content="https://dibisnis.id/asset/logo.png">
-<meta property="og:type" content="article" /> 
+<!--meta-->
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Produk Kategori {{ $category->name }}  - joinjob.id" />
+<meta property="og:description" content="@yield('title'), JOINJOB merupakan media untuk melakukan penawaran dengan
+bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dalam satu media website." />
+<meta property="og:url" content="https://joinjob.id/" />
+<meta property="og:site_name" content="joinjob.id" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
+<meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
+bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dalam satu media website." />
+<meta name="twitter:title" content="Produk Kategori {{ $category->name }}  - joinjob.id" />
+<meta name="twitter:image" content="https://joinjob.id/asset/logo.jpg" />
+ 
 @endsection
 @section('content')
 <!-- Top Products-->

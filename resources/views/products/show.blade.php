@@ -3,6 +3,7 @@
 @section('header')
 
 <title>{{ $product->name }} | joinjob.id.id</title>
+
 <meta name="keywords" content="{{ $product->name }}">
 <meta name="title" content="{{ $product->name }} | joinjob.id.id">
 <?php 
@@ -23,12 +24,28 @@
 <meta itemprop="image" content="{{ asset('storage/products/'.$images[0]) }}">
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="{{ $product->name }} | joinjob.id.id">
-<meta name="og:description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
-<meta name="og:type" content="article">
-
+<!--meta-->
+<meta property="og:locale" content="id_ID" />
+<meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $product->name }} | joinjob.id.id" />
-<meta property="og:url" content="https://joinjob.id.id/" />
+<meta property="og:description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}" />
+<meta property="og:url" content="https://joinjob.id/" />
+<meta property="og:site_name" content="joinjob.id" />
+<meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image:secure_url" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image:secure_url" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image:secure_url" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta property="og:image:secure_url" content="{{ asset('storage/products/'.$images[0]) }}" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}" />
+<meta name="twitter:title" content="{{ $product->name }} | joinjob.id.id" />
+<meta name="twitter:image" content="{{ asset('storage/products/'.$images[0]) }}" />
+
+
+<meta property="og:title" content="{{ $product->name }} | joinjob.id.id" /> 
 <meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}">
 <meta property="og:type" content="article" />
 
