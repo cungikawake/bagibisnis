@@ -71,7 +71,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'role' => 2,
-            'exp_date' => date('Y-m-d', strtotime('+1 month', strtotime($today))),
+            'exp_date' => date('Y-m-d', strtotime('+10 days', strtotime($today))), //free
             'password' => Hash::make($data['password']),
         ]);
 
@@ -82,6 +82,8 @@ class RegisterController extends Controller
             'user_id' => $user->id,
             'status' => 1,
             'max_product' => 10, 
+            'type_member' => 1, 
+            'quota_post' => 10, //free 
         ]);
 
         if($customer){
