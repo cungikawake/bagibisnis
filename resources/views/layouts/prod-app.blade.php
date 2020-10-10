@@ -25,6 +25,15 @@
     <!-- Web App Manifest-->
     <link rel="manifest" href="{{ asset('asset/manifest.json') }}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3J9YEWTPD6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3J9YEWTPD6');
+  </script>
     <style>
         .product-thumbnail img{
                     height:145px;
