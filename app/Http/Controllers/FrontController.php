@@ -32,24 +32,10 @@ class FrontController extends Controller
  
     public function search(Request $request)
     {    
-        $provinces = Province::get();
-        $province_search = $request->province;
+        $provinces = Province::get(); 
         $keyword = $request->keyword;
 
-        if($province_search != '' && $keyword !=''){
-            $products = Product::select('*','products.name as product_name')
-            ->join('members', 'members.id', '=', 'products.member_id')
-            ->where('products.name', 'like', "%{$request->keyword}%")
-            ->where('products.tag', 'like', "%{$request->province}%")
-            ->orderBy('products.created_at', 'DESC')->paginate(20);
-
-        }else if($province_search != ''){
-            $products = Product::select('*','products.name as product_name')
-            ->join('members', 'members.id', '=', 'products.member_id') 
-            ->where('products.tag', 'like', "%{$request->province}%")
-            ->orderBy('products.created_at', 'DESC')->paginate(20);
-
-        }else if($keyword !=''){
+        if($keyword !=''){
             $products = Product::select('*','products.name as product_name')
             ->join('members', 'members.id', '=', 'products.member_id')
             ->where('products.name', 'like', "%{$request->keyword}%") 
@@ -61,7 +47,7 @@ class FrontController extends Controller
             ->orderBy('products.created_at', 'DESC')->paginate(20);
         } 
 
-        return view('home', compact('products', 'keyword', 'provinces', 'province_search'));
+        return view('home', compact('products', 'keyword', 'provinces'));
     }
 
     public function product()
