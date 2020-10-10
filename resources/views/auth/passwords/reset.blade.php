@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user-app')
 @section('header')
 <title>Reset Password | dibisnis.id</title>
 @endsection

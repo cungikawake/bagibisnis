@@ -13,12 +13,12 @@
     <!-- Title-->
     <title>Join job - join job indonesia</title>
     <!-- Favicon-->
-    <link rel="icon" href="https://designing-world.com/suha-v2.1.0/img/icons/icon-72x72.png">
+    <link rel="icon" href="https://joinjob.id/asset/logo.jpg">
     <!-- Apple Touch Icon-->
     <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://joinjob.id/asset/logo.jpg">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://joinjob.id/asset/logo.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://joinjob.id/asset/logo.jpg">
     <!-- Stylesheet-->
     <link rel="stylesheet" href="https://designing-world.com/suha-v2.1.0/style.css">
     <link rel="stylesheet" href="{{ asset('asset/custom.css') }}">
