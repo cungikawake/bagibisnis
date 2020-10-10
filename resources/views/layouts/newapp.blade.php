@@ -26,10 +26,65 @@
     <!-- Web App Manifest-->
     <link rel="manifest" href="{{ asset('asset/manifest.json') }}">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-     
+    <style>
+        .product-thumbnail img{
+            height:145px;
+        }
+        .suha-navbar-toggler {
+        position: relative;
+        z-index: 1;
+        width: 100px;
+        cursor: pointer;
+        padding: .5rem 0;
+        } 
+        .footer-nav-area{
+        height:auto;
+        }
+        .catagory-card i{
+        color:#3bb3c4;
+        }
+        .bg-success, .badge-success{
+        background-color: #3bb3c4 !important;
+        }
+        .top-product-card .sale-price{
+        color:#3bb3c4;
+        }
+
+        .top-product-card .product-rating{
+        color:#020310;
+        }
+
+        .notification-area .list-group-item .noti-icon{
+            background: linear-gradient(to left, #3bb3c4, #3ab4c3);
+        }
+
+        .notification-area .list-group-item .noti-icon::before{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        content: "";
+        top: -2px;
+        right: -10px;
+        border-radius: 50%;
+        z-index: 1;
+        }
+        .notification-area .list-group-item .noti-icon-notif::before{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ea4c62;
+        content: "";
+        top: -2px;
+        right: -2px;
+        border-radius: 50%;
+        z-index: 1;
+        }
+    </style>
     @yield('styles')
 </head>
 <body>
+    
     <!-- Preloader-->
     <div class="preloader" id="preloader">
       <div class="spinner-grow text-secondary" role="status">
