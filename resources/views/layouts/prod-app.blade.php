@@ -116,7 +116,7 @@
         <div class="suha-navbar-toggler d-flex flex-wrap">
             @guest
                 <div class="notification-area" style="margin-top: 5px;">
-                  <div class="list-group-item d-flex align-items-center" href="notification-details.html" style="border:none;"> 
+                  <div class="list-group-item d-flex align-items-center"  style="border:none;"> 
                     <a href="{{ route('login') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-lock"></i></span></a>
                   </div> 
                 </div>

@@ -117,18 +117,15 @@
         <!-- Navbar Toggler--> 
         <div class="suha-navbar-toggler d-flex flex-wrap">
             @guest
-                <div style="margin:15px;">
-                    <i class="fas fa-bell"></i>
-                </div>
-                <div style="margin:15px;"> 
-                    <a href="{{ route('login') }}">
-                        <i class="fas fa-user-lock"></i>
-                    </a>
+                <div class="notification-area" style="margin-top: 5px;">
+                  <div class="list-group-item d-flex align-items-center"   style="border:none;"> 
+                    <a href="{{ route('login') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-lock"></i></span></a>
+                  </div> 
                 </div>
             @else
                 
                 <div class="notification-area" style="margin-top: 5px;">
-                  <div class="list-group-item d-flex align-items-center" href="notification-details.html" style="border:none;">
+                  <div class="list-group-item d-flex align-items-center"  style="border:none;">
                     <a href="{{ route('member.notif') }}"><span class="noti-icon noti-icon-notif"><i class="fas fa-bell"></i></span> </a>
                     <a href="{{ route('member.profile') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-tie"></i></span></a>
                   </div> 
