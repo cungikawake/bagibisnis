@@ -57,30 +57,30 @@
             background: linear-gradient(to left, #3bb3c4, #3ab4c3);
         }
 
-            .notification-area .list-group-item .noti-icon::before{
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            content: "";
-            top: -2px;
-            right: -10px;
-            border-radius: 50%;
-            z-index: 1;
-            }
-            .notification-area .list-group-item .noti-icon-notif::before{
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ea4c62;
-            content: "";
-            top: -2px;
-            right: -2px;
-            border-radius: 50%;
-            z-index: 1;
-            }
+        .notification-area .list-group-item .noti-icon::before{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        content: "";
+        top: -2px;
+        right: -10px;
+        border-radius: 50%;
+        z-index: 1;
+        }
+        .notification-area .list-group-item .noti-icon-notif::before{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #ea4c62;
+        content: "";
+        top: -2px;
+        right: -2px;
+        border-radius: 50%;
+        z-index: 1;
+        }
             
-        </style>
+    </style>
     @yield('styles')
 </head>
 <body>

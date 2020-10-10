@@ -38,8 +38,7 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
 @endsection
 
 @section('styles')
-<style> 
-</style>
+ 
 @endsection
 
 @section('content')
