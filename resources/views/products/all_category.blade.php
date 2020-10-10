@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 @section('header')
 <title>Semua kategori bisnis, media pilihan bisnis | dibisnis.id</title>
 
@@ -30,64 +30,30 @@
 
 @endsection
 @section('content')
-<style>
-.box{ 
-    padding:10px;
-    margin-bottom:15px;
-    text-align:center;
-    color:#5abdc0;
-}
-.box img{ 
-    border-radius:15%;
-}
-.box:hover{
-    background:#3AAB9F;
-    color:#fff;
-    cursor:pointer;
-}
-</style>
-    <div class="container"> 
-        <!--slider-->
-        <div class="row"> 
-            <div  class="carousel slide" data-ride="carousel" style="padding-left:15px; padding-right:15px;">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>       
-                <!--Slides-->
-                <div class="carousel-inner" role="listbox">
-                    <!--First slide--> 
-                    <div class="carousel-item active  ">
-                        <img class="d-block w-100" src="{{ asset('asset/4.jpeg') }}"
-                        alt="image Joinjob" style="max-height:500px;">
-                    </div>
-                    <!--/First slide--> 
+<!-- Product Catagories-->
+<div class="product-catagories-wrapper py-3">
+    <div class="container">
+        <div class="section-heading">
+        <h6 class="ml-1">Kateogri Produk</h6>
+        </div>
+        <div class="product-catagory-wrap">
+        <div class="row g-3">
+            @foreach($categories as $category)
+            <!-- Single Catagory Card-->
+            <div class="col-md-4">
+            <div class="card catagory-card">
+                <div class="card-body text-white" style="background:#3bb4c6;">
+                    <a href="{{ url('category/'.$category->id.'/'.$category->slug) }}">
+                        <img src="{{ asset('asset/'.$category->icon) }}" alt="{{ $category->name }}" style="max-width:100px;">
+                        <h4 class="text-white">{{ $category->name }}</h4>
+                        <p class="text-white">{{ $category->subtitle }}</p>
+                    </a>
                 </div>
-                <!--/.Slides--> 
-            </div> 
-        </div>
-
-        @include('layouts.main-menu')
-    </div>
-
-    <div class="container"> 
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    @foreach($categories as $category)
-                        <div class="col-md-4 col-6">
-                            <a href="{{ url('category/'.$category->id.'/'.$category->slug) }}">
-                                <div class="box">
-                                    <img src="{{ asset('asset/'.$category->icon) }}" alt="{{ $category->name }}" style="max-width:100px;">
-                                    <h4>{{ $category->name }}</h4>
-                                </div> 
-                            </a>
-                        </div>
-                    @endforeach
-                </div> 
             </div>
+            </div>
+            @endforeach
+        </div>
         </div>
     </div>
+</div> 
 @endsection

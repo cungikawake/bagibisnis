@@ -68,4 +68,7 @@ Route::group(['middleware' => 'member'], function () {
     Route::post('/member/product/store', 'Member\ProductController@store')->name('member.product.store');
     
     Route::get('/member/preview/product/{slug}', 'Member\MemberController@preview_product')->name('member.preview_product');
+    Route::get('/member/notif', 'Member\MemberController@notif')->name('member.notif');
+
+    Route::post('/product/review', 'Member\MemberController@store_review')->name('member.review');
 });

@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 @section('header')
-<title>Sortir Modal terendah | joinjob.id</title>
+<title>Urutkan Biaya Modal terendah | joinjob.id</title>
 
 
 <meta name="keywords" content="Joinjob website yang menyediakan fasilitas pemasaran digital">
-<meta name="title" content="Sortir Modal terendah | joinjob.id ">
+<meta name="title" content="Urutkan Biaya Modal Terendah | joinjob.id ">
  
 <meta name="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 
@@ -32,143 +32,72 @@
 @endsection
 
 @section('content')
-    <div class="container"> 
-        <!--slider-->
-        <div class="row"> 
-            <div  class="carousel slide" data-ride="carousel" style="padding-left:15px; padding-right:15px;">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
-                </ul>       
-                <!--Slides-->
-                <div class="carousel-inner" role="listbox">
-                    <!--First slide--> 
-                    <div class="carousel-item active  ">
-                        <img class="d-block w-100" src="{{ asset('asset/3.jpeg') }}"
-                        alt="image Joinjob" style="max-height:500px;">
-                    </div>
-                    <!--/First slide-->  
+<!-- Top Products-->
+<div class="top-products-area clearfix py-3">
+    <div class="container">
+        <div class="section-heading d-flex align-items-center justify-content-between"> 
+            <form action="{{ route('product.filter') }}" id="form_filter">
+                <div class="form-group">
+                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Biaya Terendah</h6>
+                    <select class="form-control" id="filter_modal" name="modal">
+                        <option value="0">Rp. - 0</option>
+                        <option value="100000">Rp. - 100.000</option>
+                        <option value="500000">Rp. - 500.000</option>
+                        <option value="5000000">Rp. - 5.000.000</option>
+                        <option value="10000000">Rp. - 10.000.000</option>
+                        <option value="10000001">Rp. + 10.000.000</option>
+                    </select>
                 </div>
-                <!--/.Slides--> 
+            </form>
+            <!-- <a class="btn btn-danger btn-sm" href="shop-grid.html">View All</a> --> 
+        </div> 
+        <div class="row g-3">
+            @foreach($products as $row) 
+            <!-- Single Top Product Card-->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card top-product-card">
+                <div class="card-body">
+                    <span class="badge badge-success">{{$row->category->name}} </span>
+                    <a class="wishlist-btn">
+                         
+                    </a>
+                    <a class="product-thumbnail d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                        <?php 
+                            $images = explode('|', $row->image);
+                        ?>
+                        @foreach($images as $key => $image)
+                            @if($key == 0)
+                                <img class="mb-2" src="{{ asset('storage/products/'.$image) }}" alt="">
+                            @endif
+                        @endforeach 
+                    </a>
+                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
+                    <p class="sale-price">Biaya | Modal Rp. {{number_format($row->modal) }}</p>
+                    <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
+                    <hr>
+                    <div class="product-rating">
+                        {{$row->shop_name}} -  {{$row->tag}}
+                    </div>
+                    <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
+                </div>
+                </div>
             </div> 
-        </div>
+            @endforeach
 
-        @include('layouts.main-menu')
-
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <form action="{{ route('product.filter') }}" id="form_filter">
-                            <div class="form-group">
-                                <h3><i class="fas fa-filter"></i> Urutkan Modal</h3>
-                                <select class="form-control" id="filter_modal" name="modal">
-                                    <option value="0">Rp. - 0</option>
-                                    <option value="100000">Rp. - 100.000</option>
-                                    <option value="500000">Rp. - 500.000</option>
-                                    <option value="5000000">Rp. - 5.000.000</option>
-                                    <option value="10000000">Rp. - 10.000.000</option>
-                                    <option value="10000001">Rp. + 10.000.000</option>
-                                </select>
-                            </div>
-                        </form>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                @foreach($products as $row)  
-                    <div class="col-6 col-md-6" style="margin-bottom:15px;">
-                        <div class="box-product">
-                            <h3 class="mt-2 text-black text-center p-14"> 
-                                {{$row->category->name}} 
-                            </h3>
-                            <div class="row"> 
-                                <div class="col-md-12">
-                                    <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                        <div class="viewer">
-                                            <p><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</p>
-                                        </div>
-                                        <div  class="carousel slide" data-ride="carousel">
-                                            <!-- Indicators -->
-                                            <ul class="carousel-indicators">
-                                                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                                <li data-target="#demo" data-slide-to="1"></li>
-                                                <li data-target="#demo" data-slide-to="2"></li>
-                                            </ul>       
-                                            <!--Slides-->
-                                            <div class="carousel-inner" role="listbox">
-                                                <?php 
-                                                    $images = explode('|', $row->image);
-                                                ?>
-                                                @foreach($images as $key => $image)
-                                                <!--First slide-->
-                                                <div class="carousel-item @if($key == 0) active @endif">
-                                                    <img class="d-block w-100 img-product" src="{{ asset('storage/products/'.$image) }}"
-                                                    alt="image Joinjob">
-                                                </div>
-                                                <!--/First slide--> 
-                                                @endforeach
-                                            </div>
-                                            <!--/.Slides--> 
-                                        </div> 
-                                    </a>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                        <h3 class="product-name p-14">{{ $row->product_name }} </h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-12 dekstop">
-                                    <div class="row">
-                                        <div class="col-4 text-center">
-                                            <h2 class="text-black" style="margin-top:10px;">
-                                            <i class="fa fa-tags"></i>
-                                            </h2>
-                                            <h4 class="mt-1 text-black">Biaya | Modal</h4>
-                                        </div>
-                                        <div class="col-8">
-                                            <h2 class="biaya-modal">Rp. {{number_format($row->modal)}}</h2>
-                                        </div>
-                                    </div>   
-                                </div>
-
-                                <div class="col-md-12 mobile">
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <h2 class="text-black p-14" style="margin-top:10px;">
-                                            <i class="fa fa-tags"></i>
-                                            </h2>
-                                            <h4 class="mt-1 text-black p-14">Biaya | Modal</h4>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <h2 class="biaya-modal p-18">Rp. {{number_format($row->modal)}}</h2>
-                                        </div>
-                                    </div>   
-                                </div>
-                                
-                                <div class="col-md-12 text-center">
-                                    <h4 class="mt-2 text-black product-shop"> 
-                                        {{$row->shop_name}} - {{$row->member->city->name}} | {{$row->member->province->name}}
-                                    </h4>
-                                </div>
-                            </div>
-                        </div> 
-                    </div> 
-                @endforeach
-                </div>
+            <div class="col-12">
+                <hr>
                 {{ $products->links() }}
-            </div>
-        </div>
+            </div> 
+        </div> 
+
     </div>
+</div>
 @stop
  
 @section('script')
 <script>
 $(document).on('change','#filter_modal',function(){
     $('#form_filter').submit();
-});
-
+}); 
 </script>
 @endsection

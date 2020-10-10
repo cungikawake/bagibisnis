@@ -358,8 +358,7 @@
 <script>
 function search(){
 	document.getElementById("Search").submit();
-} 
- 
+}  
 </script> 
 @yield('script')
 </html>

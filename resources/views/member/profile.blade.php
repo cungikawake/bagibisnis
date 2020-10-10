@@ -1,234 +1,113 @@
-@extends('layouts.app')
+@extends('layouts.user-app')
 @section('header')
-<title>Profil bisnis, media pilihan bisnis | dibisnis.id</title>
+<title>Profil Akun, Join bisnis antar provinsi | dibisnis.id</title>
 @endsection
 @section('content')
-    <div class="container" style="margin-top:100px;"> 
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 style="color:#212529;">Profil Bisnis Anda</h3>
-                        <h4 class="alert alert-warning"><i class="fas fa-info-circle"></i> Masa aktif akun sampai {{ date('d M Y', strtotime(Session::get('user')->exp_date)) }}</h4>
-                        <hr>
+<div class="container">
+    <!-- Profile Wrapper-->
+    <div class="profile-wrapper-area py-3">
+        <!-- User Information-->
+        <div class="card user-info-card">
+            <div class="card-body p-4 d-flex align-items-center">
+                <div class="user-profile mr-3">
+                    @if($member->logo !='')
+                        <img class="img-fluid" src="{{ asset('storage/member/'.$member->logo) }}"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                    @else
+                        <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                    @endif
+                    <div class="change-user-thumb">
+                        <form>
+                            <input class="form-control-file" type="file">
+                            <button>
+                                @if($member->type_member == 3)
+                                <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
+                                @elseif($member->type_member == 2)
+                                <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
+                                @else
+                                <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
+                                @endif
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        @if($member->logo !='')
-                        <p class="text-center">
-                            <img class="img-fluid" src="{{ asset('storage/member/'.$member->logo) }}"  style="max-height:150px; border-radius:20%; border:2px solid #3EC7AF;">
-                        </p>
-                        @else
-                        <p class="text-center">
-                            <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:20%; border:2px solid #3EC7AF;">
-                        </p>
-                        @endif
-                        <a href="{{ route('member.edit') }}">
-                            <button class="btn btn-primary"> <i class="fas fa-edit"></i> Ubah profile</button>
-                        </a>
-                    </div>
-                    <div class="col-md-8"> 
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-home"></i>
-                            {{$member->shop_name}}
-                        </h4>
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-user"></i>
-                            {{$member->name}}
-                        </h4>
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-envelope-open"></i>
-                            {{$member->email}}
-                        </h4>
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-phone"></i>
-                            {{$member->phone_number}}
-                        </h4> 
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{$member->address}}
-                        </h4>
-                    </div>
+                <div class="user-info">
+                    <h5 class="mb-0">{{$member->member_name}}</h5>
+                    <p class="mb-0 text-white">{{ $member->city_name }} | {{ $member->province_name }}</p> 
+                    <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
+                    <p class="mb-0 text-white">{{ $member->email }}</p> 
+                    <a href="{{ route('member.edit') }}">
+                        <button class="btn btn-success">Edit Profil</button>
+                    </a>
+                    <a href="#">
+                        <button class="btn btn-success">Transaksi</button>
+                    </a>
                 </div> 
             </div>
-        </div>
-
-        @if(Session::get('user')->exp_date > date('Y-m-d')) 
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-4">
-                        <h3 style="color:#212529;">Bisnis Anda</h3>
-                        <hr>
-                    </div>
-                    <div class="col-8 text-right">
-                        <a href="{{ route('member.product.create') }}">
-                            <button class="btn btn-primary"> <i class="fas fa-plus"></i> Tambahkan produk </button>
-                        </a>
-                        <hr>
-                    </div>
-                </div>
-                @forelse($products as $row)   
-
-                @if($row->status == 1)
-                <div class="alert alert-success">
-                    <p>Produk sudah aktif </p> 
-                </div>
-                @else
-                <div class="alert alert-warning">
-                    <p>Produk sedang di periksa oleh tim kami, mohon menunggu konfirmasi. </p> 
-                </div>
-                @endif
-                <div class="row"> 
-                    <div class="col-md-12 mobile">
-                        <p>
-                        <a href="{{ url('/product/show/' . $row->slug) }}">
-                            <h3 style="margin-top:5px;">{{ $row->name }} </h3>
-                        </a>
-                        </p>
-                        <div class="f_p_item">
-                            <div class="f_p_img"> 
-                                <div  class="carousel slide" data-ride="carousel">
-                                        <!-- Indicators -->
-                                        <ul class="carousel-indicators">
-                                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                            <li data-target="#demo" data-slide-to="1"></li>
-                                            <li data-target="#demo" data-slide-to="2"></li>
-                                        </ul>       
-                                        <!--Slides-->
-                                        <div class="carousel-inner" role="listbox">
-                                            <?php 
-                                                $images = explode('|', $row->image);
-                                            ?>
-                                            @foreach($images as $key => $image)
-                                            <!--First slide-->
-                                            <div class="carousel-item @if($key == 0) active @endif">
-                                                <img class="d-block w-100" src="{{ asset('storage/products/'.$image) }}"
-                                                alt="image dibisnis" style="max-height:350px;">
-                                            </div>
-                                            <!--/First slide--> 
-                                            @endforeach
-                                        </div>
-                                        <!--/.Slides--> 
-                                    </div>  
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="col-md-4"> 
-                        <h4 class="mt-2 text-black">
-                            <i class="fa fa-bookmark"></i>
-                            {{$row->category->name}}
-                        </h4> 
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-eye"></i>
-                             {{number_format($row->visitor)}} dilihat
-                        </h4>
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-info-circle"></i>
-                            Status : {{($row->status == 0)? 'Sedang ditinjau': 'Aktif'}}
-                        </h4> 
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-hashtag"></i>
-                            {{$row->tag}}
-                        </h4>  
-                        <br>
-                        <div class="card">
-                            <div class="card-body" style="background:#3fc7af;border-radius:10px 10px 0 0;">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5 class="text-black">Modal Bisnis</h5>
-                                    </div>
-                                    <div class="col-6"> 
-                                        <p class="text-black">Rp. {{number_format($row->modal)}}</p>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="card-body" style="background:#3fc7af47;">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <h5 class="text-black">Provit Bisnis</h5>
-                                    </div>
-                                    <div class="col-6"> 
-                                        <p class="text-black">Rp. {{ number_format($row->provit) }}/{{$row->satuan}}</p>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <p class="text-right">	
-                            <ul id="share">
-                                <li>   
-                                    <a href="{{ url('/product/show/' . $row->slug) }}">
-                                        <i class="fas fa-edit"></i> Edit
-                                    </a> 
-                                </li>
-                                <li>   
-                                    <a href="{{ url('/product/show/' . $row->slug) }}">
-                                        <i class="fas fa-eye"></i> Detail
-                                    </a> 
-                                </li>
-                                <li> 
-                                    <div class="dropdown">
-                                        <p data-toggle="dropdown" id="menu2" class="text-black"><i class="fas fa-share-alt"></i> Bagikan</p>	 
-                                        <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ url('/product/show/' . $row->slug) }}"><i class="fab fa-facebook"></i> Facebook</a>
-                                                <a class="dropdown-item" href="https://api.whatsapp.com/send?text={{ $row->name  }} %20 {{ url('/product/show/' . $row->slug) }}"><i class="fab fa-whatsapp-square"></i> Whatsapp</a>
-                                        </div>
-                                    </div> 
-                                </li>
-                            </ul>
-                        </p>
-                    </div> 
-                    
-                    <div class="col-md-8 dekstop">
-                        <p>
-                        <a href="{{ url('/product/show/' . $row->slug) }}">
-                            <h3 style="margin-top:5px;">{{ $row->name }} </h3>
-                        </a>
-                        </p>
-                        <div class="f_p_item">
-                            <div class="f_p_img"> 
-                                    <div  class="carousel slide" data-ride="carousel">
-                                        <!-- Indicators -->
-                                        <ul class="carousel-indicators">
-                                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                            <li data-target="#demo" data-slide-to="1"></li>
-                                            <li data-target="#demo" data-slide-to="2"></li>
-                                        </ul>       
-                                        <!--Slides-->
-                                        <div class="carousel-inner" role="listbox">
-                                            <?php 
-                                                $images = explode('|', $row->image);
-                                            ?>
-                                            @foreach($images as $key => $image)
-                                            <!--First slide-->
-                                            <div class="carousel-item @if($key == 0) active @endif">
-                                                <img class="d-block w-100" src="{{ asset('storage/products/'.$image) }}"
-                                                alt="image dibisnis" style="max-height:350px;">
-                                            </div>
-                                            <!--/First slide--> 
-                                            @endforeach
-                                        </div>
-                                        <!--/.Slides--> 
-                                    </div>  
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="col-md-12">
-                        <hr>
-                    </div> 
-                    <div class="clearfix"></div>
-                </div>
-                    @empty
-
-                    <p>Produk belum tersedia !, Tawarkan bisnis anda</p> 
-                </div>
-                @endforelse
-            </div>
-        </div>
-        @else
-        <div class="alert alert-danger"> Maaf sementara bisnis anda dikunci, karena masa aktif sudah habis. Silahkan menghubungi kami </div>
-        @endif
+        </div>  
     </div>
+    <div class="alert alert-danger"> 
+        <div class="section-heading d-flex align-items-center justify-content-between">
+        <h6 class="ml-1 text-black">Masa aktif akun anda sampai {{ date('d-m-Y', strtotime($user->exp_date)) }}, Lakukan pembelian paket agar postingan anda tetap dipromosikan.</h6>
+        <!-- Layout Options-->
+        <div class="layout-options">
+            <!-- <a href="#" class="active">
+                <i class="fas fa-plus"></i> Paket 
+            </a> -->
+        </div>
+        </div>
+    </div>
+    <!-- Top Products-->
+    <div class="top-products-area py-3">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        <div class="container">
+          <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6 class="ml-1">All Products</h6>
+            <!-- Layout Options-->
+            <div class="layout-options">
+                <a href="{{ route('member.product.create') }}" class="active">
+                    <i class="fas fa-plus"></i> Posting 
+                </a>
+            </div>
+          </div>
+          <div class="row g-3">
+          @foreach($products as $row) 
+            <!-- Single Top Product Card-->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card top-product-card">
+                <div class="card-body">
+                    <span class="badge badge-success">{{$row->category->name}} </span>
+                    <a class="wishlist-btn">
+                         
+                    </a>
+                    <a class="product-thumbnail d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                        <?php 
+                            $images = explode('|', $row->image);
+                        ?>
+                        @foreach($images as $key => $image)
+                            @if($key == 0)
+                                <img class="mb-2" src="{{ asset('storage/products/'.$image) }}" alt="joinjob">
+                            @endif
+                        @endforeach 
+                    </a>
+                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a> 
+                    <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
+                    <div class="product-rating">
+                        <i class="fas fa-map"></i> {{$row->member->province->name}}
+                    </div>
+                    <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
+                </div>
+                </div>
+            </div> 
+            @endforeach
+
+            <div class="col-12">
+                <hr>
+                {{ $products->links() }}
+            </div> 
+          </div>
+        </div>
+    </div>
+</div>
 @endsection

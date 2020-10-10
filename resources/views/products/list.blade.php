@@ -1,102 +1,87 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 @section('header')
 <title> Produk Kategori {{ $category->name }}  | joinjob.id</title>
+<meta name="keywords" content="Produk Kategori {{ $category->name }}, Join Informasi Antar Provinsi">
+<meta name="title" content="Produk Kategori {{ $category->name }}, Join Informasi Antar Provinsi">
+ 
+<meta name="description" content="Produk Kategori {{ $category->name }}, Joinjob hadir sebagai tempat berbagi informasi dan
+memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dan transaksi dalam satu media website.">
+
+<link rel="canonical" href="https://Joinjob.id/" /> 
+
+<!-- Search Engine -->
+<meta name="description" content="Produk Kategori {{ $category->name }}, Joinjob hadir sebagai tempat berbagi informasi dan
+memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dan transaksi dalam satu media website.">
+<meta name="image" content="https://dibisnis.id/asset/logo.png">
+
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Joinjob.id">
+<meta itemprop="description" content="Produk Kategori {{ $category->name }}, Joinjob hadir sebagai tempat berbagi informasi dan
+memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dan transaksi dalam satu media website.">
+<meta itemprop="image" content="https://dibisnis.id/asset/logo.png">
+
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Produk Kategori {{ $category->name }}, Join Informasi Antar Provinsi | Joinjob.id">
+<meta name="og:description" content="Produk Kategori {{ $category->name }}, Joinjob hadir sebagai tempat berbagi informasi dan
+memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dan transaksi dalam satu media website.">
+<meta name="og:type" content="article">
+
+<meta property="og:title" content="Produk Kategori {{ $category->name }}, Join Informasi Antar Provinsi | Joinjob.id" />
+<meta property="og:url" content="https://Joinjob.id/" />
+<meta property="og:image" content="https://dibisnis.id/asset/logo.png">
+<meta property="og:type" content="article" /> 
 @endsection
 @section('content')
-    <div class="container" style="margin-top:100px;"> 
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 style="color:#212529;">Kategori {{ $category->name }} <span style="font-size:12px;">[ {{ $products->total() }} Item ]</span></h3>
-                        <hr>
-                    </div>
-                </div>
-
-                <div class="row">
-                @foreach($products as $row)  
-                    <div class="col-6 col-md-6" style="margin-bottom:15px;">
-                        <div class="box-product">
-                            <h3 class="mt-2 text-black text-center p-14"> 
-                                {{$row->category->name}} 
-                            </h3>
-                            <div class="row"> 
-                                <div class="col-md-12">
-                                    <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                        <div class="viewer">
-                                            <p><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</p>
-                                        </div>
-                                        <div  class="carousel slide" data-ride="carousel">
-                                            <!-- Indicators -->
-                                            <ul class="carousel-indicators">
-                                                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                                <li data-target="#demo" data-slide-to="1"></li>
-                                                <li data-target="#demo" data-slide-to="2"></li>
-                                            </ul>       
-                                            <!--Slides-->
-                                            <div class="carousel-inner" role="listbox">
-                                                <?php 
-                                                    $images = explode('|', $row->image);
-                                                ?>
-                                                @foreach($images as $key => $image)
-                                                <!--First slide-->
-                                                <div class="carousel-item @if($key == 0) active @endif">
-                                                    <img class="d-block w-100 img-product" src="{{ asset('storage/products/'.$image) }}"
-                                                    alt="image Joinjob">
-                                                </div>
-                                                <!--/First slide--> 
-                                                @endforeach
-                                            </div>
-                                            <!--/.Slides--> 
-                                        </div> 
-                                    </a>
-                                </div>
-                                <div class="col-md-12 text-center">
-                                    <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                        <h3 class="product-name p-14">{{ $row->product_name }} </h3>
-                                    </a>
-                                </div>
-                                <div class="col-md-12 dekstop">
-                                    <div class="row">
-                                        <div class="col-4 text-center">
-                                            <h2 class="text-black" style="margin-top:10px;">
-                                            <i class="fa fa-tags"></i>
-                                            </h2>
-                                            <h4 class="mt-1 text-black">Biaya | Modal</h4>
-                                        </div>
-                                        <div class="col-8">
-                                            <h2 class="biaya-modal">Rp. {{number_format($row->modal)}}</h2>
-                                        </div>
-                                    </div>   
-                                </div>
-
-                                <div class="col-md-12 mobile">
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <h2 class="text-black p-14" style="margin-top:10px;">
-                                            <i class="fa fa-tags"></i>
-                                            </h2>
-                                            <h4 class="mt-1 text-black p-14">Biaya | Modal</h4>
-                                        </div>
-                                        <div class="col-12 text-center">
-                                            <h2 class="biaya-modal p-18">Rp. {{number_format($row->modal)}}</h2>
-                                        </div>
-                                    </div>   
-                                </div>
-                                
-                                <div class="col-md-12 text-center">
-                                    <h4 class="mt-2 text-black product-shop"> 
-                                        {{$row->shop_name}} - {{$row->member->city->name}} | {{$row->member->province->name}}
-                                    </h4>
-                                </div>
-                            </div>
-                        </div> 
-                    </div> 
-                @endforeach
-                </div>
-
-                {{ $products->links() }}
-            </div>
+<!-- Top Products-->
+<div class="top-products-area clearfix py-3">
+    <div class="container">
+        <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6 class="ml-1">Semua Kategori {{ $category->name }}</h6>
+            <!-- <a class="btn btn-danger btn-sm" href="shop-grid.html">View All</a> -->
         </div>
+        <div class="row g-3">
+            @foreach($products as $row) 
+            <!-- Single Top Product Card-->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card top-product-card">
+                <div class="card-body">
+                    <span class="badge badge-success">{{$row->category->name}} </span>
+                    <a class="wishlist-btn">
+                         
+                    </a>
+                    <a class="product-thumbnail d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                        <?php 
+                            $images = explode('|', $row->image);
+                        ?>
+                        @foreach($images as $key => $image)
+                            @if($key == 0)
+                                <img class="mb-2" src="{{ asset('storage/products/'.$image) }}" alt="">
+                            @endif
+                        @endforeach 
+                    </a>
+                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
+                    <p class="sale-price">Biaya | Modal Rp. {{number_format($row->modal) }}</p>
+                    <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
+                    <hr>
+                    <div class="product-rating">
+                        {{$row->shop_name}} -  {{$row->tag}}
+                    </div>
+                    <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
+                </div>
+                </div>
+            </div> 
+            @endforeach
+
+            <div class="col-12">
+                <hr>
+                {{ $products->links() }}
+            </div> 
+        </div> 
+
     </div>
+</div>
 @endsection

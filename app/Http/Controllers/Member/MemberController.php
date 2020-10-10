@@ -10,6 +10,8 @@ use App\City;
 use App\District;
 use App\User;
 use App\Product;
+use App\Notification;
+use App\Review;
 
 use Auth;
 use Session;
@@ -24,26 +26,37 @@ class MemberController extends Controller
 
     public function profile(){
         $user = Auth::user();
-        $member = User::join('members', 'members.user_id', 'users.id')
+
+        $member = User::select(
+            '*',
+            'members.name as member_name',
+            'provinces.name as province_name',
+            'cities.name as city_name' 
+            )
+            ->join('members', 'members.user_id', 'users.id')
+            ->join('provinces', 'provinces.id', 'members.province_id')
+            ->join('cities', 'cities.id', 'members.city_id')
             ->where('members.user_id', $user->id)
             ->first(); 
          
+         
+         
         $products = Product::orderBy('created_at', 'DESC')->paginate(10);
          
-        return view('member.profile', compact('member', 'products'));
+        return view('member.profile', compact('member', 'products', 'user'));
         
     }
 
     public function edit(){
         $user = Auth::user();
-        $member = User::join('members', 'members.user_id', 'users.id')
-            ->where('members.user_id', $user->id)
-            ->first();
+
+        $member = Member::where('user_id', $user->id)->first();
+        
         
         $provinces = Province::get();
         $cities = City::get();
           
-        return view('member.edit', compact('member', 'provinces', 'cities'));
+        return view('member.edit', compact('member', 'provinces', 'cities', 'user'));
         
     } 
     public function update(Request $request){
@@ -94,5 +107,73 @@ class MemberController extends Controller
         }
 
         return back()->with('success', 'User update successfully.');
+    }
+
+    public function notif(){
+        $user = Auth::user();
+        $member = User::join('members', 'members.user_id', 'users.id')
+            ->where('members.user_id', $user->id)
+            ->first();
+        
+        $notifcategory = Notification::join('members', 'members.province_id', '=' ,'notifications.province_id') 
+        ->join('categories', 'categories.id', '=', 'notifications.category_id') 
+        ->get();
+        
+        $categories = [];
+        foreach($notifcategory as $category){
+            $categories[$category->category_id] = array(
+                'id' => $category->category_id,
+                'name' => $category->name,
+                'icon' => $category->icon
+            );
+        }
+ 
+        $notifproducts = Notification::select(
+            'products.name as product_name',
+            'products.slug as product_slug',
+            'products.id as product_id',
+            'products.image as product_image',
+            'products.modal as product_modal',
+            'products.category_id as category_id'
+        )
+        ->where('notifications.province_id', $member->province_id)
+        ->join('products', 'products.id', '=', 'notifications.product_id') 
+        ->get(); 
+
+        $products = [];
+        foreach($notifproducts as $product){
+            if(isset($categories[$product->category_id])){
+                $products[$product->category_id][$product->product_id] = array(
+                    'product_name' => $product->product_name,
+                    'product_image' => $product->product_image,
+                    'product_modal' => $product->product_modal, 
+                    'product_slug' => $product->product_slug
+                );
+            } 
+        }
+         
+         
+        return view('member.notif', compact('member', 'products', 'categories', 'user'));
+    }
+
+    public function store_review(Request $request){
+        $this->validate($request, [
+            'comment' => 'required|string|max:300|min:5', 
+        ]);
+
+        $user = Auth::user();
+        $member = User::select('*', 'members.id as member_id')
+            ->join('members', 'members.user_id', 'users.id')
+            ->where('members.user_id', $user->id)
+            ->first();
+         
+        $review = new Review;
+        $review->member_id = $member->member_id;
+        $review->product_id = $request->product;
+        $review->review = $request->comment;
+        $review->status = 1;
+        $review->save();
+
+        return back()->with('success', 'Terima kasih sudah memberikan review.');
     }
 }

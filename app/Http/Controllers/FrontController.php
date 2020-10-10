@@ -10,6 +10,7 @@ use App\Customer;
 use App\Province;
 use App\Order;
 use App\User;
+use App\Review;
 use App\PageCounter;
 use Geoip;
 use Auth;
@@ -22,7 +23,7 @@ class FrontController extends Controller
         
         $products = Product::select('*','products.name as product_name')
             ->join('members', 'members.id', '=', 'products.member_id')
-            ->orderBy('products.created_at', 'DESC')->paginate(20);
+            ->orderBy('products.created_at', 'DESC')->paginate(8);
         
         
 
@@ -73,8 +74,10 @@ class FrontController extends Controller
     {
         $product = Product::with(['category','member'])->where('slug', $slug)->first(); 
         PageCounter::createViewLog($product);
+
+        $reviews = Review::where('product_id', $product->id)->get();
          
-        return view('products.show', compact('product'));
+        return view('products.show', compact('product', 'reviews'));
     }
 
     public function category(){
@@ -102,7 +105,7 @@ class FrontController extends Controller
         $products = Product::select('*','products.name as product_name')
         ->join('members', 'members.id', '=', 'products.member_id')
         ->orderBy('products.created_at', 'DESC')
-        ->paginate(20);
+        ->paginate(8);
 
         if(isset($request->modal)){
             if($request->modal > 0 || $request->modal <= 10000000 ){
@@ -113,28 +116,28 @@ class FrontController extends Controller
                 ->join('members', 'members.id', '=', 'products.member_id')
                 ->whereBetween('products.modal', [$start, $end])
                 ->orderBy('products.modal', 'ASC')
-                ->paginate(20);
+                ->paginate(8);
 
             }else if($request->modal > 10000000){
                 $products = Product::select('*','products.name as product_name')
                 ->join('members', 'members.id', '=', 'products.member_id')
                 ->where('products.modal', '>', $request->modal)
                 ->orderBy('products.modal', 'ASC')
-                ->paginate(20);
+                ->paginate(8);
 
             }else if($request->modal == 0){
                 $products = Product::select('*','products.name as product_name')
                 ->join('members', 'members.id', '=', 'products.member_id')
                 ->where('products.modal', '>', $request->modal)
                 ->orderBy('products.modal', 'ASC')
-                ->paginate(20);
+                ->paginate(8);
             } 
             
         }else{
             $products = Product::select('*','products.name as product_name')
                 ->join('members', 'members.id', '=', 'products.member_id') 
                 ->orderBy('products.modal', 'ASC')
-                ->paginate(20);
+                ->paginate(8);
         }
         
         return view('products.filter', compact('products', 'provinces'));

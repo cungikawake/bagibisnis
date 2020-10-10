@@ -1,107 +1,95 @@
-@extends('layouts.app')
+@extends('layouts.user-app')
 @section('header')
-<title>Profil {{$member->shop_name}} | dibisnis.id</title>
+<title>Profil Akun {{ $member->member_name }}, Join bisnis antar provinsi | dibisnis.id</title>
 @endsection
 @section('content')
-    <div class="container" style="margin-top:100px;"> 
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h3 style="color:#212529;">Detail Profil - {{$member->member_name}}</h3> 
-                        <hr>
+<div class="container">
+    <!-- Profile Wrapper-->
+    <div class="profile-wrapper-area py-3">
+        <!-- User Information-->
+        <div class="card user-info-card">
+            <div class="card-body p-4 d-flex align-items-center">
+                <div class="user-profile mr-3">
+                    @if($member->logo !='')
+                        <img class="img-fluid" src="{{ asset('storage/member/'.$member->logo) }}"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                    @else
+                        <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                    @endif
+                    <div class="change-user-thumb">
+                        <form>
+                            <input class="form-control-file" type="file">
+                            <button>
+                                @if($member->type_member == 3)
+                                <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
+                                @elseif($member->type_member == 2)
+                                <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
+                                @else
+                                <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
+                                @endif
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-4 text-center">
-                        @if($member->logo !='')
-                        <p class="text-center">
-                            <img class="img-fluid" src="{{ asset('storage/member/'.$member->logo) }}"  style="max-height:150px; border-radius:20%; border:2px solid #3EC7AF;">
-                        </p>
-                        @else
-                        <p class="text-center">
-                            <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:20%; border:2px solid #3EC7AF;">
-                        </p>
-                        @endif 
-                    </div>
-                    <div class="col-8">  
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-user"></i>
-                            {{$member->member_name}}
-                        </h4>
-                         
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-map-marker-alt"></i>
-                            {{$member->city_name}} | {{$member->province_name}}
-                        </h4>
-
-                        <h4 class="mt-2 text-black">
-                            <i class="fab fa-whatsapp"></i>
-                            {{$member->phone_number}}
-                        </h4>
-                        <h4 class="mt-2 text-black">
-                            <i class="fas fa-envelope-open"></i>
-                            {{$member->email}}
-                        </h4>
-                    </div>
+                <div class="user-info">
+                    <h5 class="mb-0">{{$member->member_name}}</h5>
+                    <p class="mb-0 text-white">{{ $member->city_name }} | {{ $member->province_name }}</p> 
+                    <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
+                    <p class="mb-0 text-white">{{ $member->email }}</p> 
+                     
                 </div> 
             </div>
-        </div>
-
-          
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    @foreach($products as $row)  
-                        <div class="col-6 col-md-6" style="padding:2px;">
-                            <div class="box" style="border:2px #aaa solid; padding:5px;">
-                                <h4 class="mt-2 text-black">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                     {{$row->member->city->name}} - {{$row->member->province->name}}
-                                </h4>
-                                <div class="row"> 
-                                    <div class="col-md-12">
-                                        <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                            <div class="viewer">
-                                                <p><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</p>
-                                            </div>
-                                            <div  class="carousel slide" data-ride="carousel">
-                                                <!-- Indicators -->
-                                                <ul class="carousel-indicators">
-                                                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                                    <li data-target="#demo" data-slide-to="1"></li>
-                                                    <li data-target="#demo" data-slide-to="2"></li>
-                                                </ul>       
-                                                <!--Slides-->
-                                                <div class="carousel-inner" role="listbox">
-                                                    <?php 
-                                                        $images = explode('|', $row->image);
-                                                    ?>
-                                                    @foreach($images as $key => $image)
-                                                    <!--First slide-->
-                                                    <div class="carousel-item @if($key == 0) active @endif">
-                                                        <img class="d-block w-100 img-product" src="{{ asset('storage/products/'.$image) }}"
-                                                        alt="image Joinjob">
-                                                    </div>
-                                                    <!--/First slide--> 
-                                                    @endforeach
-                                                </div>
-                                                <!--/.Slides--> 
-                                            </div> 
-                                        </a>
-                                    </div>
-                                    <div class="col-md-12 text-center">
-                                        <a href="{{ url('/product/show/' . $row->slug) }}" >
-                                            <h4 style="margin-top:5px;padding: 10px;">{{ $row->name }} </h4>
-                                        </a>
-                                    </div> 
-                                </div>
-                            </div>
-                        </div> 
-                    @endforeach
-                    {{$products->links()}}
-                </div>
-            </div>
         </div>  
+    </div> 
+    <!-- Top Products-->
+    <div class="top-products-area py-3">
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        <div class="container">
+          <div class="section-heading d-flex align-items-center justify-content-between">
+            <h6 class="ml-1">All Products</h6>
+            <!-- Layout Options-->
+            <div class="layout-options">
+                 
+            </div>
+          </div>
+          <div class="row g-3">
+          @foreach($products as $row) 
+            <!-- Single Top Product Card-->
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card top-product-card">
+                <div class="card-body">
+                    <span class="badge badge-success">{{$row->category->name}} </span>
+                    <a class="wishlist-btn">
+                         
+                    </a>
+                    <a class="product-thumbnail d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                        <?php 
+                            $images = explode('|', $row->image);
+                        ?>
+                        @foreach($images as $key => $image)
+                            @if($key == 0)
+                                <img class="mb-2" src="{{ asset('storage/products/'.$image) }}" alt="joinjob">
+                            @endif
+                        @endforeach 
+                    </a>
+                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a> 
+                    <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
+                    <div class="product-rating">
+                        <i class="fas fa-map"></i> {{$row->member->province->name}}
+                    </div>
+                    <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
+                </div>
+                </div>
+            </div> 
+            @endforeach
+
+            <div class="col-12">
+                <hr>
+                {{ $products->links() }}
+            </div> 
+          </div>
+        </div>
     </div>
+</div>
 @endsection
