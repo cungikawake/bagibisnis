@@ -5,8 +5,8 @@
 <!--meta-->
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="@yield('title') - joinjob.id" />
-<meta property="og:description" content="@yield('title'), JOINJOB merupakan media untuk melakukan penawaran dengan
+<meta property="og:title" content="Join Informasi Antar Provinsi - joinjob.id" />
+<meta property="og:description" content="Join Informasi Antar Provinsi, JOINJOB merupakan media untuk melakukan penawaran dengan
 bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
 melakukan kegiatan interaksi dalam satu media website." />
 <meta property="og:url" content="https://joinjob.id/" />
