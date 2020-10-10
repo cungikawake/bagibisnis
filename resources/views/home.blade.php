@@ -6,9 +6,8 @@
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Join Informasi Antar Provinsi - joinjob.id" />
-<meta property="og:description" content="Join Informasi Antar Provinsi, JOINJOB merupakan media untuk melakukan penawaran dengan
-bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
-melakukan kegiatan interaksi dalam satu media website." />
+<meta property="og:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
+bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk melakukan kegiatan interaksi dalam satu media website." />
 <meta property="og:url" content="https://joinjob.id/" />
 <meta property="og:site_name" content="joinjob.id" />
 <meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
@@ -23,7 +22,7 @@ melakukan kegiatan interaksi dalam satu media website." />
 <meta name="twitter:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
 bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
 melakukan kegiatan interaksi dalam satu media website." />
-<meta name="twitter:title" content="Abimanyu Villas - land in the heart of Seminyak" />
+<meta name="twitter:title" content="Join Informasi Antar Provinsi" />
 <meta name="twitter:image" content="https://joinjob.id/asset/logo.jpg" />
 
 @endsection
