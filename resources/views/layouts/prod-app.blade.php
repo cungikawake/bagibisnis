@@ -117,7 +117,7 @@
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="/product/search" method="GET" id="Search">
-                <input class="form-control" type="search" placeholder="Cari Judul Penawaran Di Provinsi Anda">
+                <input class="form-control" type="search" placeholder="Cari Judul Penawaran Di Provinsi Anda" name="keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>

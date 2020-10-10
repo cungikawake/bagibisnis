@@ -46,7 +46,7 @@ melakukan kegiatan interaksi dan transaksi dalam satu media website.">
 <div class="top-products-area clearfix py-3">
     <div class="container">
         <div class="section-heading d-flex align-items-center justify-content-between">
-            <h6 class="ml-1">Semua Penawaran</h6>
+            <h6 class="ml-1">Semua Penawaran - {{ (isset($keyword))? $keyword : '' }}</h6>
             <!-- <a class="btn btn-danger btn-sm" href="shop-grid.html">View All</a> -->
         </div>
         <div class="row g-3">
