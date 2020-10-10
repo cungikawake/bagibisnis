@@ -128,7 +128,8 @@
             @guest
                 <div class="notification-area" style="margin-top: 5px;">
                   <div class="list-group-item d-flex align-items-center"   style="border:none;"> 
-                    <a href="{{ route('login') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-lock"></i></span></a>
+                  <a href="{{ route('login') }}"><span class="noti-icon noti-icon-profil"><i class="fas fa-bell"></i></span> </a>  
+                  <a href="{{ route('login') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-lock"></i></span></a>
                   </div> 
                 </div>
             @else
