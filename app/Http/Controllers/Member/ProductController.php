@@ -75,7 +75,9 @@ class ProductController extends Controller
                         if($province->id == $member->province_id && $member->user_id != $user->id){
                             $notif = new Notification;
                             $notif->type = 1;
-                            $notif->data = $product->id;
+                            $notif->province_id = $province->id;
+                            $notif->category_id = $request->category_id;
+                            $notif->product_id = $product->id;
                             $notif->save();
                         }
                     }
