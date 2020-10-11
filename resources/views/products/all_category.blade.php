@@ -3,7 +3,7 @@
 <title>Semua kategori, Join Informasi Antar Provinsi | joinjob.id</title>
 
 <meta name="keywords" content="Semua kategori , Join Informasi Antar Provinsi">
-<meta name="title" content="Semua kategori , Join Informasi Antar Provinsi">
+<meta name="title" content="Semua kategori, Join Informasi Antar Provinsi | joinjob.id">
  
 <meta name="description" content="Semua kategori , Join Informasi Antar Provinsi. joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 
@@ -34,7 +34,7 @@
 <div class="product-catagories-wrapper py-3">
     <div class="container">
         <div class="section-heading">
-        <h6 class="ml-1">Kateogri</h6>
+        <h6 class="ml-1">Join Kategori</h6>
         </div>
         <div class="product-catagory-wrap">
         <div class="row g-3">

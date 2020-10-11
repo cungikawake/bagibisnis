@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
@@ -10,8 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
-    <!-- Title-->
-    <title>Join job - join job indonesia</title>
+     
     <!-- Favicon-->
     <link rel="icon" href="https://joinjob.id/asset/logo.jpg">
     <!-- Apple Touch Icon-->
@@ -121,7 +120,7 @@
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="/product/search" method="GET" id="Search">
-                <input class="form-control" type="search" placeholder="Cari Judul Penawaran Di Provinsi Anda" name="keyword">
+                <input class="form-control" type="search" placeholder="Judul Penawaran" name="keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>

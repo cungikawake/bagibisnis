@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
@@ -117,7 +117,7 @@
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="/product/search" method="GET" id="Search">
-                <input class="form-control" type="search" placeholder="Cari Judul Penawaran Di Provinsi Anda" name="keyword">
+                <input class="form-control" type="search" placeholder="Judul Penawaran" name="keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -152,7 +152,7 @@
         <div class="content d-flex align-items-center mb-2"><img src="{{ asset('asset/logo.jpg') }}" alt="">
           <h6 class="mb-0 text-white">Notifikasi</h6>
         </div>
-        <span class="mb-0 d-block text-white">Daftar Langsung JOINJOB.id <strong class="mx-1">FREE</strong>Sign Up</span>
+        <span class="mb-0 d-block text-white">Aktifkan join member lakukan penawaran untuk provinsi tujuan</span>
         <a href="{{ route('register') }}">
             <button class="btn btn-primary">Sign Up</button>
         </a>

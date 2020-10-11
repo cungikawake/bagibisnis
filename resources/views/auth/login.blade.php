@@ -45,10 +45,10 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
-          <img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:100px;border-radius:50%;" class="big-logo">
+            <h4 class="faq-heading text-center text-white">Sign In</h4> 
           
             <!-- Register Form-->
-            <div class="register-form mt-5 px-4">
+            <div class="register-form mt-1 px-4">
               <form method="POST" action="{{ route('login') }}">
                 @csrf
 
@@ -87,7 +87,7 @@
                 <!-- <a class="forgot-password d-block mt-3 mb-1" href="{{ route('password.request') }}">Lupa password ?</a> -->
             @endif
               
-              <p class="mb-0">Anda belum punya Akun ?<a class="ml-1" href="{{ route('register') }}">Register Now</a></p>
+              <p class="mb-0 mt-3">Anda belum punya Akun ?<a class="ml-1" href="{{ route('register') }}">Register Now</a></p>
             </div>
             <!-- View As Guest-->
             <div class="view-as-guest mt-3"><a class="btn" href="/home">Kembali</a></div>

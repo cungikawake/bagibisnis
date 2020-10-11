@@ -176,4 +176,9 @@ class MemberController extends Controller
 
         return back()->with('success', 'Terima kasih sudah memberikan review.');
     }
+
+    public function paket(){
+        $user = Auth::user();
+        return view('member.paket', compact('user'));
+    }
 }

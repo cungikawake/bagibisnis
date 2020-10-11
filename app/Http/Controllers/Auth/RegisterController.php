@@ -78,7 +78,7 @@ class RegisterController extends Controller
         $customer = Member::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'shop_name' => $data['shop_name'],
+            'shop_name' => $data['name'],
             'user_id' => $user->id,
             'status' => 1,
             'max_product' => 10, 

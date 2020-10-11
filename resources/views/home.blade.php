@@ -3,11 +3,12 @@
 <title>Join Informasi Antar Provinsi | Joinjob.id</title>
 
 <!--meta-->
+<meta name="description" content="Joinjob merupakan media untuk melakukan penawaran dengan bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk melakukan kegiatan interaksi dalam satu media website."/>
+
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Join Informasi Antar Provinsi - joinjob.id" />
-<meta property="og:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
-bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk melakukan kegiatan interaksi dalam satu media website." />
+<meta property="og:description" content="Joinjob merupakan media untuk melakukan penawaran dengan bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk melakukan kegiatan interaksi dalam satu media website." />
 <meta property="og:url" content="https://joinjob.id/" />
 <meta property="og:site_name" content="joinjob.id" />
 <meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
@@ -19,9 +20,7 @@ bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberika
 <meta property="og:image" content="https://joinjob.id/asset/logo.jpg" />
 <meta property="og:image:secure_url" content="https://joinjob.id/asset/logo.jpg" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
-bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
-melakukan kegiatan interaksi dalam satu media website." />
+<meta name="twitter:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk melakukan kegiatan interaksi dalam satu media website." />
 <meta name="twitter:title" content="Join Informasi Antar Provinsi" />
 <meta name="twitter:image" content="https://joinjob.id/asset/logo.jpg" />
 

@@ -9,8 +9,7 @@
 <?php 
     $taglessBody = strip_tags($product->description);
     $images = explode('|', $product->image);
-?>
-<meta name="description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
+?> 
 
 <link rel="canonical" href="https://joinjob.id.id/" /> 
 

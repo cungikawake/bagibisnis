@@ -44,9 +44,8 @@
       <div class="background-shape"></div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
-            <img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:100px;border-radius:50%;" class="big-logo">
-            <h4 class="faq-heading text-center text-white">Join Informasi Antar Provinsi</h4>
+          <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5"> 
+            <h4 class="faq-heading text-center text-white">JOIN JOB</h4>
             <h6 class="faq-heading text-center text-white">Free Sign-Up</h6>
             <!-- Register Form-->
             <div class="register-form mt-5 px-4">
@@ -116,6 +115,8 @@
             <!-- Login Meta-->
             <div class="login-meta-data">
               <p class="mt-3 mb-0">Kamu sudah punya Akun ?<a class="ml-1" href="/login">Sign In</a></p>
+              <!-- View As Guest-->
+              <div class="view-as-guest mt-3"><a class="btn" href="/home">Kembali</a></div>
             </div>
           </div>
         </div>

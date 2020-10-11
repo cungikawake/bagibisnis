@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, shrink-to-fit=no">
@@ -11,9 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     
-    <!-- The above tags *must* come first in the head, any other head content must come *after* these tags-->
-    <!-- Title-->
-    <title>Join job - join job indonesia</title>
+    <!-- The above tags *must* come first in the head, any other head content must come *after* these tags--> 
     <!-- Favicon-->
     <link rel="icon" href="https://joinjob.id/asset/logo.jpg">
     <!-- Apple Touch Icon-->
@@ -107,21 +105,33 @@
     <!-- Header Area-->
     <div class="header-area" id="headerArea">
       <div class="container h-100 d-flex align-items-center justify-content-between">
-        <!-- Logo Wrapper-->
-        @if(Request::segment(1) == '' || Request::segment(1) == 'home')
-        <div class="logo-wrapper">
-            <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:25px;margin-top: 13px;"></a>
-            <a href="/faq"><p class="text-center">FAQ</p></a>
-        </div>
-        @else
-        <!-- Back Button-->
-        <div class="back-button"><a href="{{ route('home') }}"><i class="fas fa-arrow-left"></i></a></div>
-        @endif
+        <!-- Logo Wrapper-->  
+        <div class="suha-navbar-toggler d-flex flex-wrap">
+            @if(Request::segment(1) == '' || Request::segment(1) == 'home')
+                <div class="notification-area" style="margin-top: 5px;">
+                  <div class="list-group-item d-flex align-items-center"   style="border:none;"> 
+                  <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:25px;"></a> 
+                    <div class="dropdown">
+                        <div data-toggle="dropdown">
+                            <i class="fas fa-bars" style="margin-left:15px;color:#38b4c3;"></i> 
+                        </div>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item"><i class="far fa-smile"></i> Tentang Kami</a>
+                            <a class="dropdown-item"><i class="far fa-question-circle"></i> FAQ</a>
+                        </div>
+                    </div>
+                  </div> 
+                </div>
+            @else
+                 <!-- Back Button-->
+                <div class="back-button"><a href="{{ route('home') }}"><i class="fas fa-arrow-left"></i></a></div>
+            @endif 
+        </div> 
 
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="/product/search" method="GET" id="Search">
-                <input class="form-control" type="search" placeholder="Cari Judul Penawaran Di Provinsi Anda" name="keyword">
+                <input class="form-control" type="search" placeholder="Judul Penawaran" name="keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -142,8 +152,8 @@
                     <a href="{{ route('member.profile') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-tie"></i></span></a>
                   </div> 
                 </div> 
-            @endguest
-        </div>
+            @endguest 
+        </div> 
       </div>
     </div>
     <!-- Header Area-->
@@ -231,7 +241,7 @@
                         <div class="card catagory-card" style="height:142px;">
                             <div class="card-body">
                                 <a href="{{ route('category') }}">
-                                    <p class="text-black"><i class="fas fa-tasks" style="font-size:50px;"></i></p>
+                                    <p class="text-black"><i class="fas fa-th-large" style="font-size:50px;"></i></p>
                                     <p class="mt-1 text-black">Kategori</p>
                                 </a>
                             </div>
