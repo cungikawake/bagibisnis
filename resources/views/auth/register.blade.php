@@ -68,6 +68,20 @@
                         </span>
                     @enderror
                 </div>
+                <div class="form-group text-left mb-4"><span>Provinsi</span>
+                    <label for="username"><i class="fas fa-marker"></i></label>
+                    <select class="form-control" name="province_id">
+                      <option value=''>Pilih Provinsi</option>
+                      @foreach($provinces as $province)
+                      <option value="{{ $province->id }}">{{ $province->name }}</option>
+                      @endforeach
+                    </select>
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
                 <div class="form-group text-left mb-4"><span>Email</span>
                     <label for="email"><i class="fas fa-envelope"></i></label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('E-Mail') }}">

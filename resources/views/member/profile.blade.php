@@ -32,7 +32,7 @@
                 </div>
                 <div class="user-info">
                     <h5 class="mb-0">{{$member->member_name}}</h5>
-                    <p class="mb-0 text-white">{{ $member->city_name }} | {{ $member->province_name }}</p> 
+                    <p class="mb-0 text-white"> {{ $member->province_name }}</p> 
                     <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
                     <p class="mb-0 text-white">{{ $member->email }}</p> 
                     <a href="{{ route('member.edit') }}">
@@ -47,7 +47,7 @@
     </div>
     <div class="alert alert-danger"> 
         <div class="section-heading d-flex align-items-center justify-content-between">
-        <h6 class="ml-1 text-black">Masa aktif akun anda sampai {{ date('d-m-Y', strtotime($user->exp_date)) }}, Lakukan pembelian paket agar postingan anda tetap dipromosikan.</h6>
+        <p class="ml-1 text-black"><i class="fas fa-warning"></i> Masa aktif member sampai {{ date('d-m-Y', strtotime($user->exp_date)) }}.</p>
         <!-- Layout Options-->
         <div class="layout-options">
             <!-- <a href="#" class="active">
@@ -62,16 +62,19 @@
             <div class="alert alert-success">{{ session('success') }}</div>
         @endif
         <div class="container">
-          <div class="section-heading d-flex align-items-center justify-content-between">
-            <h6 class="ml-1">All Products</h6>
-            <!-- Layout Options-->
-            <div class="layout-options">
-                <a href="{{ route('member.product.create') }}" class="active">
-                    <i class="fas fa-plus"></i> Posting 
-                </a>
+             
+            <div class="section-heading d-flex align-items-center justify-content-between">
+                <h6 class="ml-1">All Products</h6>
+                <!-- Layout Options-->
+                    <div class="layout-options">
+                        <a href="{{ route('member.product.create') }}" class="active">
+                            <i class="fas fa-plus"></i> Posting 
+                        </a>
+                    </div>
             </div>
-          </div>
-          <div class="row g-3">
+
+            <div class="row g-3"> 
+          
           @foreach($products as $row) 
             <!-- Single Top Product Card-->
             <div class="col-6 col-md-4 col-lg-3">
@@ -99,8 +102,8 @@
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
                 </div>
                 </div>
-            </div> 
-            @endforeach
+            </div>  
+        @endforeach 
 
             <div class="col-12">
                 <hr>

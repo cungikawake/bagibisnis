@@ -9,6 +9,7 @@ use App\Member;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Province;
 
 class RegisterController extends Controller
 {
@@ -54,9 +55,16 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'province_id' => ['required'],
         ]);
     }
 
+    public function getRegister()
+    {
+        $provinces = Province::get();
+
+        return view('auth.register', compact('provinces'));
+    }
     /**
      * Create a new user instance after a valid registration.
      *
@@ -83,7 +91,8 @@ class RegisterController extends Controller
             'status' => 1,
             'max_product' => 10, 
             'type_member' => 1, 
-            'quota_post' => 10, //free 
+            'quota_post' => 5, //free,
+            'province_id'=> $data['province_id'] 
         ]);
 
         if($customer){

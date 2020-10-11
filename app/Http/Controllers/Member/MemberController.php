@@ -30,19 +30,21 @@ class MemberController extends Controller
         $member = User::select(
             '*',
             'members.name as member_name',
-            'provinces.name as province_name',
-            'cities.name as city_name' 
+            'members.id as member_id',
+            'provinces.name as province_name', 
             )
             ->join('members', 'members.user_id', 'users.id')
-            ->join('provinces', 'provinces.id', 'members.province_id')
-            ->join('cities', 'cities.id', 'members.city_id')
+            ->join('provinces', 'provinces.id', 'members.province_id') 
             ->where('members.user_id', $user->id)
             ->first(); 
          
          
          
-        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        $products = Product::orderBy('created_at', 'DESC')
+        ->where('member_id', $member->member_id)
+        ->paginate(10);
          
+
         return view('member.profile', compact('member', 'products', 'user'));
         
     }
@@ -127,6 +129,7 @@ class MemberController extends Controller
                 'icon' => $category->icon
             );
         }
+         
  
         $notifproducts = Notification::select(
             'products.name as product_name',
@@ -150,8 +153,7 @@ class MemberController extends Controller
                     'product_slug' => $product->product_slug
                 );
             } 
-        }
-         
+        } 
          
         return view('member.notif', compact('member', 'products', 'categories', 'user'));
     }

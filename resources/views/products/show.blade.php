@@ -70,7 +70,7 @@
     <div class="container d-flex justify-content-between">
         <div class="p-title-price">
             <h6 class="mb-1">{{ $product->name }}</h6>
-            <p class="sale-price mb-0" style="font-size:18px; color:#17a2b8;">Biaya | Modal <span>Rp. {{number_format($product->modal)}}</span></p>
+            <p class="sale-price mb-0" style="font-size:18px; color:#17a2b8;">Anggaran | Biaya <span>Rp. {{number_format($product->modal)}}</span></p>
         </div>
         <div class="p-wishlist-share dropdown">
             <div data-toggle="dropdown">
@@ -147,7 +147,11 @@
             <ul class="pl-0">
                 <li class="single-user-review d-flex">
                     <div class="user-thumbnail">
+                        @if(empty($product->member->logo))
+                        <img src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png" alt="{{ $product->member->name }}" style="border:2px solid #ccc;">
+                        @else
                         <img src="{{ asset('storage/member/'.$product->member->logo) }}" alt="{{ $product->member->name }}" style="border:2px solid #ccc;">
+                        @endif
                     </div>
                     <div class="rating-comment">
                     <div class="rating">
@@ -160,7 +164,7 @@
                         @endif
                     </div>
                     <p class="comment mb-0">{{$product->member->name}}</p>
-                    <span class="name-date">{{$product->member->city->name}} | {{$product->member->province->name}}</span>
+                    <span class="name-date"> {{$product->member->province->name}}</span>
                     </div>
                 </li>
             </ul>
@@ -192,7 +196,13 @@
         <ul class="pl-0">
             @foreach($reviews as $review)
             <li class="single-user-review d-flex">
-                <div class="user-thumbnail"><img src="{{ asset('storage/member/'.$review->member->logo) }}" alt=""></div>
+                <div class="user-thumbnail">
+                    @if(isset($review->member->logo) && $review->member->logo !='')
+                        <img class="img-fluid" src="{{ asset('storage/member/'.$review->member->logo) }}"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;" alt="$review->member->name">
+                    @else
+                        <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                    @endif 
+                </div>
                 <div class="rating-comment">
                     <h6 class="comment mb-0">{{ $review->member->name }}</h6>
                     <div class="rating">
