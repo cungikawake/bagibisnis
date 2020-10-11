@@ -19,7 +19,11 @@ class Member extends Model
         'facebook',
         'instagram',
         'phone_number',
-        'address'
+        'address',
+        'province_id',
+        'city_id',
+        'type_member',
+        'quota_post'
     ];
 
     public function province()

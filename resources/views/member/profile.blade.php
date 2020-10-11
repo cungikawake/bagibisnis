@@ -10,7 +10,7 @@
         <div class="card user-info-card">
             <div class="card-body p-4 d-flex align-items-center">
                 <div class="user-profile mr-3">
-                    @if($member->logo !='')
+                    @if(isset($member->logo) && $member->logo !='')
                         <img class="img-fluid" src="{{ asset('storage/member/'.$member->logo) }}"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
                     @else
                         <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
