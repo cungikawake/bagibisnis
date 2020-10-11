@@ -19,9 +19,9 @@
                         <form>
                             <input class="form-control-file" type="file">
                             <button>
-                                @if($member->type_member == 3)
+                                @if(isset($member->type_member) && $member->type_member == 3)
                                 <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
-                                @elseif($member->type_member == 2)
+                                @elseif(isset($member->type_member) && $member->type_member == 2)
                                 <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
                                 @else
                                 <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
