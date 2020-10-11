@@ -111,7 +111,7 @@
         @if(Request::segment(1) == '' || Request::segment(1) == 'home')
         <div class="logo-wrapper">
             <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:25px;margin-top: 13px;"></a>
-            <p>FAQ</p>
+            <a href="/faq"><p class="text-center">FAQ</p></a>
         </div>
         @else
         <!-- Back Button-->
@@ -232,7 +232,7 @@
                             <div class="card-body">
                                 <a href="{{ route('category') }}">
                                     <p class="text-black"><i class="fas fa-tasks" style="font-size:50px;"></i></p>
-                                    <p class="mt-1 text-black">Kategori Bisnis</p>
+                                    <p class="mt-1 text-black">Kategori</p>
                                 </a>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                             <div class="card-body">
                                 <a href="{{route('product.filter')}}">
                                     <p class="text-black"><i class="fa fa-tags" style="font-size:50px;"></i></p>
-                                    <p class="mt-1 text-black">Biaya | Modal</p>
+                                    <p class="mt-1 text-black">Anggaran | Biaya</p>
                                 </a>
                             </div>
                         </div>

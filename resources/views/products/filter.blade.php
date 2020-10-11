@@ -1,29 +1,29 @@
 @extends('layouts.newapp')
 @section('header')
-<title>Urutkan Biaya Modal terendah | joinjob.id</title>
+<title>Urutkan Anggaran & Biaya terendah | joinjob.id</title>
 
 
 <meta name="keywords" content="Joinjob website yang menyediakan fasilitas pemasaran digital">
-<meta name="title" content="Urutkan Biaya Modal Terendah | joinjob.id ">
+<meta name="title" content="Urutkan Anggaran & Biaya Terendah | joinjob.id ">
  
-<meta name="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta name="description" content="Anggaran & Biaya Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 
 <link rel="canonical" href="https://joinjob.id/" /> 
 
 <!-- Search Engine -->
-<meta name="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta name="description" content="Anggaran & Biaya terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 <meta name="image" content="https://joinjob.id/asset/logo.png">
 
 <!-- Schema.org for Google -->
-<meta itemprop="name" content="Modal terendah, joinjob.id">
-<meta itemprop="description" content="Modal terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta itemprop="name" content="Anggaran & Biaya terendah, joinjob.id">
+<meta itemprop="description" content="Anggaran & Biaya terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 <meta itemprop="image" content="https://joinjob.id/asset/logo.png">
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <!--meta-->
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Urutkan Biaya Modal terendah  - joinjob.id" />
+<meta property="og:title" content="Urutkan Anggaran & Biaya terendah  - joinjob.id" />
 <meta property="og:description" content="@yield('title'), JOINJOB merupakan media untuk melakukan penawaran dengan
 bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
 melakukan kegiatan interaksi dalam satu media website." />
@@ -53,7 +53,7 @@ melakukan kegiatan interaksi dalam satu media website." />
         <div class="section-heading d-flex align-items-center justify-content-between"> 
             <form action="{{ route('product.filter') }}" id="form_filter">
                 <div class="form-group">
-                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Biaya Terendah</h6>
+                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Anggaran & Biaya</h6>
                     <select class="form-control" id="filter_modal" name="modal">
                         <option value="0">Rp. - 0</option>
                         <option value="100000">Rp. - 100.000</option>

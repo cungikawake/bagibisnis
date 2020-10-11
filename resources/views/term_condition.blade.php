@@ -1,9 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.user-app')
 @section('header')
 <title>Syarat & Ketentuan | joinjob.id</title>
 @endsection
 @section('content')
     <div class="container"> 
+    <!-- Profile Wrapper-->
+    <div class="profile-wrapper-area py-3">
         <div class="card">
              <div class="card-body">
                 <h1 id="about">Syarat & Ketentuan</h1>
@@ -14,31 +16,27 @@
                 <h4><strong>1.PERATURAN UMUM BESERTA SYARAT DAN KETENTUAN</strong></h4>
                 <h5>A. UMUM</h5>
                 <p>Selamat datang di situs www.joinjob.id</p>
-                <p>JOINJOB sebagai situs komunikasi online di Indonesia yang berprinsip kebebasan berkomunikasi dan menyampaikan informasi yang bertanggungjawab.
-Sebelum melakukan akses dan menggunakan JOINJOB, kami menyarankan agar Anda membaca Peraturan Umum beserta Syarat dan Ketentuan terlebih dahulu. Dengan mengakses dan menggunakan JOINJOB, Anda setuju untuk terikat dengan Peraturan Umum beserta Syarat dan Ketentuan ini. Jika Anda tidak menyetujui Peraturan Umum beserta Syarat dan Ketentuan yang ditetapkan di bawah ini, mohon tidak mengakses dan menggunakan JOINJOB</p>
+                <p>JOINJOB sebagai situs informasi & iklan dengan bentuk tabel baris di Indonesia. yang berprinsip pada kebebasan berkomunikasi dan menyampaikan informasi yang bertanggungjawab.</p>
+                <p>Sebelum melakukan akses dan menggunakan JOINJOB, kami menyarankan agar Anda membaca Peraturan Umum beserta Syarat dan Ketentuan terlebih dahulu. Dengan mengakses dan menggunakan JOINJOB, Anda setuju untuk terikat dengan Peraturan Umum beserta Syarat dan Ketentuan ini. Jika Anda tidak menyetujui Peraturan Umum beserta Syarat dan Ketentuan yang ditetapkan di bawah ini, mohon tidak mengakses dan menggunakan JOINJOB.</p>
                 <p>Peraturan Umum beserta Syarat dan Ketentuan ini dapat kami ubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu. Keputusan yang diambil berdasarkan peraturan ini bersifat mutlak dan tidak dapat diganggu gugat.</p>
                 <br>
 
                 <h5>B.DEFINISI</h5>
-                <p>JOINJOB adalah situs komunikasi online di Indonesia dengan alamat situs www.joinjob.id .
-</p>
+                <p>JOINJOB adalah situs informasi dan iklan dengan bentuk tabel baris bersifat online di Indonesia dengan alamat situs www.joinjob.id .</p>
                 <p>Layanan adalah segala bentuk aktivitas yang terjadi di JOINJOB untuk pengguna.</p>
-                <p>Free Sign-Up adalah aktivitas dasar untuk mulai menjadi member JOINJOB dengan ketentuan melakukan 10.kali posting secara gratis selama 30.hari.</p>
-                <p>Usher Renew adalah aktivitas untuk mengaktivkan atau aktivasi ulang akun-member JOINJOB setelah masa gratis posting dan tempo waktu sudah habis.</p>
+                <p>Sign-Up adalah aktivitas dasar untuk mulai menjadi member di JOINJOB.</p>
+                <p>Paket Join Member adalah pilihan paket yang dipilih untuk mengaktifkan fitur Posting.</p>
                 <p>Posting adalah aktivitas untuk menampilkan informasi dan penawaran Konten di JOINJOB.</p>
-                <p>Konten adalah thread, posting, iklan, pesan, Photo, gambar, teks, file, atau seluruh
-komunikasi yang ditampilkan.</p>
-                <p>
-Pengguna adalah pengunjung dan member.
-</p>
+                <p>Konten adalah thread, posting, iklan, pesan, Photo, gambar, teks, file, atau seluruh Penawaran yang ditampilkan.</p>
+                <p>Pengguna adalah pengunjung dan member.</p>
                 <p>Pengunjung adalah semua orang yang mengakses dan menggunakan Layanan JOINJOB.</p>
-                <p>
-Member adalah semua orang yang mendaftarkan diri dan memiliki akun di JOINJOB.</p>
+                <p>Pengunjung adalah semua orang yang mengakses dan menggunakan Layanan JOINJOB.</p>
+                <p>Member adalah semua orang yang mendaftarkan diri dan memiliki akun di JOINJOB.</p>
                 <p>Nama Pengguna adalah nama akun di JOINJOB yang dibuat oleh PENGUNJUNG saat mendaftar sebagai MEMBER di JOINJOB.</p>
                 <p>Banned adalah sanksi larangan berupa pembatalan dan penghapusan konten di JOINJOB. Ini disebabkan karena PENGGUNA melakukan kesalahan atau pelanggaran tertentu.</p>
-                <p>Expired Post adalah penghapusan Konten dan Posting MEMBER yang sudah mencapai batas waktu selama 30.hari Tayang.</p>
-                <p>
-Notifikasi adalah Pemberitahuan secara Otomatis kepada pengguna layanan di JOINJOB yang berupa pesan singkat meliputi pemberitahuan USER RENEW , Expired Post , Banned dan informasi penawaran terbaru sesuai alamat PROVINSI pengguna.</p>
+                <p>Expired Post adalah penghapusan Konten dan Posting MEMBER yang sudah mencapai batas waktu selama 60.hari Tayang.</p>
+                <p>Notifikasi adalah Pemberitahuan secara Otomatis kepada pengguna layanan di JOINJOB yang berupa pesan singkat meliputi pemberitahuan notifikasi,Join Paket Member,Expired Post dan Banned.</p>
+                 
                 
                 <h5>C.KETENTUAN UMUM PENGGUNA</h5>
                 <p>Anda setuju untuk terikat dengan Syarat dan Ketentuan yang ditetapkan serta kebijakan mengenai perubahan atau perbaikan Syarat dan Ketentuan di kemudian hari.</p>
@@ -68,7 +66,19 @@ kerugian yang timbul yang diakibatkan atas ketidakbenaran data-data/identitas ya
                 <p>9-Tidak Berisikan informasi atau perintah mengenai kegiatan ilegal seperti barang ilegal, obat-obatan terlarang dan kegiatan melanggar privasi seseorang.</p>
                 <p>10.Tidak Mengandung unsur penipuan dan melanggar peraturan perundangan-undangan di wilayah kesatuan republik Indonesia.</p>
                 <p>11.Kami tidak menjamin keberlanjutan penyimpanan dan penampilan KONTEN yang sudah dibuat oleh MEMBER dan tidak dapat diganggu gugat.</p>
-
+                
+                <h5>Metode Pembayaran</h5>
+                <p>Untuk pembelian paket di JOINJOB, Anda dapat melakukan pembayaran dengan semua
+jenis kartu kredit, debit, pembayaran melalui ATM, Bank Transfer,pembayaran melalui Alfamart dan Indomaret, Kami terus berupaya meningkatkan pengalaman pembayaran Anda dengan menambahkan metode pembayaran populer terbaru.</p>
+                <p>-Pembayaran melalui ATM/Bank Transfer, Anda akan mendapatkan kode Virtual Account
+yang akan menjadi kode pembayaran saat Anda melakukan transfer pembayaran.</p>
+                <p>-Pembayaran yang menggunakan kartu kredit hanya dapat dilakukan menggunakan kartu kredit yang terdaftar pada bank terkait sebagai 'Verified by Visa' and 'Mastercard SecureCode'.
+Anda tinggal melakukan verifikasi transaksi Anda dengan memasukkan kode password.</p>
+                <p>-Pada pembayaran melalui Indomaret dan Alfamart, Anda akan mendapatkan kode pembayaran transaksi Anda pada halaman pembayaran saat Anda melakukan pemilihan paket.
+Anda tinggal memberikan kode pembayaran transaksi ke kasir Indomaret/Alfamart.</p>
+                <p>Setelah pembayaran Anda diproses, Anda akan diarahkan ke halaman konfirmasi yang berisi informasi tentang proses pembayaran Anda yang telah berhasil ataupun yang terkendala. Apabila pembayaran telah berhasil, kami akan membuat faktur / riwayat transaksi yang dapat Anda lihat di bagian Profil Anda.</p>
+                 
+                 
                 <h5>Transaksi Antar Pengguna</h5>
                 <p>-MEMBER dapat melakukan komunikasi penawaran, memberi informasi serta menjual dan membeli barang dan jasa lewat JOINJOB.</p>
                 <p>-Dalam menjalankan aktivitas transaksi, pengguna langsung berkomunikasi secara pribadi, di luar layanan JOINJOB.</p>
@@ -82,6 +92,9 @@ sehingga kami tidak memiliki kontrol atas kualitas, keamanan, moralitas atau leg
 oleh MEMBER, oleh karenanya kami tidak dapat memastikan apakah informasi tersebut benar dan seorang akan benar menyelesaikan suatu transaksi.</p>
                 <p>-JOINJOB tidak dapat menjamin kebenaran nama,identitas, usia, dan kewarganegaraan sebenarnya dari seorang MEMBER. Anda harus berkomunikasi langsung melalui sarana-sarana
 yang tersedia pada JOINJOB ataupun lainnya.</p>
+
+                
+
 
                 <h5>D.HAK KEKAYAAN INTELEKTUAL</h5>
                 <p>-KONTEN, LAYANAN dan software JOINJOB (termasuk tetapi tidak terbatas kepada teks, suara, foto grafis dan materi lain yang terkandung di dalamnya) dilindungi oleh Hak Cipta, Hak Merek, Hak Paten, dan/atau Hak Atas Kekayaan Intelektual lainnya, dimana setiap pelanggaran terhadap hal-hal tersebut diatas adalah suatu tindakan melawan hukum.</p>
@@ -109,6 +122,8 @@ PENGGUNA MANAPUN YANG MELANGGAR SYARAT DAN KETENTUAN DAPAT DILARANG SELAMANYA UN
                 <p>Pencantuman tautan oleh MEMBER dilayanan Situs JOINJOB adalah hak dan tanggung jawab langsung MEMBER. Entitas apapun yang Anda pilih sebagai kontak atau berinteraksi baik yang terdaftar dalam direktori atau di tempat lain pada situs tersebut adalah sepenuhnya
 tanggung jawab layanan tersebut pada Anda, dan Anda setuju bahwa JOINJOB tidak dapat dikenakan tindakan apapun untuk kerusakan atau biaya yang keluar atas interaksi yang terjadi sesuai Yurisdiksi dan hukum yang berlaku.</p>
                 <p>Syarat-syarat penggunaan ini dan hubungan Anda dengan JOINJOB diatur menurut hukum Republik dan Anda sepakat untuk terikat pada yurisdiksi pengadilan Republik Indonesia. Perubahan Ketentuan Layanan.</p>
+
+                <h5>Perubahan Ketentuan Layanan.</h5>
                 <p>Atas kebijaksanaan JOINJOB, kami dapat merevisi syarat-syarat penggunaan ini pada saat kapanpun dengan mengubah halaman ini tanpa pemberitahuan sebelumnya.</p>
                 
                 <h5 id="ketentuan">F. KETENTUAN-KETENTUAN LAINNYA</h5>
@@ -122,6 +137,8 @@ tanggung jawab layanan tersebut pada Anda, dan Anda setuju bahwa JOINJOB tidak d
                 <p>Kebebasan Berpendapat yang Bertanggungjawab/Responsible Freedom of Speech<br>
 -JOINJOB menganut prinsip Bebas Menyatakan Pendapat yang Bertanggung jawab Bagi Anda yang merasa dirugikan oleh MEMBER lain karena akibat dari prinsip ini harap
 segera menghubungi CS JOINJOB.</p>
+                <p>Expired Post</p>
+                <p>-kami memiliki hak untuk menghapus postingan member di JOINJOB sesuai batas waktu tayang yang sudah ditentukan.</p>
                 <p>Penggunaan Nama JOINJOB<br>
 -Menggunakan/mengatasnamakan JOINJOB untuk tujuan apapun dan kepentingan pribadi atau kelompok tertentu tanpa seijin pihak JOINJOB adalah DILARANG!</p>
                 <p>Terima kasih atas kunjungan Anda ke situs Kami www.joinjob.id .Kami selalu berusaha untuk melakukan yang terbaik, antara lain berupaya menjaga kepercayaan Anda sebagai pengguna. dengan melindungi informasi pribadi milik Anda yang bersifat pribadi dan rahasia.
@@ -168,10 +185,11 @@ ke hard-drive komputer setiap pengakses situs tersebut untuk keperluan pencatata
                 <h5 style="text-align:center; color:#3fc7af;">www.joinjob.id</h5>
                 <h5 style="text-align:center; color:#3fc7af;">#joinaja</h5>
                 <p style="text-align:center;margin-top:-12px;"><small>Temukan Kami</small></p>
-                <h2 style="text-align:center;margin-top:-35px;"><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></h2>
+                <h2 style="text-align:center;margin-top:-15px;"><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></h2>
 
 
              </div>
         </div> 
+    </div>
     </div>
 @endsection

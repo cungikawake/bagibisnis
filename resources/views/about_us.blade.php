@@ -1,47 +1,54 @@
-@extends('layouts.app')
+@extends('layouts.user-app')
 @section('header')
 <title>Tentang Kami | joinjob.id</title>
 @endsection
 @section('content')
     <div class="container"> 
+    <!-- Profile Wrapper-->
+    <div class="profile-wrapper-area py-3">
         <div class="card">
              <div class="card-body">
                 <h1>Tentang Kami</h1>
                 <hr>
+                <p>Kami ada untuk anda .</p>
                 <p>
-                Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor
-                untuk menjual barang & jasa mereka kepada para reseller yang akan menjualnya lagi kepada para konsumen.
+                JOINJOB merupakan media untuk melakukan penawaran dengan
+bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
+melakukan kegiatan interaksi dalam satu media website.
+Sistem interaksi sosial dengan posting penawaran informasi-barang-jasa
+dan konten penjelasan anggaran | biaya , photo dengan tujuan Wilayah/Provinsi. JOINJOB memudahkan anda menjangkau target secara luas dan tepat.
                 </p>
                 <br>
-                <p>
-                Dengan perkembangan saat ini, terlihat dari banyaknya transaksi penjualan barang & jasa melalui media digital online kami hadir untuk memberikan fasilitas media untuk memudahkan para pelaku bisnis menjual produk & jasa mereka melalui sistem penjualan kembali reseller.
-                </p>
-                <br>
-                <p>
-                Selain itu Joinjob.id juga memberikan solusi bagi anda yang ingin melakukan bisnis dan sedang mencari bisnis yang tepat. kami hadir memberikan penawaran dengan berbagai pilihan produk & jasa yang memungkinkan untuk anda jual kembali.
-                </p>
+                <h1 id="tujuan_kami">Tujuan Kami</h1>
+                <hr>
+                <p>Membangun Interaksi Bersifat Lokal Informasi.</p>
+                <p>JOINJOB memiliki komitmen untuk menciptakan kemudahan dalam menjalin interaksi sosial antar pengguna. Dengan platform - website yang mudah digunakan bagi semua kalangan, sehingga dapat
+tercipta interaksi yang tepat dan saling menguntungkan bagi pengguna.
+</p>  
+               <br>
+               <h1 id="konsep_kami">Konsep Kami</h1>
+               <hr>
+               <p>Memahami Tujuan Anda.</p>
+               <p>Memudahkan anda dalam mendaftar di website JOINJOB.
+Platform-Media dengan bentuk tabel baris berisi informasi & penawaran untuk memudahkan anda melakukan Dan menerima informasi antar provinsi.</p>
+               <br>
              </div>
         </div>
 
         <div class="card">
              <div class="card-body">
-                <h3>Visi</h3>
+                <h1 id="hubungi_kami">Hubungi Kami</h1>
                 <hr>
                 <p>
-                 Berbagai pilihan produk & jasa 
-                <p>Platform Bisnis To Bisnis (B2B) </p>
-                <p>
-                Penjelasan detail untuk modal & provit.
+                Dukungan Anda Prioritas Kami.
                 </p>
-                <br>
-
-                <h3>Misi</h3>
-                <hr>
                 <p>
-                  Mengembangkan para pelaku bisnis
-                <p>Menciptakan pelaku bisnis</p>
-                <p>Memberikan berbagai pilihan bisnis
+                Dalam memaksimalkan pelayanan sebuah Media website JOINJOB senantiasa menerima saran & kritik anda sebagai landasan kami untuk memberikan pelayanan yang terbaik.
                 </p>
+                <p>Phone : +62 87 858 7777 03 (Whatsapp chat.only)</p>
+                <p>Email : cs@joinjob.id</p>
+                <p>Jam Kantor : *08.00-18.00* setiap hari</p>
+                <h3>#joinaja</h3>
                 <br> 
              </div>
         </div>
@@ -54,5 +61,6 @@
                 </h3>
              </div>
         </div>
-    </div>
+      </div>
+   </div>
 @endsection
