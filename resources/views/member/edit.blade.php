@@ -24,7 +24,7 @@
                 </div>
                 <div class="user-info">
                     <h5 class="mb-0">{{$member->name}}</h5>
-                    <p class="mb-0 text-white">{{ $member->city->name }} | {{ $member->province->name }}</p> 
+                    <p class="mb-0 text-white">{{ (isset($member->city->name))? $member->city->name : '' }} | {{ $member->province->name }}</p> 
                     <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
                     <p class="mb-0 text-white">{{ $member->email }}</p>  
                 </div>
