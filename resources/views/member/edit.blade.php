@@ -69,11 +69,11 @@
                             
 
                             <div class="form-group row"> 
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Logo Bisnis') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Foto Profil') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" value="{{ old('logo', $member->logo) }}"  autocomplete="logo" autofocus>
-
+                                    <small>Ukuran max 1MB, *.jpg,*.png</small>
                                     @error('logo')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Pemilik') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Pengguna') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $member->name) }}" required autocomplete="name" autofocus>
@@ -93,20 +93,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="shop_name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Bisnis Usaha') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="shop_name" type="text" class="form-control @error('shop_name') is-invalid @enderror" name="shop_name" value="{{ old('shop_name',$member->shop_name) }}" required autocomplete="shop_name" autofocus>
-
-                                    @error('shop_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+                            </div> 
                             <div class="form-group row">
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-right">{{ __('Nomor Hp / Whatsapp') }}</label>
 
@@ -120,19 +107,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Alamat Usaha') }}</label>
-
-                                <div class="col-md-6">
-                                    <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address',$member->address) }}" required autocomplete="address" autofocus>
-
-                                    @error('address')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+                             
                             
                             <div class="form-group row">
                                 <label for="shop_name" class="col-md-4 col-form-label text-md-right">{{ __('Provinsi') }}</label>
@@ -152,31 +127,14 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="shop_name" class="col-md-4 col-form-label text-md-right">{{ __('Kabupaten/Kota') }}</label>
-
-                                <div class="col-md-6">
-                                    <select id="city" type="text" class="form-control select @error('city') is-invalid @enderror" name="city" required >
-                                        <option value="">Pilih Kabupaten</option>
-                                        @foreach($cities as $city )
-                                            <option value="{{ $city->id }}" @if($city->id == $member->city_id) selected @endif >{{ $city->name }}</option>
-                                        @endforeach
-                                    </select>
-
-                                    @error('city')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+                             
                             <hr>
                             
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-12 offset-md-4"> 
                                     <p>
-                                        <small>Saya  menyetujui seluruh <a href="#">syarat & ketentuan</a> sistem.</small>
+                                        <small>Saya  menyetujui seluruh <a href="/faq">syarat & ketentuan</a> sistem.</small>
                                     </p> 
                                 </div>
                             </div>

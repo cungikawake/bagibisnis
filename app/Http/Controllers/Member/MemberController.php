@@ -65,23 +65,19 @@ class MemberController extends Controller
         $user = Auth::user();
          
         $this->validate($request,[
-            'name' => ['required', 'string', 'min:5', 'max:255'], 
-            'shop_name' => ['required', 'string', 'min:5', 'max:255'],
+            'name' => ['required', 'string', 'min:5', 'max:255'],  
             'phone_number' => ['required', 'numeric', 'min:10'], 
-            'address' => ['required', 'string', 'min:5'], 
-            'province' => ['required', 'min:1'], 
-            'city' => ['required', 'min:1'],  
+            'province' => ['required', 'min:1'],  
         ]); 
 
         $member = Member::where('user_id', $user->id)
             ->first();
         
         $member->name = $request->name;
-        $member->shop_name = $request->shop_name;
+        $member->shop_name = $request->name;
         $member->phone_number = $request->phone_number;
-        $member->address = $request->address;
-        $member->province_id = $request->province;
-        $member->city_id = $request->city;
+        $member->address = '';
+        $member->province_id = $request->province; 
         $member->save();
 
         if($request->hasFile('logo'))
@@ -108,7 +104,7 @@ class MemberController extends Controller
             }
         }
 
-        return back()->with('success', 'User update successfully.');
+        return redirect()->route('member.profile')->with('success', 'User update successfully.');
     }
 
     public function notif(){

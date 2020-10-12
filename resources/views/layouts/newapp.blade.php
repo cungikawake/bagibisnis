@@ -109,17 +109,17 @@
         <div class="suha-navbar-toggler d-flex flex-wrap">
             @if(Request::segment(1) == '' || Request::segment(1) == 'home')
                 <div class="notification-area" style="margin-top: 5px;">
-                  <div class="list-group-item d-flex align-items-center"   style="border:none;"> 
-                  <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:25px;"></a> 
+                  <div class="list-group-item d-flex align-items-center" style="border:none;"> 
                     <div class="dropdown">
                         <div data-toggle="dropdown">
-                            <i class="fas fa-bars" style="margin-left:15px;color:#38b4c3;"></i> 
+                            <i class="fas fa-bars" style="color:#38b4c3;"></i> 
                         </div>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item"><i class="far fa-smile"></i> Tentang Kami</a>
-                            <a class="dropdown-item"><i class="far fa-question-circle"></i> FAQ</a>
+                            <a href="/faq" class="dropdown-item"><i class="far fa-question-circle"></i> FAQ</a>
+                            <a href="/about_us" class="dropdown-item"><i class="far fa-smile"></i> Tentang Kami</a> 
                         </div>
                     </div>
+                    <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:25px;margin-left:15px;"></a> 
                   </div> 
                 </div>
             @else
