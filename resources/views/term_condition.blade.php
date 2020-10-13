@@ -183,7 +183,7 @@ ke hard-drive komputer setiap pengakses situs tersebut untuk keperluan pencatata
                 <p>JOINJOB Mematuhi Syarat-syarat dan ketentuan dalam Kebijakan Privasi ini tunduk kepada hukum di wilayah Negara Kesatuan Republik Indonesia.</p>
 
                 <h5 style="text-align:center; color:#3fc7af;">www.joinjob.id</h5>
-                <h5 style="text-align:center; color:#3fc7af;">#joinaja</h5>
+                <h5 style="text-align:center; color:#3fc7af;">joinaja</h5>
                 <p style="text-align:center;margin-top:-12px;"><small>Temukan Kami</small></p>
                 <h2 style="text-align:center;margin-top:-15px;"><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></h2>
 

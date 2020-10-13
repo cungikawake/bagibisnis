@@ -47,17 +47,16 @@ Platform-Media dengan bentuk tabel baris berisi informasi & penawaran untuk memu
                 </p>
                 <p>Phone : +62 87 858 7777 03 (Whatsapp chat.only)</p>
                 <p>Email : cs@joinjob.id</p>
-                <p>Jam Kantor : *08.00-18.00* setiap hari</p>
-                <h3>#joinaja</h3>
+                <p>Jam Kantor : *08.00-18.00* setiap hari</p> 
                 <br> 
              </div>
         </div>
         <div class="card">
              <div class="card-body">
+                <h3>joinaja</h3>
                 <h3>
-                <a href="#"><i class="fab fa-facebook"></i> Facebook </a>
-                | <a href="#"><i class="fab fa-instagram"></i> Instagram </a> 
-                | <a href="#"><i class="fab fa-youtube"></i> Youtube </a>
+                <a href="#"><i class="fab fa-facebook"></i> </a>
+                | <a href="#"><i class="fab fa-instagram"></i>  </a>  
                 </h3>
              </div>
         </div>

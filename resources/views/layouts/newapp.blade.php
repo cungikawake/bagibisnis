@@ -112,14 +112,13 @@
                   <div class="list-group-item d-flex align-items-center" style="border:none;"> 
                     <div class="dropdown">
                         <div data-toggle="dropdown">
-                            <i class="fas fa-bars" style="color:#38b4c3;"></i> 
+                            <i class="fas fa-bars" style="font-size:25px;color:#38b4c3;"></i> 
                         </div>
                         <div class="dropdown-menu">
-                            <a href="/faq" class="dropdown-item"><i class="far fa-question-circle"></i> FAQ</a>
-                            <a href="/about_us" class="dropdown-item"><i class="far fa-smile"></i> Tentang Kami</a> 
+                            <a href="/faq" class="dropdown-item"><i class="far fa-question-circle"></i> FAQ</a>     
                         </div>
                     </div>
-                    <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:25px;margin-left:15px;"></a> 
+                    <a href="/home"><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:29px;margin-left:15px;"></a> 
                   </div> 
                 </div>
             @else
@@ -131,7 +130,7 @@
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="/product/search" method="GET" id="Search">
-                <input class="form-control" type="search" placeholder="Judul Penawaran" name="keyword">
+                <input class="form-control" type="search" placeholder="Cari Judul Penawaran" name="keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -182,7 +181,7 @@
         <!-- Hero Slides-->
         <div class="hero-slides owl-carousel" style="margin-top:50px;">
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide1.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slider1.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Amazon Echo</h4>
@@ -191,7 +190,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide2.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slider2.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Light Candle</h4>
@@ -200,7 +199,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide3.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slider3.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
@@ -209,7 +208,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide4.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slider4.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
@@ -218,7 +217,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide5.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slider5.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
@@ -290,9 +289,9 @@
             <li class="active">
                 <a href="/home">
                     <p><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:35px;"></p>
-                    <p style="margin-top:-10px;">JOINJOB</p>
-                    <p style="margin-top:-15px;">Copyright 2020</p>
-                    <p style="margin-top:-15px;">Join Informasi Antar Provinsi</p>
+                    <p style="margin-top:-10px;color:#3bb3c4;">JOINJOB</p>
+                    <p style="margin-top:-15px;color:#3bb3c4;">Copyright 2020</p>
+                    <p style="margin-top:-15px;color:#3bb3c4;">Join Informasi Antar Provinsi</p>
                 </a>
             </li> 
           </ul>

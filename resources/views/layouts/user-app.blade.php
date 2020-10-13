@@ -120,7 +120,7 @@
         <!-- Search Form-->
         <div class="top-search-form">
             <form action="/product/search" method="GET" id="Search">
-                <input class="form-control" type="search" placeholder="Judul Penawaran" name="keyword">
+                <input class="form-control" type="search" placeholder="Cari Judul Penawaran" name="keyword">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -184,9 +184,9 @@
             <li class="active">
                 <a href="/home">
                     <p><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:35px;"></p>
-                    <p style="margin-top:-10px;">JOINJOB</p>
-                    <p style="margin-top:-15px;">Copyright 2020</p>
-                    <p style="margin-top:-15px;">Join Informasi Antar Provinsi</p>
+                    <p style="margin-top:-10px;color:#3bb3c4;">JOINJOB</p>
+                    <p style="margin-top:-15px;color:#3bb3c4;">Copyright 2020</p>
+                    <p style="margin-top:-15px;color:#3bb3c4;">Join Informasi Antar Provinsi</p>
                 </a>
             </li> 
           </ul>
