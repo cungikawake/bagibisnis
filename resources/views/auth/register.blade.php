@@ -29,7 +29,10 @@
   <body>
     <style>
         .login-wrapper {
-            background: linear-gradient(to left, #17a2b8, #0d3bd1);
+            background: linear-gradient(to left, #f8f8ff, #ffffff);
+        }
+        .register-form .form-control{
+          border-bottom: 1px solid #28a745;
         }
     </style>
     <!-- Preloader-->
@@ -45,8 +48,9 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5"> 
-            <h4 class="faq-heading text-center text-white">JOIN JOB</h4>
-            <h6 class="faq-heading text-center text-white">Free Sign-Up</h6>
+            <img src="https://joinjob.id/asset/logo.jpg" width="50">
+            <h4 class="faq-heading text-center  " style="color:#020310;">JOIN JOB</h4>
+            <h6 class="faq-heading text-center  " style="color:#020310;">Free Sign-Up</h6>
             <!-- Register Form-->
             <div class="register-form mt-5 px-4">
               <form method="POST" action="{{ route('register') }}">
@@ -59,18 +63,18 @@
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
 
-                <div class="form-group text-left mb-4"><span>Nama Pengguna</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Nama Pengguna</span>
                     <label for="username"><i class="fas fa-user"></i></label>
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="{{ __('Nama Pengguna') }}">
+                    <input id="name" type="text" style="color:#020310;" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="{{ __('Nama Pengguna') }}">
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
-                <div class="form-group text-left mb-4"><span>Provinsi</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Provinsi</span>
                     <label for="username"><i class="fas fa-marker"></i></label>
-                    <select class="form-control" name="province_id">
+                    <select class="form-control" name="province_id" style="color:#020310;">
                       <option value=''>Pilih Provinsi</option>
                       @foreach($provinces as $province)
                       <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -82,27 +86,27 @@
                         </span>
                     @enderror
                 </div>
-                <div class="form-group text-left mb-4"><span>Email</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Email</span>
                     <label for="email"><i class="fas fa-envelope"></i></label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('E-Mail') }}">
-                    <small>Email akan digunakan untuk masuk ke bisnis anda</small>
+                    <small style="color:#020310;">Email akan digunakan untuk masuk ke bisnis anda</small>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
-                <div class="form-group text-left mb-4"><span>Kata Sandi</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Kata Sandi</span>
                     <label for="password"><i class="fas fa-key"></i></label>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"   placeholder="********************">
-                    <small>Minimal 8 digit</small>
+                    <small style="color:#020310;">Minimal 8 digit</small>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
                 </div>
-                <div class="form-group text-left mb-4"><span>Ulangi Kata Sandi</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Ulangi Kata Sandi</span>
                     <label for="password"><i class="fas fa-key"></i></label>
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Konfirmasi Sandi') }}"   placeholder="********************">
                      
@@ -114,23 +118,23 @@
                 </div>
                 <div class="form-group text-left mb-4"> 
                     <div class="alert alert-warning">
-                        <p> Anda Menggunakan Paket Free Joinjob Member. Gratis 5 X Posting Selama 10.Hari</p>
+                        <p style="color:#020310;"> Anda Menggunakan Paket Free Joinjob Member. Gratis 5 X Posting Selama AKHIR TAHUN 2020</p>
                     </div>
                 </div>
                 <div class="form-group text-left mb-4"> 
                     <input type="checkbox" name="aggree" required>
-                    <span>Dengan Membuat Akun JOINJOB, Saya Setuju</span>
-                    <p><span>Dengan <a href="#">Syarat & Ketentuan</a> Dan <a href="#">Kebijakan Privacy</a>.</span></p>
+                    <span style="color:#020310;">Dengan Membuat Akun JOINJOB, Saya Setuju</span>
+                    <p style="color:#020310;"><span style="color:#020310;">Dengan <a href="#" style="color:#020310;">Syarat & Ketentuan</a> Dan <a href="#">Kebijakan Privacy</a>.</span></p>
                 </div>
 
-                <button class="btn btn-success btn-lg w-100" type="submit">Sign Up</button>
+                <button class="btn btn-success btn-lg w-100" type="submit" style="color:#020310;">Sign Up</button>
               </form>
             </div>
             <!-- Login Meta-->
             <div class="login-meta-data">
-              <p class="mt-3 mb-0">Kamu sudah punya Akun ?<a class="ml-1" href="/login">Sign In</a></p>
+              <p class="mt-3 mb-0" style="color:#020310;">Kamu sudah punya Akun ?<a class="ml-1" href="/login" style="color:#020310;">Sign In</a></p>
               <!-- View As Guest-->
-              <div class="view-as-guest mt-3"><a class="btn" href="/home">Kembali</a></div>
+              <div class="view-as-guest mt-3"><a class="btn" href="/home" style="color:#020310;">Kembali</a></div>
             </div>
           </div>
         </div>

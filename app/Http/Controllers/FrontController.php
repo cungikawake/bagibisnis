@@ -25,8 +25,7 @@ class FrontController extends Controller
             ->join('members', 'members.id', '=', 'products.member_id')
             ->orderBy('products.created_at', 'DESC')->paginate(8);
         
-        
-
+         
         return view('home', compact('products', 'provinces'));
     }
  

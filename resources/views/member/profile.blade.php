@@ -1,13 +1,13 @@
 @extends('layouts.user-app')
 @section('header')
-<title>Profil Akun, Join bisnis antar provinsi | dibisnis.id</title>
+<title>Profil Akun, Join bisnis antar provinsi | joinjob.id</title>
 @endsection
 @section('content')
 <div class="container">
     <!-- Profile Wrapper-->
     <div class="profile-wrapper-area py-3">
         <!-- User Information-->
-        <div class="card user-info-card">
+        <div class="card user-info-card" style="background:#f8f8ff;">
             <div class="card-body p-4 d-flex align-items-center">
                 <div class="user-profile mr-3">
                     @if(isset($member->logo) && $member->logo !='')
@@ -32,9 +32,9 @@
                 </div>
                 <div class="user-info">
                     <h5 class="mb-0">{{$member->member_name}}</h5>
-                    <p class="mb-0 text-white"> {{ $member->province_name }}</p> 
-                    <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
-                    <p class="mb-0 text-white">{{ $member->email }}</p> 
+                    <p class="mb-0 text-black"> {{ $member->province_name }}</p> 
+                    <p class="mb-0 text-black">{{ $member->phone_number }}</p> 
+                    <p class="mb-0 text-black">{{ $member->email }}</p> 
                     <a href="{{ route('member.edit') }}">
                         <button class="btn btn-success">Edit Profil</button>
                     </a>
@@ -47,7 +47,7 @@
     </div>
     <div class="alert alert-danger"> 
         <div class="section-heading d-flex align-items-center justify-content-between">
-        <p class="ml-1 text-black"><i class="fas fa-warning"></i> Masa aktif member sampai {{ date('d-m-Y', strtotime($user->exp_date)) }}.</p>
+        <p class="ml-1 text-black"><i class="fas fa-warning"></i> NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</p>
         <!-- Layout Options-->
         <div class="layout-options">
             <!-- <a href="#" class="active">

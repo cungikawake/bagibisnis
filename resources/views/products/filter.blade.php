@@ -1,29 +1,29 @@
 @extends('layouts.newapp')
 @section('header')
-<title>Urutkan Anggaran & Biaya terendah | joinjob.id</title>
+<title>Urutkan Anggaran & Anggaran terendah | joinjob.id</title>
 
 
 <meta name="keywords" content="Joinjob website yang menyediakan fasilitas pemasaran digital">
-<meta name="title" content="Urutkan Anggaran & Biaya Terendah | joinjob.id ">
+<meta name="title" content="Urutkan Anggaran & Anggaran Terendah | joinjob.id ">
  
-<meta name="description" content="Anggaran & Biaya Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta name="description" content="Anggaran & Anggaran Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 
 <link rel="canonical" href="https://joinjob.id/" /> 
 
 <!-- Search Engine -->
-<meta name="description" content="Anggaran & Biaya terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta name="description" content="Anggaran & Anggaran terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 <meta name="image" content="https://joinjob.id/asset/logo.png">
 
 <!-- Schema.org for Google -->
-<meta itemprop="name" content="Anggaran & Biaya terendah, joinjob.id">
-<meta itemprop="description" content="Anggaran & Biaya terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
+<meta itemprop="name" content="Anggaran & Anggaran terendah, joinjob.id">
+<meta itemprop="description" content="Anggaran & Anggaran terendah Joinjob.id merupakan website yang menyediakan fasilitas pemasaran digital bagi produsen dan distributor">
 <meta itemprop="image" content="https://joinjob.id/asset/logo.png">
 
 <!-- Open Graph general (Facebook, Pinterest & Google+) -->
 <!--meta-->
 <meta property="og:locale" content="id_ID" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Urutkan Anggaran & Biaya terendah  - joinjob.id" />
+<meta property="og:title" content="Urutkan Anggaran & Anggaran terendah  - joinjob.id" />
 <meta property="og:description" content="@yield('title'), JOINJOB merupakan media untuk melakukan penawaran dengan
 bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
 melakukan kegiatan interaksi dalam satu media website." />
@@ -41,7 +41,7 @@ melakukan kegiatan interaksi dalam satu media website." />
 <meta name="twitter:description" content="JOINJOB merupakan media untuk melakukan penawaran dengan
 bentuk tabel baris. JOINJOB hadir sebagai tempat berbagi informasi dan memberikan kemudahan mencari berbagai keperluan anda untuk
 melakukan kegiatan interaksi dalam satu media website." />
-<meta name="twitter:title" content="Urutkan Biaya Modal terendah  - joinjob.id" />
+<meta name="twitter:title" content="Urutkan Anggaran Modal terendah  - joinjob.id" />
 <meta name="twitter:image" content="https://joinjob.id/asset/logo.jpg" />
 
 @endsection
@@ -53,7 +53,7 @@ melakukan kegiatan interaksi dalam satu media website." />
         <div class="section-heading d-flex align-items-center justify-content-between"> 
             <form action="{{ route('product.filter') }}" id="form_filter">
                 <div class="form-group">
-                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Anggaran & Biaya</h6>
+                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Anggaran & Anggaran</h6>
                     <select class="form-control" id="filter_modal" name="modal">
                         <option value="0">Rp. - 0</option>
                         <option value="100000">Rp. - 100.000</option>
@@ -87,7 +87,7 @@ melakukan kegiatan interaksi dalam satu media website." />
                         @endforeach 
                     </a>
                     <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
-                    <p class="sale-price">Biaya | Modal Rp. {{number_format($row->modal) }}</p>
+                    <p class="sale-price">Anggaran | Biaya Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
                     <div class="product-rating">

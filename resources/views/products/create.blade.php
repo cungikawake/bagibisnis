@@ -1,4 +1,4 @@
-@extends('layouts.newapp')
+@extends('layouts.user-app')
 @section('header')
 <title>Penawaran produk baru, media pilihan bisnis | joinjob.id</title>
 @endsection
@@ -13,7 +13,7 @@
         </div>
         <div class="product-catagory-wrap">
             <div class="row g-3">
-                <h6 class="alert alert-warning"><i class="fas fa-info-circle"></i> Masa aktif akun sampai {{ date('d M Y', strtotime(Session::get('user')->exp_date)) }}</h6> 
+                <h6 class="alert alert-warning"><i class="fas fa-info-circle"></i> NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</h6> 
             </div> 
             <form action="{{ route('member.product.store') }}" method="post" enctype="multipart/form-data" >
             @csrf
@@ -24,13 +24,16 @@
                                 <div class="form-group">
                                     <label for="name">Judul Penawaran</label>
                                     <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
+                                    <small style="margin-top:-10px;">Maximal 50 huruf</small>
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    <small>Maximal 50 huruf</small>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="price">Anggaran Biaya</label>
                                     <input type="number" name="modal" class="form-control" value="{{ old('modal') }}" required placeholder="contoh : 50000">
+                                    <small>Tulis angka tanpa spasi</small>
                                     <p class="text-danger">{{ $errors->first('modal') }}</p>
+                                    
                                         
                                 </div>
                                 <div class="form-group">
@@ -51,8 +54,9 @@
                                         <option value="{{ $row->name }}" {{ old('tag') == $row->name ? 'selected':'' }}>{{ $row->name }}</option>
                                         @endforeach
                                     </select> 
-                                    <p class="text-danger">{{ $errors->first('tag') }}</p>
                                     <small>Tawarkan produk di provinsi pilihan anda.</small>
+                                    <p class="text-danger">{{ $errors->first('tag') }}</p>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Keterangan</label>
@@ -63,15 +67,15 @@
                                 <div class="form-group">
                                     <label for="image">Foto Produk</label>
                                     <input type="file" name="image[]" class="form-control" value="{{ old('image') }}" required>
-                                    <input type="file" name="image[]" class="form-control" value="{{ old('image') }}" required>
-                                    <input type="file" name="image[]" class="form-control" value="{{ old('image') }}" required>
+                                    <input type="file" name="image[]" class="form-control" value="{{ old('image') }}" >
+                                    <input type="file" name="image[]" class="form-control" value="{{ old('image') }}" >
                                         
                                     @foreach($errors->all() as $error)
                                         @if($error=="Sorry! Maximum allowed size for an image is 2MB")
                                                 <span class="help-block"><strong>{{$error}}</strong></span>
                                         @endif
                                     @endforeach
-                                    <small>Ukuran gambar max 2Mb</small>
+                                    <small>Ukuran gambar masing-masing max 2Mb</small>
                                 </div>
                                 <div class="form-group text-center">
                                     <button class="btn btn-primary btn-sm">POSTING</button>

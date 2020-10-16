@@ -1,6 +1,6 @@
 @extends('layouts.user-app')
 @section('header')
-<title>Notifikasi Penawaran, Join bisnis antar provinsi | dibisnis.id</title>
+<title>Notifikasi Penawaran, Join bisnis antar provinsi | joinjob.id</title>
 @endsection
 @section('content') 
  
@@ -12,7 +12,7 @@
             <!-- Single Notification-->
             <a class="list-group-item d-flex align-items-center" href="{{ route('member.profile') }}"><span class="noti-icon"><i class="fas fa-key"></i></span>
             <div class="noti-info">
-                <h6 class="mb-0">Masa aktif member sampai {{ date('d-m-Y', strtotime($user->exp_date)) }}</h6>
+                <h6 class="mb-0">NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</h6>
                 
             </div>
             </a>
@@ -49,7 +49,7 @@
                                         @endforeach 
                                         <span class="product-title">{{ $product['product_name'] }}</span>
                                         <p class="sale-price">
-                                        Biaya | Modal Rp.{{ number_format($product['product_modal']) }}
+                                        Anggaran | Modal Rp.{{ number_format($product['product_modal']) }}
                                         </p> 
                                     </a>
                                 </div>

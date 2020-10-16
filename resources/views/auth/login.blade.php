@@ -27,7 +27,10 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
         .login-wrapper {
-            background: linear-gradient(to left, #17a2b8, #0d3bd1);
+            background: linear-gradient(to left, #f8f8ff, #ffffff);
+        }
+        .register-form .form-control{
+          border-bottom: 1px solid #28a745;
         }
     </style>
   </head>
@@ -45,7 +48,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
-            <h4 class="faq-heading text-center text-white">Sign In</h4> 
+            <img src="https://joinjob.id/asset/logo.jpg" width="50">
+            <h4 class="faq-heading text-center " style="color:#020310;">Sign In</h4> 
           
             <!-- Register Form-->
             <div class="register-form mt-1 px-4">
@@ -59,9 +63,9 @@
                 @if (session('error'))
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
-                <div class="form-group text-left mb-4"><span>Email</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Email</span>
                     <label for="username"><i class="fas fa-user"></i></label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+                    <input id="email" style="color:#020310;" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -69,9 +73,9 @@
                     @enderror
                 </div>
 
-                <div class="form-group text-left mb-4"><span>Password</span>
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Password</span>
                     <label for="password"><i class="fas fa-key"></i></label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="********************">
+                    <input id="password" style="color:#020310;" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="********************">
                      @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -87,10 +91,10 @@
                 <!-- <a class="forgot-password d-block mt-3 mb-1" href="{{ route('password.request') }}">Lupa password ?</a> -->
             @endif
               
-              <p class="mb-0 mt-3">Anda belum punya Akun ?<a class="ml-1" href="{{ route('register') }}">Register Now</a></p>
+              <p class="mb-0 mt-3" style="color:#020310;" >Anda belum punya Akun ?<a class="ml-1" href="{{ route('register') }}" style="color:#020310;" >Register Now</a></p>
             </div>
             <!-- View As Guest-->
-            <div class="view-as-guest mt-3"><a class="btn" href="/home">Kembali</a></div>
+            <div class="view-as-guest mt-3"><a class="btn" href="/home" style="color:#020310;" >Kembali</a></div>
           </div>
         </div>
       </div>

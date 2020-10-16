@@ -59,7 +59,7 @@
                         @endforeach 
                     </a>
                     <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
-                    <p class="sale-price">Biaya | Modal Rp. {{number_format($row->modal) }}</p>
+                    <p class="sale-price">Anggaran | Biaya Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
                     <div class="product-rating">

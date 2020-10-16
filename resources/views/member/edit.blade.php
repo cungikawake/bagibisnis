@@ -1,13 +1,13 @@
 @extends('layouts.user-app')
 @section('header')
-<title>Profil Akun, Join bisnis antar provinsi | dibisnis.id</title>
+<title>Profil Akun, Join bisnis antar provinsi | joinjob.id</title>
 @endsection
 @section('content')
 <div class="container">
     <!-- Profile Wrapper-->
     <div class="profile-wrapper-area py-3">
         <!-- User Information-->
-        <div class="card user-info-card">
+        <div class="card user-info-card" style="background-color: #f8f8ff;">
             <div class="card-body p-4 d-flex align-items-center">
                 <div class="user-profile mr-3">
                     @if($member->logo !='')
@@ -18,15 +18,21 @@
                     <div class="change-user-thumb">
                         <form>
                             <input class="form-control-file" type="file">
-                            <button><i class="fas fa-star"></i></button>
+                            <button>@if(isset($member->type_member) && $member->type_member == 3)
+                                <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
+                                @elseif(isset($member->type_member) && $member->type_member == 2)
+                                <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
+                                @else
+                                <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
+                                @endif</button>
                         </form>
                     </div>
                 </div>
                 <div class="user-info">
                     <h5 class="mb-0">{{$member->name}}</h5>
-                    <p class="mb-0 text-white">{{ (isset($member->city->name))? $member->city->name : '' }} | {{ $member->province->name }}</p> 
-                    <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
-                    <p class="mb-0 text-white">{{ $member->email }}</p>  
+                    <p class="mb-0 text-black">{{ (isset($member->city->name))? $member->city->name : '' }} | {{ $member->province->name }}</p> 
+                    <p class="mb-0 text-black">{{ $member->phone_number }}</p> 
+                    <p class="mb-0 text-black">{{ $member->email }}</p>  
                 </div>
             </div>
         </div>  
@@ -44,7 +50,7 @@
           </div>
             <div class="row g-3">
                 <div class="col-12">
-                    <div class="card top-product-card">
+                    <div class="card">
                     <div class="card-body">
                         <form method="POST" action="{{ route('member.update') }}" enctype="multipart/form-data">
                             @csrf
@@ -130,17 +136,11 @@
                              
                             <hr>
                             
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-12 offset-md-4"> 
-                                    <p>
-                                        <small>Saya  menyetujui seluruh <a href="/faq">syarat & ketentuan</a> sistem.</small>
-                                    </p> 
-                                </div>
+                            <div class="form-group row">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Selesai
+                                </button>
                             </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save"></i>
-                            </button>
                         </form>
                     </div>
                     </div>

@@ -94,6 +94,9 @@
           border-radius: 50%;
           z-index: 1;
         }
+        .product-title-meta-data::after{
+            background:none;
+        }
     </style>
     @yield('styles')
 </head>
@@ -138,7 +141,13 @@
                 <div class="notification-area" style="margin-top: 5px;">
                   <div class="list-group-item d-flex align-items-center" href="notification-details.html" style="border:none;">
                     <a href="{{ route('member.notif') }}"><span class="noti-icon noti-icon-notif"><i class="fas fa-bell"></i></span> </a>
-                    <a href="{{ route('member.profile') }}"><span class="noti-icon noti-icon-profile"> <i class="fas fa-user-tie"></i></span></a>
+                    <a href="{{ route('member.profile') }}"><span class="noti-icon noti-icon-profile">
+                        @if(!empty(session('member')->logo))
+                            <img src="{{ asset('storage/member/'.session('member')->logo) }}" alt="joinjob" style="max-height:29px;border-radius: 50%; border: 1px solid #79c9d4;">
+                        @else
+                            <i class="fas fa-user-tie"></i>
+                        @endif
+                    </span></a>
                   </div> 
                 </div> 
             @endguest

@@ -1,6 +1,6 @@
 @extends('layouts.user-app')
 @section('header')
-<title>Paket Join Member, Join bisnis antar provinsi | dibisnis.id</title>
+<title>Paket Join Member, Join bisnis antar provinsi | joinjob.id</title>
 @endsection
 @section('content') 
  
@@ -12,7 +12,7 @@
             <!-- Single Notification-->
             <a class="list-group-item d-flex align-items-center" href="{{ route('member.profile') }}"><span class="noti-icon"><i class="fas fa-key"></i></span>
             <div class="noti-info">
-                <h6 class="mb-0">Masa aktif akun anda sampai {{ date('d-m-Y', strtotime($user->exp_date)) }}</h6>
+                <h6 class="mb-0">NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</h6>
             </div>
             </a> 
             <p>Selamat Datang Di Fitur Join Member.</p>
