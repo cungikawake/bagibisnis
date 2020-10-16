@@ -89,7 +89,7 @@
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Email</span>
                     <label for="email"><i class="fas fa-envelope"></i></label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('E-Mail') }}">
-                    <small style="color:#020310;">Email akan digunakan untuk masuk ke bisnis anda</small>
+                    <small style="color:#020310;">Email akan digunakan untuk masuk ke akun anda</small>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

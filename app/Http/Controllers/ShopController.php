@@ -28,7 +28,7 @@ class ShopController extends Controller
         ->join('members', 'members.user_id', 'users.id')
         ->join('cities', 'cities.id', '=', 'members.city_id')
         ->join('provinces', 'provinces.id', '=', 'members.province_id')
-        ->where('members.shop_name', $shop_name)
+        ->where('members.name', $shop_name)
         ->first(); 
      
         $products = Product::where('member_id', $member->member_id)->orderBy('created_at', 'DESC')->paginate(10);
