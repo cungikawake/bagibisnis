@@ -63,7 +63,7 @@
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
                     <div class="product-rating">
-                        {{$row->shop_name}} -  {{$row->tag}}
+                        {{$row->shop_name}}  <i class="fas fa-long-arrow-alt-right"></i> {{$row->tag}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
                 </div>

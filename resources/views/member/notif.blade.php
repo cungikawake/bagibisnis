@@ -49,7 +49,7 @@
                                         @endforeach 
                                         <span class="product-title">{{ $product['product_name'] }}</span>
                                         <p class="sale-price">
-                                        Anggaran | Modal Rp.{{ number_format($product['product_modal']) }}
+                                        Anggaran | Biaya Rp.{{ number_format($product['product_modal']) }}
                                         </p> 
                                     </a>
                                 </div>

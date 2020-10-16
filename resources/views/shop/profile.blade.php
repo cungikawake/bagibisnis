@@ -1,6 +1,6 @@
 @extends('layouts.user-app')
 @section('header')
-<title>Profil Akun {{ $member->member_name }}, Join bisnis antar provinsi | dibisnis.id</title>
+<title>Profil Akun {{ $member->member_name }}, Join bisnis antar provinsi | joinjob.id</title>
 
 <!--meta-->
 <meta property="og:locale" content="id_ID" />
