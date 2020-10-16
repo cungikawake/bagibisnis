@@ -77,8 +77,10 @@
                 <i class="fas fa-share-alt"></i> Bagikan
             </div>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ url('/product/show/' . $product->slug) }}"><i class="fab fa-facebook"></i> Facebook</a>
-                <a class="dropdown-item" href="https://api.whatsapp.com/send?text={{ $product->name  }} %20 {{ url('/product/show/' . $product->slug) }}"><i class="fab fa-whatsapp-square"></i> Whatsapp</a>
+                <p class="dropdown-item">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('/product/show/' . $product->slug) }}" style="color:#000;"><i class="fab fa-facebook"></i> </a>
+                    <a   href="https://api.whatsapp.com/send?text={{ $product->name  }} %20 {{ url('/product/show/' . $product->slug) }}" style="color:#000;"><i class="fab fa-whatsapp-square"></i> </a>
+                </p> 
             </div>
         </div>
     </div>
