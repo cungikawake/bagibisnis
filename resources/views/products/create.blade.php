@@ -54,7 +54,7 @@
                                         <option value="{{ $row->name }}" {{ old('tag') == $row->name ? 'selected':'' }}>{{ $row->name }}</option>
                                         @endforeach
                                     </select> 
-                                    <small>Tawarkan produk di provinsi pilihan anda.</small>
+                                    <small>Tawarkan di provinsi tujuan anda.</small>
                                     <p class="text-danger">{{ $errors->first('tag') }}</p>
                                     
                                 </div>

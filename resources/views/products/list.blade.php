@@ -77,12 +77,14 @@ melakukan kegiatan interaksi dalam satu media website." />
                             @endif
                         @endforeach 
                     </a>
-                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
-                    <p class="sale-price">Anggaran | Biaya Rp. {{number_format($row->modal) }}</p>
+                    <a style="min-height:50px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a>
+                    <p class="sale-price">Anggaran | Biaya </p>
+                    <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
+
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
-                    <div class="product-rating">
-                        {{$row->shop_name}} <i class="fas fa-long-arrow-alt-right"></i> {{$row->tag}}
+                    <div class="product-rating" style="text-transform: uppercase;">
+                        {{$row->member->name}} <i class="fas fa-arrow-right" style="color:#3bb3c4;"></i> {{$row->tag}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
                 </div>

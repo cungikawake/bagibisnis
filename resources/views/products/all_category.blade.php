@@ -41,15 +41,9 @@
             @foreach($categories as $category)
             <!-- Single Catagory Card-->
             <div class="col-md-4">
-            <div class="card catagory-card">
-                <div class="card-body text-white" style="background:#3bb4c6;">
-                    <a href="{{ url('category/'.$category->id.'/'.$category->slug) }}">
-                        <img src="{{ asset('asset/'.$category->icon) }}" alt="{{ $category->name }}" style="max-width:100px;">
-                        <h4 class="text-white">{{ $category->name }}</h4>
-                        <p class="text-white">{{ $category->subtitle }}</p>
-                    </a>
-                </div>
-            </div>
+                <a href="{{ url('category/'.$category->id.'/'.$category->slug) }}">
+                    <img src="{{ asset('asset/'.$category->icon) }}" alt="{{ $category->name }}"  > 
+                </a>
             </div>
             @endforeach
         </div>

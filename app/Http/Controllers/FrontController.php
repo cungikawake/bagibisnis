@@ -79,7 +79,8 @@ class FrontController extends Controller
 
         $products = Category::select('*', 'categories.name as categori_name')
         ->where('slug', $slug)->where('id', $id)->first()->product()->with('member')->orderBy('created_at', 'DESC')->paginate(12);
-          
+         
+
         return view('products.list', compact('products', 'category', 'provinces'));
     }
 

@@ -97,6 +97,9 @@
         .product-title-meta-data::after{
             background:none;
         }
+        .top-product-card .product-thumbnail img{
+            width:auto;
+        }
     </style>
     @yield('styles')
 </head>

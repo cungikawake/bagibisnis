@@ -177,6 +177,7 @@ return [
         Stevebauman\Location\LocationServiceProvider::class,
         Torann\GeoIP\GeoIPServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
     ],
 
     /*
@@ -229,7 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Location' => Stevebauman\Location\LocationServiceProvider::class,
         'GeoIP' => Torann\GeoIP\Facades\GeoIP::class,
-
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 

@@ -98,7 +98,7 @@ melakukan kegiatan interaksi dalam satu media website." />
                             @endif
                         @endforeach 
                     </a>
-                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a> 
+                    <a style="min-height:50px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a> 
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
                     <div class="product-rating">
                         <i class="fas fa-map"></i> {{$row->member->province->name}}

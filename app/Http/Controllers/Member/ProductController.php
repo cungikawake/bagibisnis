@@ -11,7 +11,7 @@ use App\Province;
 use App\User;
 use App\Member;
 use App\Notification;
-
+use Image;
 use File;
 use Auth;
 
@@ -49,8 +49,20 @@ class ProductController extends Controller
                 $images = array();
                 foreach($request->file('image') as $key => $file){
                     $file = $file;
-                    $filename = time() . $key . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
-                    $file->storeAs('public/products', $filename);
+                    
+                    /* $filename = time() . $key . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
+                    $file->storeAs('public/products', $filename); */
+
+                    $image                   =       $request->file('image');
+                    $input['imagename']      =       time().'.x.'.$image->extension(); 
+                    $destinationPath         =       public_path('/storage/products'); 
+                    $img                     =       Image::make($image->path()); 
+
+                    // --------- [ Resize Image ] --------------- 
+                    $img->resize(150, 150, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($destinationPath.'/'.$input['imagename']); 
+
                     $images[] = $filename;
                 }
 

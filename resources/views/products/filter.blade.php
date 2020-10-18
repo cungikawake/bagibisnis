@@ -53,7 +53,7 @@ melakukan kegiatan interaksi dalam satu media website." />
         <div class="section-heading d-flex align-items-center justify-content-between"> 
             <form action="{{ route('product.filter') }}" id="form_filter">
                 <div class="form-group">
-                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Anggaran & Anggaran</h6>
+                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Anggaran & Biaya</h6>
                     <select class="form-control" id="filter_modal" name="modal">
                         <option value="0">Rp. - 0</option>
                         <option value="100000">Rp. - 100.000</option>
@@ -86,12 +86,13 @@ melakukan kegiatan interaksi dalam satu media website." />
                             @endif
                         @endforeach 
                     </a>
-                    <a class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
-                    <p class="sale-price">Anggaran | Biaya Rp. {{number_format($row->modal) }}</p>
+                    <a style="min-height:50px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 50, $end='...') !!}</a>
+                    <p class="sale-price">Anggaran | Biaya </p>
+                    <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
                     <div class="product-rating">
-                        {{$row->shop_name}} <i class="fas fa-long-arrow-alt-right"></i>  {{$row->tag}}
+                        {{$row->shop_name}} <i class="fas fa-arrow-right" style="color:#3bb3c4;"></i>  {{$row->tag}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
                 </div>

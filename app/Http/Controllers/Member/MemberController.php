@@ -15,6 +15,7 @@ use App\Review;
 
 use Auth;
 use Session;
+use Image;
 
 class MemberController extends Controller
 {
@@ -83,7 +84,7 @@ class MemberController extends Controller
         if($request->hasFile('logo'))
         {
             $this->validate($request,[
-                'photo' => 'mimes:jpeg,png,jpg |max:1024',
+                'photo' => 'image|mimes:jpeg,png,jpg',
             ]); 
 
             $allowedfileExtension=['jpeg','jpg','png'];
@@ -94,12 +95,24 @@ class MemberController extends Controller
             $check=in_array($extension,$allowedfileExtension);
              
             if($check){ 
-                $filename = time() .'-'. \Str::slug($request->shop_name) . '.' . $file->getClientOriginalExtension();
-                $file->storeAs('public/member', $filename); 
+                /* $filename = time() .'-'. \Str::slug($request->shop_name) . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('public/member', $filename);  */
+                
+                $image                   =       $request->file('logo');
+                $input['imagename']      =       time().'.x.'.$image->extension(); 
+                $destinationPath         =       public_path('/storage/member'); 
+                $img                     =       Image::make($image->path());
+
+
+                // --------- [ Resize Image ] --------------- 
+                $img->resize(150, 150, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($destinationPath.'/'.$input['imagename']); 
+                 
 
                 $member = Member::where('user_id', $user->id)
                 ->first();
-                $member->logo = $filename;
+                $member->logo = $input['imagename'];
                 $member->save();
             }
         }
