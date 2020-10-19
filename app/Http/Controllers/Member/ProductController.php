@@ -55,7 +55,7 @@ class ProductController extends Controller
 
                     $image                   =       $file;
                     $input['imagename']      =       time().'-joinjob.'.$image->getClientOriginalExtension(); 
-                    $destinationPath         =       storage_path('/products'); 
+                    $destinationPath         =       storage_path('public/products'); 
                     $img                     =       Image::make($image->path()); 
 
                     // --------- [ Resize Image ] --------------- 
