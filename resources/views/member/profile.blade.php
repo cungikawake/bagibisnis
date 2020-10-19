@@ -104,7 +104,7 @@
                     
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
                     <div class="product-rating">
-                        <i class="fas fa-map-marker-alt"></i> {{$row->member->province->name}}
+                        <i class="fas fa-map-marker-alt"></i> {{$row->tag}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
                 </div>
