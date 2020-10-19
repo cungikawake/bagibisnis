@@ -99,7 +99,7 @@ class MemberController extends Controller
                 $file->storeAs('public/member', $filename);  */
                 
                 $image                   =       $request->file('logo');
-                $input['imagename']      =       time().'.x.'.$image->extension(); 
+                $input['imagename']      =       time().'.x.'.$image->getClientOriginalExtension(); 
                 $destinationPath         =       public_path('/storage/member'); 
                 $img                     =       Image::make($image->path());
 

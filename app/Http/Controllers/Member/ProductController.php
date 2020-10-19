@@ -53,13 +53,13 @@ class ProductController extends Controller
                     /* $filename = time() . $key . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
                     $file->storeAs('public/products', $filename); */
 
-                    $image                   =       $request->file('image');
-                    $input['imagename']      =       time().'.x.'.$image->extension(); 
+                    $image                   =       $file;
+                    $input['imagename']      =       time().'.x.'.$image->getClientOriginalExtension(); 
                     $destinationPath         =       public_path('/storage/products'); 
                     $img                     =       Image::make($image->path()); 
 
                     // --------- [ Resize Image ] --------------- 
-                    $img->resize(150, 150, function ($constraint) {
+                    $img->resize(200, 200, function ($constraint) {
                         $constraint->aspectRatio();
                     })->save($destinationPath.'/'.$input['imagename']); 
 

@@ -21,12 +21,10 @@ class ShopController extends Controller
         $member = User::select(
             '*',
             'members.name as member_name',
-            'members.id as member_id',
-            'cities.name as city_name',
+            'members.id as member_id', 
             'provinces.name as province_name'
         )
-        ->join('members', 'members.user_id', 'users.id')
-        ->join('cities', 'cities.id', '=', 'members.city_id')
+        ->join('members', 'members.user_id', 'users.id') 
         ->join('provinces', 'provinces.id', '=', 'members.province_id')
         ->where('members.name', $shop_name)
         ->first(); 
