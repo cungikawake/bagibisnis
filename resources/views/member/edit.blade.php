@@ -79,7 +79,7 @@
 
                                 <div class="col-md-6">
                                     <input id="logo" type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" value="{{ old('logo', $member->logo) }}"  autocomplete="logo" autofocus>
-                                    <small>Ukuran max 1MB, *.jpg,*.png</small>
+                                    <small>File gambar *.jpg,*.png</small>
                                     @error('logo')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
