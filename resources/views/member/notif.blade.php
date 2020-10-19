@@ -47,10 +47,15 @@
                                                 <img class="mb-2" src="{{ asset('storage/products/'.$image) }}" alt="joinjob">
                                             @endif
                                         @endforeach 
-                                        <span class="product-title">{{ $product['product_name'] }}</span>
+                                        <span class="product-title" style="min-height:30px;max-height:30px;" >
+                                        {!! \Illuminate\Support\Str::limit($product['product_name'], 50, $end='...') !!}
+                                          </span>
                                         <p class="sale-price">
-                                        Anggaran | Biaya Rp.{{ number_format($product['product_modal']) }}
+                                        Anggaran | Biaya 
                                         </p> 
+                                        <p class="sale-price">
+                                        Rp.{{ number_format($product['product_modal']) }}
+                                        </p>
                                     </a>
                                 </div>
                             </div> 

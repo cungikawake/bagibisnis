@@ -59,11 +59,11 @@ class ProductController extends Controller
                     $img                     =       Image::make($image->path()); 
 
                     // --------- [ Resize Image ] --------------- 
-                    $img->resize(200, 200, function ($constraint) {
+                    $img->resize(1200, 1200, function ($constraint) {
                         $constraint->aspectRatio();
                     })->save($destinationPath.'/'.$input['imagename']); 
 
-                    $images[] = $filename;
+                    $images[] = $input['imagename'];
                 }
 
                 $product = Product::create([

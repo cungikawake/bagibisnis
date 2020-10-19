@@ -28,6 +28,12 @@ melakukan kegiatan interaksi dalam satu media website." />
 
 @endsection
 @section('content')
+<style>
+.user-info-card .user-profile{
+    width:100px;
+    height:100px;
+}
+</style>
 <div class="container">
     <!-- Profile Wrapper-->
     <div class="profile-wrapper-area py-3">
@@ -36,24 +42,22 @@ melakukan kegiatan interaksi dalam satu media website." />
             <div class="card-body p-4 d-flex align-items-center">
                 <div class="user-profile mr-3">
                     @if($member->logo !='')
-                        <img class="img-fluid" src="{{ asset('storage/member/'.$member->logo) }}"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                        <img  src="{{ asset('storage/member/'.$member->logo) }}"  style="height:100px; border-radius:50%; border:2px solid #3EC7AF;">
                     @else
-                        <img class="img-fluid" src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="max-height:150px; border-radius:50%; border:2px solid #3EC7AF;">
+                        <img   src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="height:100px; border-radius:50%; border:2px solid #3EC7AF;">
                     @endif
-                    <div class="change-user-thumb">
+                    <!-- <div class="change-user-thumb">
                         <form>
                             <input class="form-control-file" type="file">
                             <button>
                                 @if($member->type_member == 3)
                                 <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
                                 @elseif($member->type_member == 2)
-                                <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
-                                @else
-                                <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
+                                <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20"> 
                                 @endif
                             </button>
                         </form>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="user-info">
                     <h5 class="mb-0">{{$member->member_name}}</h5>
@@ -98,14 +102,14 @@ melakukan kegiatan interaksi dalam satu media website." />
                             @endif
                         @endforeach 
                     </a>
-                    <a style="min-height:30px; font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                    <a style="min-height:30px;max-height:30px; font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">
                         {!! \Illuminate\Support\Str::limit($row->name, 30, $end='...') !!}</a> 
                     
                     <p class="sale-price">Anggaran | Biaya </p>
                     <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
-                    <div class="product-rating" style="text-transform: uppercase;min-height:30px;">
-                        <i class="fas fa-map"></i> {{$row->member->province->name}}
+                    <div class="product-rating" style="text-transform: uppercase;min-height:30px;max-height:30px;">
+                        <i class="fas fa-map-marker-alt"></i> {{$row->member->province->name}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
                 </div>

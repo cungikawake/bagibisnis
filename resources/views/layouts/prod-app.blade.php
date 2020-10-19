@@ -34,10 +34,7 @@
 
     gtag('config', 'G-3J9YEWTPD6');
   </script>
-    <style>
-        .product-thumbnail img{
-                    height:145px;
-                  }
+    <style> 
         .suha-navbar-toggler {
             position: relative;
             z-index: 1;
@@ -49,7 +46,7 @@
     </style>
     <style>
       .product-thumbnail img{
-        height:145px;
+        height:100px;
       }
       .catagory-card i{
           color:#3bb3c4;
@@ -162,9 +159,9 @@
       <div class="toast-body">
         <button class="ml-3 close" type="button" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="content d-flex align-items-center mb-2"><img src="{{ asset('asset/logo.jpg') }}" alt="">
-          <h6 class="mb-0 text-white">Notifikasi</h6>
+          <h6 class="mb-0 text-white">HALO...</h6>
         </div>
-        <span class="mb-0 d-block text-white">Aktifkan join member lakukan penawaran untuk provinsi tujuan</span>
+        <span class="mb-0 d-block text-white">DAFTAR SEKARANG  <strong class="mx-1">FREE</strong>Sign Up</span>
         <a href="{{ route('register') }}">
             <button class="btn btn-primary">Sign Up</button>
         </a>

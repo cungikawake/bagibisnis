@@ -156,15 +156,13 @@
                         @endif
                     </div>
                     <div class="rating-comment">
-                    <div class="rating">
+                    <!-- <div class="rating">
                         @if($product->member->type_member == 3)
                         <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
                         @elseif($product->member->type_member == 2)
-                        <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
-                        @else
-                        <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
+                        <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20"> 
                         @endif
-                    </div>
+                    </div> -->
                     <p class="comment mb-0">{{$product->member->name}}</p>
                     <span class="name-date"> {{$product->member->province->name}}</span>
                     </div>
@@ -207,15 +205,13 @@
                 </div>
                 <div class="rating-comment">
                     <h6 class="comment mb-0">{{ $review->member->name }}</h6>
-                    <div class="rating">
+                    <!-- <div class="rating">
                         @if($review->member->type_member == 3)
                         <img src="{{ asset('asset/gold_star.png') }}" alt="joinjob" width="20">
                         @elseif($review->member->type_member == 2)
-                        <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20">
-                        @else
-                        <img src="{{ asset('asset/brown_star.png') }}" alt="joinjob" width="20">
+                        <img src="{{ asset('asset/silver_star.png') }}" alt="joinjob" width="20"> 
                         @endif
-                    </div>
+                    </div> -->
                     <p class="comment mb-0">{{ $review->review }}</p>
                     <span class="name-date">{{ $review->created_at }}</span>
                 </div>

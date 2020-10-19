@@ -37,7 +37,7 @@
     </script>
     <style>
         .product-thumbnail img{
-            height:145px;
+            height:100px;
         }
         .suha-navbar-toggler {
         position: relative;
@@ -177,9 +177,9 @@
       <div class="toast-body">
         <button class="ml-3 close" type="button" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <div class="content d-flex align-items-center mb-2"><img src="{{ asset('asset/logo.jpg') }}" alt="">
-          <h6 class="mb-0 text-white">Notifikasi</h6>
+          <h6 class="mb-0 text-white">HALO...</h6>
         </div>
-        <span class="mb-0 d-block text-white">Daftar Langsung JOINJOB.id <strong class="mx-1">FREE</strong>Sign Up</span>
+        <span class="mb-0 d-block text-white">DAFTAR SEKARANG  <strong class="mx-1">FREE</strong>Sign Up</span>
         <a href="{{ route('register') }}">
             <button class="btn btn-primary">Sign Up</button>
         </a>
@@ -187,6 +187,7 @@
     </div>
     <!-- PWA Install Alert-->
     @else
+    
     
     @endguest
 

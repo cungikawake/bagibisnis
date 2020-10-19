@@ -41,7 +41,7 @@
         <div class="row g-3">
             @foreach($products as $row) 
             <!-- Single Top Product Card-->
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card top-product-card">
                 <div class="card-body">
                     <span class="badge badge-success">{{$row->category->name}} </span>
@@ -58,14 +58,14 @@
                             @endif
                         @endforeach 
                     </a>
-                    <a style="min-height:30px;font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                    <a style="min-height:30px;max-height:30px;font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">
                     {!! \Illuminate\Support\Str::limit($row->product_name, 30, $end='...') !!}
                     </a>
                     <p class="sale-price">Anggaran | Biaya </p>
                     <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
-                    <div class="product-rating" style="text-transform: uppercase;min-height:30px;">
+                    <div class="product-rating" style="text-transform: uppercase;min-height:30px;max-height:30px;">
                         {{$row->shop_name}}  <i class="fas fa-arrow-right" style="color:#3bb3c4;"></i> {{$row->tag}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
