@@ -100,6 +100,9 @@
         .top-product-card .product-thumbnail img{
             width:auto;
         }
+        .user-info-card{
+          background-color: #fff;
+        }
     </style>
     @yield('styles')
 </head>

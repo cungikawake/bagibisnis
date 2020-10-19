@@ -57,9 +57,9 @@ melakukan kegiatan interaksi dalam satu media website." />
                 </div>
                 <div class="user-info">
                     <h5 class="mb-0">{{$member->member_name}}</h5>
-                    <p class="mb-0 text-white">{{ $member->city_name }} | {{ $member->province_name }}</p> 
-                    <p class="mb-0 text-white">{{ $member->phone_number }}</p> 
-                    <p class="mb-0 text-white">{{ $member->email }}</p> 
+                    <p class="mb-0" style="color:#020310;">{{ $member->province_name }}</p> 
+                    <p class="mb-0 " style="color:#020310;">{{ $member->phone_number }}</p> 
+                    <p class="mb-0" style="color:#020310;">{{ $member->email }}</p> 
                      
                 </div> 
             </div>
@@ -98,9 +98,13 @@ melakukan kegiatan interaksi dalam satu media website." />
                             @endif
                         @endforeach 
                     </a>
-                    <a style="min-height:50px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a> 
+                    <a style="min-height:30px; font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">
+                        {!! \Illuminate\Support\Str::limit($row->name, 30, $end='...') !!}</a> 
+                    
+                    <p class="sale-price">Anggaran | Biaya </p>
+                    <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
-                    <div class="product-rating">
+                    <div class="product-rating" style="text-transform: uppercase;min-height:30px;">
                         <i class="fas fa-map"></i> {{$row->member->province->name}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
