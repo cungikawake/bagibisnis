@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:150|unique:products,name',
+            'name' => 'required|string|max:30|unique:products,name',
             'description' => 'required|string',
             'category_id' => 'required|exists:categories,id',
             'modal' => 'required|integer',  
@@ -54,8 +54,8 @@ class ProductController extends Controller
                     $file->storeAs('public/products', $filename); */
 
                     $image                   =       $file;
-                    $input['imagename']      =       time().'.x.'.$image->getClientOriginalExtension(); 
-                    $destinationPath         =       public_path('/storage/products'); 
+                    $input['imagename']      =       time().'-joinjob.'.$image->getClientOriginalExtension(); 
+                    $destinationPath         =       storage_path('/products'); 
                     $img                     =       Image::make($image->path()); 
 
                     // --------- [ Resize Image ] --------------- 
