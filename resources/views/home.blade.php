@@ -41,7 +41,7 @@
         <div class="row g-3">
             @foreach($products as $row) 
             <!-- Single Top Product Card-->
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg-3">
                 <div class="card top-product-card">
                 <div class="card-body">
                     <span class="badge badge-success">{{$row->category->name}} </span>
