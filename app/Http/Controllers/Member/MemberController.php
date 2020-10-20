@@ -100,7 +100,7 @@ class MemberController extends Controller
                 
                 $image                   =       $request->file('logo');
                 $input['imagename']      =       time().'.x.'.$image->getClientOriginalExtension(); 
-                $destinationPath         =       public_path('/storage/member'); 
+                $destinationPath         =       public_path('app/public/member'); 
                 $img                     =       Image::make($image->path());
 
 
