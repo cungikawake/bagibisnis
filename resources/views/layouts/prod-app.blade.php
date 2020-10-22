@@ -155,7 +155,7 @@
 
     @guest 
     
-        @if (!isset($_COOKIE['joinjob']))
+        @if (isset($_COOKIE['joinjob']))
             <!-- PWA Install Alert-->
             <div class="toast pwa-install-alert shadow" id="pwaInstallToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="8000" data-autohide="true">
                 <div class="toast-header" style="background:#fff;">
