@@ -2,16 +2,16 @@
 
 @section('header')
 
-<title>{{ $product->name }} | joinjob.id.id</title>
+<title>{{ $product->name }} | joinjob.id</title>
 
 <meta name="keywords" content="{{ $product->name }}">
-<meta name="title" content="{{ $product->name }} | joinjob.id.id">
+<meta name="title" content="{{ $product->name }} | joinjob.id">
 <?php 
     $taglessBody = strip_tags($product->description);
     $images = explode('|', $product->image);
 ?> 
 
-<link rel="canonical" href="https://joinjob.id.id/" /> 
+<link rel="canonical" href="https://joinjob.id/product/show/{{ $product->slug }}" /> 
 
 <!-- Search Engine -->
 <meta name="description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}">
@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ $product->name }} | joinjob.id.id" />
 <meta property="og:description" content="{!! \Illuminate\Support\Str::limit(strip_tags($taglessBody), 200,'...')  !!}" />
-<meta property="og:url" content="https://joinjob.id/" />
+<meta property="og:url" content="https://joinjob.id/product/show/{{ $product->slug }}" />
 <meta property="og:site_name" content="joinjob.id" />
 <meta property="og:image" content="{{ asset('storage/products/'.$images[0]) }}" />
 <meta property="og:image:secure_url" content="{{ asset('storage/products/'.$images[0]) }}" />
