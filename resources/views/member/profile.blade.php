@@ -110,7 +110,7 @@
                     <p></p>
                     
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
-                    <div class="product-rating">
+                    <div class="product-rating" style="text-transform: uppercase;min-height:30px;max-height:30px;">
                         <i class="fas fa-map-marker-alt"></i> {{$row->tag}}
                     </div>
                     <!-- <a class="btn btn-success btn-sm add2cart-notify" href="#"><i class="lni lni-plus"></i></a> -->
