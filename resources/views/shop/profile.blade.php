@@ -42,9 +42,9 @@ melakukan kegiatan interaksi dalam satu media website." />
             <div class="card-body p-4 d-flex align-items-center">
                 <div class="user-profile mr-3">
                     @if($member->logo !='')
-                        <img  src="{{ asset('storage/member/'.$member->logo) }}"  style="height:100px; border-radius:50%; border:2px solid #3EC7AF;">
+                        <img  src="{{ asset('storage/member/'.$member->logo) }}"  style="height:100px; width:100px; border-radius:20%; border:2px solid #3EC7AF;">
                     @else
-                        <img   src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="height:100px; border-radius:50%; border:2px solid #3EC7AF;">
+                        <img   src="https://www.stma.org/wp-content/uploads/2017/10/no-image-icon.png"  style="height:100px; width:100px; border-radius:20%; border:2px solid #3EC7AF;">
                     @endif
                     <!-- <div class="change-user-thumb">
                         <form>
