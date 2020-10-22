@@ -6,8 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Auth;
-use Session;
+use Session; 
 use App\Member;
 
 class LoginController extends Controller
@@ -48,7 +49,7 @@ class LoginController extends Controller
             'email' => 'required|string',
             'password' => 'required|string', 
         ]);
-
+        
         $user = \Auth::attempt([
             'email' => $request->email,
             'password' => $request->password, 
@@ -71,6 +72,9 @@ class LoginController extends Controller
                 ]);
 
             }
+
+            //cookee
+            setcookie("joinjob",'guest_login',time()+31556926 ,'/');
 
             session([
                 'member' => $member,

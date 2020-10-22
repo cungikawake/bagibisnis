@@ -164,22 +164,47 @@
 
      
     @guest 
-    <!-- PWA Install Alert-->
-    <div class="toast pwa-install-alert shadow" id="pwaInstallToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="8000" data-autohide="true">
-      <div class="toast-body">
-        <button class="ml-3 close" type="button" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <div class="content d-flex align-items-center mb-2"><img src="{{ asset('asset/logo.jpg') }}" alt="">
-          <h6 class="mb-0 text-white">HALO...</h6>
-        </div>
-        <span class="mb-0 d-block text-white">DAFTAR SEKARANG  <strong class="mx-1">FREE</strong>Sign Up</span>
-        <a href="{{ route('register') }}">
-            <button class="btn btn-primary">Sign Up</button>
-        </a>
-      </div>
-    </div>
-    <!-- PWA Install Alert-->
-    @else
     
+        @if (!isset($_COOKIE['joinjob']))
+            <!-- PWA Install Alert-->
+            <div class="toast pwa-install-alert shadow" id="pwaInstallToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="8000" data-autohide="true">
+                <div class="toast-header" style="background:#fff;">
+                    <button class="ml-3 close" type="button" data-dismiss="toast" aria-label="Close" ><span aria-hidden="true" style="color:#ed052b;">&times;</span></button> 
+                    <div class="content d-flex align-items-center mb-2">
+                        <img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-width:50px;">
+                        <h3 class="mb-0" style="color:#3ab4c3;margin-left:50%;">Welcome Back...</h3>
+                    </div>
+                </div>
+                <div class="toast-body" style="background:#3ab4c3;"> 
+                    <h6 class="mb-0 d-block text-white">LOGIN SEKARANG  <strong class="mx-1"></strong>LOGIN</h6>
+                    <br>
+                    <a href="{{ route('login') }}">
+                        <button class="btn btn-primary">Login Lagi</button>
+                    </a>
+                </div>
+            </div>
+            <!-- PWA Install Alert-->
+        @else
+            <!-- PWA Install Alert-->
+            <div class="toast pwa-install-alert shadow" id="pwaInstallToast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="8000" data-autohide="true">
+                <div class="toast-header" style="background:#fff;">
+                    <button class="ml-3 close" type="button" data-dismiss="toast" aria-label="Close" ><span aria-hidden="true" style="color:#ed052b;">&times;</span></button> 
+                    <div class="content d-flex align-items-center mb-2">
+                        <img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-width:50px;">
+                        <h3 class="mb-0" style="color:#3ab4c3;margin-left:50%;">HALO...</h3>
+                    </div>
+                </div>
+                <div class="toast-body" style="background:#3ab4c3;"> 
+                    <h6 class="mb-0 d-block text-white">DAFTAR SEKARANG  <strong class="mx-1">FREE</strong>Sign Up</h6>
+                    <br>
+                    <a href="{{ route('register') }}">
+                        <button class="btn btn-primary">Sign Up</button>
+                    </a>
+                </div>
+            </div>
+            <!-- PWA Install Alert-->
+        @endif
+    @else 
     @endguest
 
     <!-- BODY CONTENT-->

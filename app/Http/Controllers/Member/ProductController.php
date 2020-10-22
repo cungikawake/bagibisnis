@@ -49,7 +49,7 @@ class ProductController extends Controller
                 $images = array();
                 foreach($request->file('image') as $key => $file){
                     $file = $file;
-                    
+                     
                     /* $filename = time() . $key . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
                     $file->storeAs('public/products', $filename); */
 
