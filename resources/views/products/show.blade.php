@@ -60,7 +60,9 @@
     ?>
     @foreach($images as $key => $image)
     <!-- Single Hero Slide-->
-    <div class="single-product-slide" style="background-size:contain;background-image: url('{{ asset('storage/products/'.$image) }}'); max-height:600px;"></div>
+    <div class="single-product-slide">
+        <img src="{{ asset('storage/products/'.$image) }}" alt="joinjob" style="max-height:500px;width:100%;">
+    </div>
     @endforeach 
 </div>
 
