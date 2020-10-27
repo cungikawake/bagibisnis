@@ -77,7 +77,7 @@
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Password</span> 
                   <label for="username"><i class="fas fa-key"></i></label>
                   <div class="input-group">
-                    <input type="password" class="form-control pwd" value="">
+                    <input type="password" class="form-control pwd" name="password" value="">
                     <span class="input-group-btn">
                       <button class="btn btn-default reveal" type="button"><i class="fas fa-eye"></i></button>
                     </span>          
