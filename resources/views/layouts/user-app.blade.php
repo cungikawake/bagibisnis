@@ -227,6 +227,7 @@
                     <p style="margin-top:-10px;color:#3bb3c4;">JOINJOB</p>
                     <p style="margin-top:-15px;color:#3bb3c4;">Copyright 2020</p>
                     <p style="margin-top:-15px;color:#3bb3c4;">Join Informasi Antar Provinsi</p>
+                    <p style="margin-top:-15px;color:#3bb3c4;">V1.0</p>
                 </a>
             </li> 
           </ul>

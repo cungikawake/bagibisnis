@@ -72,7 +72,7 @@
     <div class="container d-flex justify-content-between">
         <div class="p-title-price">
             <h6 class="mb-1">{{ $product->name }}</h6>
-            <p class="sale-price mb-0" style="font-size:18px; color:#17a2b8;">Anggaran | Biaya <span>Rp. {{number_format($product->modal)}}</span></p>
+            <p class="sale-price mb-0" style="font-size:18px; color:#17a2b8;">Modal <span>Rp. {{number_format($product->modal)}}</span></p>
         </div>
         <div class="p-wishlist-share dropdown">
             <div data-toggle="dropdown">

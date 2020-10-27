@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class Category extends Model
 {
-    protected $fillable = ['name', 'parent_id', 'slug'];
+    protected $fillable = ['name', 'parent_id', 'slug', 'icon', 'icon2'];
 
     public function scopeGetParent($query)
     {

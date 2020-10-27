@@ -7,7 +7,7 @@
 <div class="container">
     <!-- Notifications Area-->
     <div class="notification-area pt-3 pb-2">
-        <h6 class="pl-1">Notifications</h6>
+        <h6 class="pl-1">Notifikasi di provinsi anda</h6>
         <div class="list-group"> 
             <!-- Single Notification-->
             <a class="list-group-item d-flex align-items-center" href="{{ route('member.profile') }}"><span class="noti-icon"><i class="fas fa-key"></i></span>
@@ -23,8 +23,8 @@
                 <div class="container">
                     <!-- Single Notification-->
                     <a class="list-group-item d-flex align-items-center" href="#">
-                        <span class="noti-icon">
-                            <img src="{{ asset('asset/'.$category['icon']) }}" class="img-fluid" alt="{{ $category['name'] }}">
+                        <span class="noti-icon" style="border-radius:0px;">
+                            <img src="{{ asset('asset/'.$category['icon2']) }}" class="img-fluid" alt="{{ $category['name'] }}">
                         </span>
                         <div class="noti-info">
                             <h6 class="mb-0">{{ $category['name'] }}</h6><span> </span>
@@ -51,7 +51,7 @@
                                         {!! \Illuminate\Support\Str::limit($product['product_name'], 50, $end='...') !!}
                                           </span>
                                         <p class="sale-price">
-                                        Anggaran | Biaya 
+                                        Modal 
                                         </p> 
                                         <p class="sale-price">
                                         Rp.{{ number_format($product['product_modal']) }}

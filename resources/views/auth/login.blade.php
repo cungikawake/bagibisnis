@@ -31,6 +31,7 @@
         }
         .register-form .form-control{
           border-bottom: 1px solid #28a745;
+          color:#000;
         }
     </style>
   </head>
@@ -73,10 +74,15 @@
                     @enderror
                 </div>
 
-                <div class="form-group text-left mb-4"><span style="color:#020310;">Password</span>
-                    <label for="password"><i class="fas fa-key"></i></label>
-                    <input id="password" style="color:#020310;" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="********************">
-                     @error('password')
+                <div class="form-group text-left mb-4"><span style="color:#020310;">Password</span> 
+                  <label for="username"><i class="fas fa-key"></i></label>
+                  <div class="input-group">
+                    <input type="password" class="form-control pwd" value="iamapassword">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default reveal" type="button"><i class="fas fa-eye"></i></button>
+                    </span>          
+                  </div>
+                    @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -114,5 +120,16 @@
     <script src="https://designing-world.com/suha-v2.1.0/js/default/dark-mode-switch.js"></script>
     <script src="https://designing-world.com/suha-v2.1.0/js/default/active.js"></script>
     <script src="https://designing-world.com/suha-v2.1.0/js/pwa.js"></script>
+    <script>
+      $(".reveal").on('click',function() {
+          var $pwd = $(".pwd");
+          
+          if ($pwd.attr('type') === 'password') {
+              $pwd.attr('type', 'text');
+          } else {
+              $pwd.attr('type', 'password');
+          }
+      });
+    </script>
   </body>
 </html>

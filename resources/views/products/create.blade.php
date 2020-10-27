@@ -29,7 +29,7 @@
                                     
                                 </div>
                                 <div class="form-group">
-                                    <label for="price">Anggaran Biaya</label>
+                                    <label for="price">Modal</label>
                                     <input type="number" name="modal" class="form-control" value="{{ old('modal') }}" required placeholder="contoh : 50000">
                                     <small>Tulis angka tanpa spasi</small>
                                     <p class="text-danger">{{ $errors->first('modal') }}</p>
@@ -47,7 +47,7 @@
                                     <p class="text-danger">{{ $errors->first('category_id') }}</p>
                                 </div> 
                                 <div class="form-group">
-                                    <label for="name">Provinsi Tujuan</label>
+                                    <label for="name">Target Provinsi</label>
                                     <select name="tag" class="form-control">
                                         <option value="">Pilih</option>
                                         @foreach ($provinces as $row)

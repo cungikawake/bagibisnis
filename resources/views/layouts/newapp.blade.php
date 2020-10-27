@@ -291,7 +291,7 @@
                             <div class="card-body">
                                 <a href="{{route('product.filter')}}">
                                     <p class="text-black"><i class="fa fa-tags" style="font-size:50px;"></i></p>
-                                    <p class="mt-1 text-black">Anggaran | Biaya</p>
+                                    <p class="mt-1 text-black">Modal</p>
                                 </a>
                             </div>
                         </div>
@@ -330,8 +330,10 @@
                     <p><img src="{{ asset('asset/logo.jpg') }}" alt="joinjob" style="max-height:35px;"></p>
                     <p style="margin-top:-10px;color:#3bb3c4;">JOINJOB</p>
                     <p style="margin-top:-15px;color:#3bb3c4;">Copyright 2020</p>
-                    <p style="margin-top:-15px;color:#3bb3c4;">Join Informasi Antar Provinsi</p>
+                    <p style="margin-top:-15px;color:#3bb3c4;">Join Informasi Antar Provinsi</p> 
+                    <p style="margin-top:-15px;color:#3bb3c4;">V1.0</p>
                 </a>
+                
             </li> 
           </ul>
         </div>

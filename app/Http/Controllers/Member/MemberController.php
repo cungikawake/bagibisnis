@@ -135,7 +135,8 @@ class MemberController extends Controller
             $categories[$category->category_id] = array(
                 'id' => $category->category_id,
                 'name' => $category->name,
-                'icon' => $category->icon
+                'icon' => $category->icon,
+                'icon2' => $category->icon2
             );
         }
          
