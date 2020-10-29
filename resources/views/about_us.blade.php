@@ -55,7 +55,7 @@ Platform-Media dengan bentuk tabel baris berisi informasi & penawaran untuk memu
              <div class="card-body">
                 <h3>joinaja</h3>
                 <h3>
-                <a href="#"><i class="fab fa-facebook"></i> </a>
+                <a href="https://www.facebook.com/join.job.1069"><i class="fab fa-facebook"></i> </a>
                 | <a href="#"><i class="fab fa-instagram"></i>  </a>  
                 </h3>
              </div>
