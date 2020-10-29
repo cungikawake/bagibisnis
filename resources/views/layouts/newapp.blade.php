@@ -184,7 +184,7 @@
                     </div>
                 </div>
                 <div class="toast-body" style="background:#3ab4c3;"> 
-                    <h6 class="mb-0 d-block text-white">ANDA HARUS KEMBALI <strong class="mx-1"></strong>LOGIN</h6>
+                    <h6 class="mb-0 d-block text-white">ANDA HARUS KEMBALI <strong class="mx-1">LOGIN</strong>LOGIN</h6>
                     <br>
                     <a href="{{ route('login') }}">
                         <button class="btn btn-primary">Login Lagi</button>
@@ -220,7 +220,7 @@
         <!-- Hero Slides-->
         <div class="hero-slides owl-carousel" style="margin-top:85px;">
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide1.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide11.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Amazon Echo</h4>
@@ -229,7 +229,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide2.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide22.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Light Candle</h4>
@@ -238,7 +238,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide3.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide33.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
@@ -247,7 +247,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide4.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide44.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
@@ -256,7 +256,7 @@
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide5.jpg') }}')">
+            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide55.jpg') }}')">
             <div class="slide-content h-100 d-flex align-items-center">
                 <!-- <div class="container">
                 <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
