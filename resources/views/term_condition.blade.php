@@ -185,7 +185,10 @@ ke hard-drive komputer setiap pengakses situs tersebut untuk keperluan pencatata
                 <h5 style="text-align:center; color:#3fc7af;">www.joinjob.id</h5>
                 <h5 style="text-align:center; color:#3fc7af;">joinaja</h5>
                 <p style="text-align:center;margin-top:-12px;"><small>Temukan Kami</small></p>
-                <h2 style="text-align:center;margin-top:-15px;"><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></h2>
+                <h2 style="text-align:center;margin-top:-15px;">
+                <a href="https://www.facebook.com/join.job.1069"><i class="fab fa-facebook"></i></a> 
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                </h2>
 
 
              </div>
