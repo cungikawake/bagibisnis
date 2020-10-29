@@ -184,7 +184,7 @@
                     </div>
                 </div>
                 <div class="toast-body" style="background:#3ab4c3;"> 
-                    <h6 class="mb-0 d-block text-white">ANDA HARUS KEMBALI <strong class="mx-1">LOGIN</strong>LOGIN</h6>
+                    <h6 class="mb-0 d-block text-white">ANDA HARUS KEMBALI <strong class="mx-1">LOGIN</strong></h6>
                     <br>
                     <a href="{{ route('login') }}">
                         <button class="btn btn-primary">Login Lagi</button>
