@@ -89,8 +89,8 @@ melakukan kegiatan interaksi dalam satu media website." />
                     
                     <a style="min-height:30px;max-height:30px; font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->product_name, 30, $end='...') !!}</a>
                     
-                    <p class="sale-price">Modal </p>
-                    <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
+                    <p class="sale-price" style="margin-top:10px;">Modal </p>
+                    <p class="sale-price" style="margin-top:-8px;">Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>
                     <hr>
                     <div class="product-rating" style="text-transform: uppercase;min-height:30px;max-height:30px;">

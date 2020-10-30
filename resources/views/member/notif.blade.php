@@ -50,10 +50,10 @@
                                         <span class="product-title" style="min-height:30px;max-height:30px;" >
                                         {!! \Illuminate\Support\Str::limit($product['product_name'], 50, $end='...') !!}
                                           </span>
-                                        <p class="sale-price">
+                                        <p class="sale-price" style="margin-top:10px;">
                                         Modal 
                                         </p> 
-                                        <p class="sale-price">
+                                        <p class="sale-price" style="margin-top:-8px;">
                                         Rp.{{ number_format($product['product_modal']) }}
                                         </p>
                                     </a>
