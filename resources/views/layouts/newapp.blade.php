@@ -227,48 +227,43 @@
         <!-- Hero Slides-->
         <div class="hero-slides owl-carousel" style="margin-top:85px;">
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide11.jpg') }}')">
+            <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
-                <!-- <div class="container">
-                <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Amazon Echo</h4>
-                <p class="text-white" data-animation="fadeInUp" data-delay="400ms" data-wow-duration="1000ms">3rd Generation, Charcoal</p><a class="btn btn-primary btn-sm" href="#" data-animation="fadeInUp" data-delay="800ms" data-wow-duration="1000ms">Buy Now</a>
-                </div> -->
+                <div class="container">
+                    <img src="{{ asset('asset/slide11.jpg') }}">
+                </div> 
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide22.jpg') }}')">
+            <div class="single-hero-slide" >
             <div class="slide-content h-100 d-flex align-items-center">
-                <!-- <div class="container">
-                <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Light Candle</h4>
-                <p class="text-white" data-animation="fadeInUp" data-delay="400ms" data-wow-duration="1000ms">Now only $22</p><a class="btn btn-success btn-sm" href="#" data-animation="fadeInUp" data-delay="500ms" data-wow-duration="1000ms">Buy Now</a>
-                </div> -->
+                <div class="container">
+                    <img src="{{ asset('asset/slide22.jpg') }}">
+                </div> 
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide33.jpg') }}')">
+            <div class="single-hero-slide" >
             <div class="slide-content h-100 d-flex align-items-center">
-                <!-- <div class="container">
-                <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
-                <p class="text-white" data-animation="fadeInUp" data-delay="400ms" data-wow-duration="1000ms">3 years warranty</p><a class="btn btn-danger btn-sm" href="#" data-animation="fadeInUp" data-delay="800ms" data-wow-duration="1000ms">Buy Now</a>
-                </div> -->
+                <div class="container">
+                    <img src="{{ asset('asset/slide33.jpg') }}">
+                </div> 
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide44.jpg') }}')">
+            <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
-                <!-- <div class="container">
-                <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
-                <p class="text-white" data-animation="fadeInUp" data-delay="400ms" data-wow-duration="1000ms">3 years warranty</p><a class="btn btn-danger btn-sm" href="#" data-animation="fadeInUp" data-delay="800ms" data-wow-duration="1000ms">Buy Now</a>
-                </div> -->
+                <div class="container">
+                    <img src="{{ asset('asset/slide44.jpg') }}">
+                </div> 
             </div>
             </div>
             <!-- Single Hero Slide-->
-            <div class="single-hero-slide" style="background-image: url('{{ asset('asset/slide55.jpg') }}')">
+            <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
-                <!-- <div class="container">
-                <h4 class="text-white mb-0" data-animation="fadeInUp" data-delay="100ms" data-wow-duration="1000ms">Best Furniture</h4>
-                <p class="text-white" data-animation="fadeInUp" data-delay="400ms" data-wow-duration="1000ms">3 years warranty</p><a class="btn btn-danger btn-sm" href="#" data-animation="fadeInUp" data-delay="800ms" data-wow-duration="1000ms">Buy Now</a>
-                </div> -->
+                <div class="container">
+                    <img src="{{ asset('asset/slide55.jpg') }}">
+                </div> 
             </div>
             </div>
         </div>
