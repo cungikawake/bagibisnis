@@ -225,7 +225,7 @@
     <!-- BODY CONTENT-->
     <div class="page-content-wrapper">
         <!-- Hero Slides-->
-        <div class="hero-slides owl-carousel" style="margin-top:60px;">
+        <div class="hero-slides owl-carousel" style="margin-top:51px;">
             <!-- Single Hero Slide-->
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
