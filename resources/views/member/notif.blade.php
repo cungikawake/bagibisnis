@@ -23,8 +23,8 @@
                 <div class="container">
                     <!-- Single Notification-->
                     <a class="list-group-item d-flex align-items-center" href="#">
-                        <span class="noti-icon" style="border-radius:0px;">
-                            <img src="{{ asset('asset/'.$category['icon2']) }}" class="img-fluid" alt="{{ $category['name'] }}">
+                        <span class="noti-icon" style="border-radius:50%;">
+                            <img  style="border-radius:50%;" src="{{ asset('asset/'.$category['icon2']) }}" class="img-fluid" alt="{{ $category['name'] }}">
                         </span>
                         <div class="noti-info">
                             <h6 class="mb-0">{{ $category['name'] }}</h6><span> </span>
