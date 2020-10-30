@@ -47,14 +47,13 @@ class ProductController extends Controller
             if($member->quota_post  > $total_product){
                 
                 $images = array();
-                foreach($request->file('image') as $key => $file){
-                    $file = $file;
-                     
+                $i = 1;
+                foreach($request->file('image') as $key => $file){ 
                     /* $filename = time() . $key . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
                     $file->storeAs('public/products', $filename); */
 
                     $image                   =       $file;
-                    $input['imagename']      =       time().'-joinjob.'.$image->getClientOriginalExtension(); 
+                    $input['imagename']      =       time().'-joinjob-'.$i++.'.'.$image->getClientOriginalExtension(); 
                     $destinationPath         =       storage_path('app/public/products'); 
                     $img                     =       Image::make($image->path()); 
 
