@@ -99,6 +99,7 @@
         @media (max-width: 400px){
             .single-hero-slide{
                 height: 125px;
+                background:contain;
             }
         }
     </style>
