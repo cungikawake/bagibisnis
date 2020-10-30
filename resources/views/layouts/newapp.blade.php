@@ -95,6 +95,12 @@
         .top-product-card .product-thumbnail img{
             width:auto;
         }
+        
+        @media (max-width: 400px){
+            .single-hero-slide{
+                height: 125px;
+            }
+        }
     </style>
     @yield('styles')
 </head>
