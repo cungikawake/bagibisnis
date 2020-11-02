@@ -10,6 +10,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Province;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+
 
 class RegisterController extends Controller
 {
@@ -58,6 +61,37 @@ class RegisterController extends Controller
             'province_id' => ['required'],
         ]);
     }
+
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function handleProviderCallback($provider)
+    {
+        $user = Socialite::driver($provider)->user();
+        $authUser = $this->findOrCreateUser($user, $provider);
+        Auth::login($authUser, true);
+        return redirect('/');
+    }
+
+    public function findOrCreateUser($user, $provider)
+    {
+        $authUser = User::where('provider_id', $user->id)->first();
+        if ($authUser) {
+            return $authUser;
+        }
+        else{
+            $data = User::create([
+                'name'     => $user->name,
+                'email'    => !empty($user->email)? $user->email : '' ,
+                'provider' => $provider,
+                'provider_id' => $user->id
+            ]);
+            return $data;
+        }
+    }
+
 
     public function getRegister()
     {

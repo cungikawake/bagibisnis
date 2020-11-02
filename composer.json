@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",
         "laravel/framework": "^6.18.35",
+        "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "pusher/pusher-php-server": "^4.1",
         "stevebauman/location": "^5.1",

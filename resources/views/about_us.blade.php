@@ -44,10 +44,8 @@ Platform-Media dengan bentuk tabel baris berisi informasi & penawaran untuk memu
                 </p>
                 <p>
                 Dalam memaksimalkan pelayanan sebuah Media website JOINJOB senantiasa menerima saran & kritik anda sebagai landasan kami untuk memberikan pelayanan yang terbaik.
-                </p>
-                <p>Phone : +62 87 858 7777 03 (Whatsapp chat.only)</p>
-                <p>Email : cs@joinjob.id</p>
-                <p>Jam Kantor : *08.00-18.00* setiap hari</p> 
+                </p>  
+                <p>Email : cs@joinjob.id</p> 
                 <br> 
              </div>
         </div>
@@ -55,8 +53,8 @@ Platform-Media dengan bentuk tabel baris berisi informasi & penawaran untuk memu
              <div class="card-body">
                 <h3>joinaja</h3>
                 <h3>
-                <a href="https://www.facebook.com/join.job.1069"><i class="fab fa-facebook"></i> </a>
-                | <a href="#"><i class="fab fa-instagram"></i>  </a>  
+                <a href="https://www.facebook.com/joinjobid-109207084318131"><i class="fab fa-facebook"></i> </a>
+                | <a href="https://www.instagram.com/joinjob.id"><i class="fab fa-instagram"></i>  </a>  
                 </h3>
              </div>
         </div>

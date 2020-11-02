@@ -29,6 +29,8 @@ Route::get('/notif/{name}', 'NotifController@index')->name('notif');
 
 Auth::routes();
 Route::get('/register', 'Auth\RegisterController@getRegister')->name('register');
+Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
 /*
 |--------------------------------------------------------------------------
 |   ADMIN

@@ -9,13 +9,7 @@
     <div class="notification-area pt-3 pb-2">
         <h6 class="pl-1">Notifikasi di provinsi anda</h6>
         <div class="list-group"> 
-            <!-- Single Notification-->
-            <a class="list-group-item d-flex align-items-center" href="{{ route('member.profile') }}"><span class="noti-icon"><i class="fas fa-key"></i></span>
-            <div class="noti-info">
-                <h6 class="mb-0">NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</h6>
-                
-            </div>
-            </a>
+             
 
             @foreach($categories as $category)
             <!-- NOTIF-->

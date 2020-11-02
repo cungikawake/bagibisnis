@@ -89,6 +89,13 @@
                     @enderror
                 </div>
                 <button class="btn btn-success btn-lg w-100" type="submit">Log In</button>
+                <br>
+                <p>Atau</p>
+                <div class="form-group">
+                  <a href="{{ url('/auth/google') }}" class="btn btn-github"><i class="fa fa-github"></i> Google</a>
+                  <a href="{{ url('/auth/twitter') }}" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                  <a href="{{ url('/auth/facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                </div>
               </form>
             </div>
             <!-- Login Meta-->
@@ -130,6 +137,28 @@
               $pwd.attr('type', 'password');
           }
       });
+    </script>
+
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '3274915989274163',
+          cookie     : true,
+          xfbml      : true,
+          version    : '{api-version}'
+        });
+          
+        FB.AppEvents.logPageView();   
+          
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     </script>
   </body>
 </html>
