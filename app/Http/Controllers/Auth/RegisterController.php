@@ -71,21 +71,27 @@ class RegisterController extends Controller
     {
         $user = Socialite::driver($provider)->user();
         $authUser = $this->findOrCreateUser($user, $provider);
-        Auth::login($authUser, true);
-        return redirect('/member');
+        $user = \Auth::attempt([
+            'email' => $authUser->email,
+            'password' => $authUser->password, 
+        ]); 
+
+        return redirect()->route('member.profile');
     }
 
     public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('email', $user->email)->first();
-        if ($authUser) {
-            Auth::login($authUser);
+        if ($authUser) { 
+            //cookee
+            setcookie("joinjob",'guest_login',time()+31556926 ,'/');
+ 
             return $authUser;
         }
         else{
             $today = date('Y-m-d');
 
-            $data = User::create([
+            $authUser = User::create([
                 'name'     => $user->name,
                 'email'    => !empty($user->email)? $user->email : '' ,
                 'provider' => $provider,
@@ -93,14 +99,13 @@ class RegisterController extends Controller
                 'role' => 2,
                 'password' => Hash::make($user->name),
                 'exp_date' => date('Y-m-d', strtotime('+10 days', strtotime($today))), //free
-            ]);
-            Auth::login($user);
+            ]); 
 
             $customer = Member::create([
-                'name' => $data->name,
-                'email' => $data->email,
-                'shop_name' => $data->name,
-                'user_id' => $data->id,
+                'name' => $authUser->name,
+                'email' => $authUser->email,
+                'shop_name' => $authUser->name,
+                'user_id' => $authUser->id,
                 'status' => 1,
                 'max_product' => 10, 
                 'type_member' => 1, 
@@ -109,9 +114,11 @@ class RegisterController extends Controller
             ]);
     
             if($customer){
-                $member = Member::where('user_id', $data->id)->first(); 
+                $member = Member::where('user_id', $authUser->id)->first(); 
                 
-                
+                //cookee
+                setcookie("joinjob",'guest_login',time()+31556926 ,'/');
+ 
                 if($today > $member->exp_date ){
                     //akun sudah exp                 
                     session([
@@ -122,10 +129,10 @@ class RegisterController extends Controller
     
                 session([
                     'member' => $member,
-                    'user' => $user
+                    'user' => $authUser
                 ]);
      
-                return $user;
+                return $authUser;
     
             }else{
                 return redirect()->back()->with('error', 'Maaf anda tidak dapat mendaftar akun');
