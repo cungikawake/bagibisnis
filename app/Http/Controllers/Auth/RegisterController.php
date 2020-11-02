@@ -72,7 +72,7 @@ class RegisterController extends Controller
         $user = Socialite::driver($provider)->user();
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
-        return redirect('/');
+        return redirect('/member');
     }
 
     public function findOrCreateUser($user, $provider)
@@ -86,9 +86,46 @@ class RegisterController extends Controller
                 'name'     => $user->name,
                 'email'    => !empty($user->email)? $user->email : '' ,
                 'provider' => $provider,
-                'provider_id' => $user->id
+                'provider_id' => $user->id,
+                'role' => 2,
+                'password' => Hash::make('Joinjob2020'),
+                'exp_date' => date('Y-m-d', strtotime('+10 days', strtotime($today))), //free
             ]);
-            return $data;
+
+            $customer = Member::create([
+                'name' => $data->name,
+                'email' => $data->email,
+                'shop_name' => $data->name,
+                'user_id' => $data->id,
+                'status' => 1,
+                'max_product' => 10, 
+                'type_member' => 1, 
+                'quota_post' => 5, //free,
+                'province_id'=> 1
+            ]);
+    
+            if($customer){
+                $member = Member::where('user_id', $data->id)->first(); 
+                $today = date('Y-m-d');
+                
+                if($today > $member->exp_date ){
+                    //akun sudah exp                 
+                    session([
+                        'exp_member' => true
+                    ]);
+    
+                }
+    
+                session([
+                    'member' => $member,
+                    'user' => $user
+                ]);
+     
+                return $user;
+    
+            }else{
+                return redirect()->back()->with('error', 'Maaf anda tidak dapat mendaftar akun');
+            }
         }
     }
 
