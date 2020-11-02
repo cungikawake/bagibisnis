@@ -82,6 +82,8 @@ class RegisterController extends Controller
             return $authUser;
         }
         else{
+            $today = date('Y-m-d');
+            
             $data = User::create([
                 'name'     => $user->name,
                 'email'    => !empty($user->email)? $user->email : '' ,
@@ -106,7 +108,7 @@ class RegisterController extends Controller
     
             if($customer){
                 $member = Member::where('user_id', $data->id)->first(); 
-                $today = date('Y-m-d');
+                
                 
                 if($today > $member->exp_date ){
                     //akun sudah exp                 
