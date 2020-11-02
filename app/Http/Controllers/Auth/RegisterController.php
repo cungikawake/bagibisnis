@@ -77,22 +77,24 @@ class RegisterController extends Controller
 
     public function findOrCreateUser($user, $provider)
     {
-        $authUser = User::where('provider_id', $user->id)->first();
+        $authUser = User::where('email', $user->email)->first();
         if ($authUser) {
+            Auth::login($authUser);
             return $authUser;
         }
         else{
             $today = date('Y-m-d');
-            
+
             $data = User::create([
                 'name'     => $user->name,
                 'email'    => !empty($user->email)? $user->email : '' ,
                 'provider' => $provider,
                 'provider_id' => $user->id,
                 'role' => 2,
-                'password' => Hash::make('Joinjob2020'),
+                'password' => Hash::make($user->name),
                 'exp_date' => date('Y-m-d', strtotime('+10 days', strtotime($today))), //free
             ]);
+            Auth::login($user);
 
             $customer = Member::create([
                 'name' => $data->name,
