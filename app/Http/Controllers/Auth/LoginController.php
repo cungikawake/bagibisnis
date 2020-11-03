@@ -131,7 +131,7 @@ class LoginController extends Controller
             return $authUser;
         }
         else{
-             
+            $today = date('Y-m-d');
             $authUser = User::create([
                 'name'     => $user->name,
                 'email'    => !empty($user->email)? $user->email : '' ,
