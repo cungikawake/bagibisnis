@@ -28,9 +28,9 @@ Route::get('/shop/profile/{shop_name}', 'ShopController@shop_detail')->name('sho
 Route::get('/notif/{name}', 'NotifController@index')->name('notif');
 
 Auth::routes();
-Route::get('/register', 'Auth\RegisterController@getRegister')->name('register');
-Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
-Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
+Route::get('/register', 'Auth\LoginController@getRegister')->name('register');
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 /*
 |--------------------------------------------------------------------------
 |   ADMIN
