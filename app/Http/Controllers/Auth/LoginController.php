@@ -11,6 +11,7 @@ use Session;
 use App\Member;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Hash;
 use App\User;
 
 class LoginController extends Controller
