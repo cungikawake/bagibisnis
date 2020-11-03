@@ -124,16 +124,60 @@ class LoginController extends Controller
         $authUser = User::where('email', $user->email)->first();
         
         if ($authUser) {
+            //cookee
+            setcookie("joinjob",'guest_login',time()+31556926 ,'/');
+ 
             return $authUser;
         }
         else{
-            $data = User::create([
+             
+            $authUser = User::create([
                 'name'     => $user->name,
                 'email'    => !empty($user->email)? $user->email : '' ,
                 'provider' => $provider,
-                'provider_id' => $user->id
+                'provider_id' => $user->id,
+                'role' => 2,
+                'password' => Hash::make($user->name),
+                'exp_date' => date('Y-m-d', strtotime('+10 days', strtotime($today))), //free
+            ]); 
+
+            $customer = Member::create([
+                'name' => $authUser->name,
+                'email' => $authUser->email,
+                'shop_name' => $authUser->name,
+                'user_id' => $authUser->id,
+                'status' => 1,
+                'max_product' => 10, 
+                'type_member' => 1, 
+                'quota_post' => 5, //free,
+                'province_id'=> 1
             ]);
-            return $data;
+    
+            if($customer){
+                $member = Member::where('user_id', $authUser->id)->first(); 
+                
+                //cookee
+                setcookie("joinjob",'guest_login',time()+31556926 ,'/');
+ 
+                if($today > $member->exp_date ){
+                    //akun sudah exp                 
+                    session([
+                        'exp_member' => true
+                    ]);
+    
+                }
+    
+                session([
+                    'member' => $member,
+                    'user' => $authUser
+                ]);
+     
+                return $authUser;
+    
+            }else{
+                return redirect()->back()->with('error', 'Maaf anda tidak dapat mendaftar akun');
+            }
+            
         }
     }
 }
