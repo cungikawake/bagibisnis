@@ -88,7 +88,7 @@
                 </div>
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Email</span>
                     <label for="email"><i class="fas fa-envelope"></i></label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('E-Mail') }}">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('E-Mail') }}" style="color:#020310;">
                     <small style="color:#020310;">Email akan digunakan untuk masuk ke akun anda</small>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -98,7 +98,7 @@
                 </div>
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Kata Sandi</span>
                     <label for="password"><i class="fas fa-key"></i></label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"   placeholder="********************">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"   placeholder="********************" style="color:#020310;">
                     <small style="color:#020310;">Minimal 8 digit</small>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -108,7 +108,7 @@
                 </div>
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Ulangi Kata Sandi</span>
                     <label for="password"><i class="fas fa-key"></i></label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Konfirmasi Sandi') }}"   placeholder="********************">
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Konfirmasi Sandi') }}"   placeholder="********************" style="color:#020310;">
                      
                     @error('password_confirmation')
                         <span class="invalid-feedback" role="alert">
