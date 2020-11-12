@@ -104,7 +104,7 @@
                 <!-- <a class="forgot-password d-block mt-3 mb-1" href="{{ route('password.request') }}">Lupa password ?</a> -->
             @endif
               
-              <p class="mb-0 mt-3" style="color:#020310;" >Anda belum punya Akun ?<a class="ml-1" href="{{ route('register') }}" style="color:#020310;" >Register Now</a></p>
+              <p class="mb-0 mt-3" style="color:#020310;" >Anda belum punya Akun ?<a class="ml-1" href="{{ route('register') }}" style="color:#020310;" >Daftar Sekarang</a></p>
             </div>
             <!-- View As Guest-->
             <div class="view-as-guest mt-3"><a class="btn" href="/home" style="color:#020310;" >Kembali</a></div>

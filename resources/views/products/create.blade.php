@@ -23,8 +23,8 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Judul Penawaran</label>
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
-                                    <small style="margin-top:-10px;">Maximal 30 huruf</small>
+                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" required placeholder="Saya ingin..."> 
+                                    <small style="margin-top:-10px;">Maximal 50 huruf</small>
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                     
                                 </div>

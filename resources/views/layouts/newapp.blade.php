@@ -230,7 +230,7 @@
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slide11.jpg') }}">
+                    <img src="{{ asset('asset/slider01.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -238,7 +238,7 @@
             <div class="single-hero-slide" >
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slide22.jpg') }}">
+                    <img src="{{ asset('asset/slider02.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -246,7 +246,7 @@
             <div class="single-hero-slide" >
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slide33.jpg') }}">
+                    <img src="{{ asset('asset/slider03.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -254,7 +254,7 @@
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slide44.jpg') }}">
+                    <img src="{{ asset('asset/slider04.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -262,7 +262,7 @@
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slide55.jpg') }}">
+                    <img src="{{ asset('asset/slider05.jpeg') }}">
                 </div> 
             </div>
             </div>
