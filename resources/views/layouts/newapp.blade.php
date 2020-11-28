@@ -230,7 +230,7 @@
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slider01.jpeg') }}">
+                    <img src="{{ asset('asset/slider11.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -238,7 +238,7 @@
             <div class="single-hero-slide" >
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slider02.jpeg') }}">
+                    <img src="{{ asset('asset/slider22.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -246,7 +246,7 @@
             <div class="single-hero-slide" >
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slider03.jpeg') }}">
+                    <img src="{{ asset('asset/slider33.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -254,7 +254,7 @@
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slider04.jpeg') }}">
+                    <img src="{{ asset('asset/slider44.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -262,7 +262,7 @@
             <div class="single-hero-slide">
             <div class="slide-content h-100 d-flex align-items-center">
                 <div class="container">
-                    <img src="{{ asset('asset/slider05.jpeg') }}">
+                    <img src="{{ asset('asset/slider55.jpeg') }}">
                 </div> 
             </div>
             </div>
@@ -293,7 +293,7 @@
                             <div class="card-body">
                                 <a href="{{route('product.filter')}}">
                                     <p class="text-black"><i class="fa fa-tags" style="font-size:50px;"></i></p>
-                                    <p class="mt-1 text-black">Modal</p>
+                                    <p class="mt-1 text-black">Budget</p>
                                 </a>
                             </div>
                         </div>

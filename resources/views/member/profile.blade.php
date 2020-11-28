@@ -58,7 +58,7 @@
     </div>
     <div class="alert alert-danger"> 
         <div class="section-heading d-flex align-items-center justify-content-between">
-        <p class="ml-1 text-black"><i class="fas fa-warning"></i> NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</p>
+        <!-- <p class="ml-1 text-black"><i class="fas fa-warning"></i> NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</p> -->
         <!-- Layout Options-->
         <div class="layout-options">
             <!-- <a href="#" class="active">
