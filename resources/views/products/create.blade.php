@@ -13,7 +13,7 @@
         </div>
         <div class="product-catagory-wrap">
             <div class="row g-3">
-                <h6 class="alert alert-warning"><i class="fas fa-info-circle"></i> NIKMATI GRATIS POSTING SAMPAI AKHIR TAHUN 2020</h6> 
+                <h6 class="alert alert-warning"><i class="fas fa-info-circle"></i>NIKMATI PENAWARAN KHUSUS BALI</h6> 
             </div> 
             <form action="{{ route('member.product.store') }}" method="post" enctype="multipart/form-data" >
             @csrf
@@ -47,14 +47,14 @@
                                     <p class="text-danger">{{ $errors->first('category_id') }}</p>
                                 </div> 
                                 <div class="form-group">
-                                    <label for="name">Target Provinsi</label>
+                                    <label for="name">Provinsi Khusus Bali</label>
                                     <select name="tag" class="form-control">
-                                        <option value="">Pilih</option>
-                                        @foreach ($provinces as $row)
+                                        <option value="1">BALI</option>
+                                        <!-- @foreach ($provinces as $row)
                                         <option value="{{ $row->name }}" {{ old('tag') == $row->name ? 'selected':'' }}>{{ $row->name }}</option>
-                                        @endforeach
+                                        @endforeach -->
                                     </select> 
-                                    <small>Tawarkan di provinsi tujuan anda.</small>
+                                    <small>Tawarkan di provinsi bali.</small>
                                     <p class="text-danger">{{ $errors->first('tag') }}</p>
                                     
                                 </div>

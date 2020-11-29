@@ -304,7 +304,7 @@
                             <div class="card-body">
                                 <a href="{{route('member.product.create')}}">
                                     <p class="text-black"><i class="fa fa-pencil-square-o" style="font-size:50px;"></i></p>
-                                    <p class="mt-1 text-black">Posting</p>
+                                    <p class="mt-1 text-black">Post To Bali</p>
                                 </a>
                             </div>
                         </div>

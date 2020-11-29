@@ -76,7 +76,7 @@ melakukan kegiatan interaksi dalam satu media website." />
         @endif
         <div class="container">
           <div class="section-heading d-flex align-items-center justify-content-between">
-            <h6 class="ml-1">All Products</h6>
+            <h6 class="ml-1">Semua Penawaran</h6>
             <!-- Layout Options-->
             <div class="layout-options">
                  
@@ -105,7 +105,7 @@ melakukan kegiatan interaksi dalam satu media website." />
                     <a style="min-height:30px;max-height:30px; font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">
                         {!! \Illuminate\Support\Str::limit($row->name, 30, $end='...') !!}</a> 
                     
-                    <p class="sale-price">Modal </p>
+                    <p class="sale-price">Budget </p>
                     <p class="sale-price">Rp. {{number_format($row->modal) }}</p>
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div> 
                     <div class="product-rating" style="text-transform: uppercase;min-height:30px;max-height:30px;">

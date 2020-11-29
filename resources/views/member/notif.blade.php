@@ -45,7 +45,7 @@
                                         {!! \Illuminate\Support\Str::limit($product['product_name'], 50, $end='...') !!}
                                           </span>
                                         <p class="sale-price" style="margin-top:10px;">
-                                        Modal 
+                                        Budget 
                                         </p> 
                                         <p class="sale-price" style="margin-top:-8px;">
                                         Rp.{{ number_format($product['product_modal']) }}
