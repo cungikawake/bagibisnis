@@ -98,8 +98,14 @@
                 </div>
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Kata Sandi</span>
                     <label for="password"><i class="fas fa-key"></i></label>
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"   placeholder="********************" style="color:#020310;">
-                    <small style="color:#020310;">Minimal 8 digit</small>
+                    <div class="input-group">
+                      <input id="password" type="password" class="form-control pwd @error('password') is-invalid @enderror" name="password" required autocomplete="new-password"   placeholder="********************" style="color:#020310;">
+
+                      <span class="input-group-btn">
+                        <button class="btn btn-default reveal" type="button"><i class="fas fa-eye"></i></button>
+                      </span>  
+                    </div>
+                    <small style="color:#020310;">Minimal 6 digit</small>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -108,8 +114,9 @@
                 </div>
                 <div class="form-group text-left mb-4"><span style="color:#020310;">Ulangi Kata Sandi</span>
                     <label for="password"><i class="fas fa-key"></i></label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Konfirmasi Sandi') }}"   placeholder="********************" style="color:#020310;">
-                     
+                    <div class="input-group">
+                      <input id="password-confirm" type="password" class="form-control pwd" name="password_confirmation" required autocomplete="new-password" placeholder="{{ __('Konfirmasi Sandi') }}"   placeholder="********************" style="color:#020310;"> 
+                    </div>
                     @error('password_confirmation')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $password_confirmation }}</strong>
@@ -159,5 +166,16 @@
     <script src="https://designing-world.com/suha-v2.1.0/js/default/dark-mode-switch.js"></script>
     <script src="https://designing-world.com/suha-v2.1.0/js/default/active.js"></script>
     <script src="https://designing-world.com/suha-v2.1.0/js/pwa.js"></script>
+    <script>
+      $(".reveal").on('click',function() {
+          var $pwd = $(".pwd");
+
+          if ($pwd.attr('type') === 'password') {
+              $pwd.attr('type', 'text');
+          } else {
+              $pwd.attr('type', 'password');
+          }
+      });
+    </script>
   </body>
 </html>

@@ -78,7 +78,7 @@ melakukan kegiatan interaksi dalam satu media website." />
                         @endforeach 
                     </a>
                     <a style="min-height:30px;max-height:30px;font-size:12px;" class="product-title d-block" href="{{ url('/product/show/' . $row->slug) }}">{!! \Illuminate\Support\Str::limit($row->name, 50, $end='...') !!}</a>
-                    <p class="sale-price" style="margin-top:10px;">Modal </p>
+                    <p class="sale-price" style="margin-top:10px;">Budget </p>
                     <p class="sale-price" style="margin-top:-8px;">Rp. {{number_format($row->modal) }}</p>
 
                     <div class="product-rating"><i class="fas fa-eye"></i> {{number_format($row->visitor)}} dilihat</div>

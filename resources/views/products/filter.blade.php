@@ -53,7 +53,7 @@ melakukan kegiatan interaksi dalam satu media website." />
         <div class="section-heading d-flex align-items-center justify-content-between"> 
             <form action="{{ route('product.filter') }}" id="form_filter">
                 <div class="form-group">
-                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Modal</h6>
+                    <h6 class="ml-1"><i class="fas fa-filter"></i> Urutkan Budget</h6>
                     <select class="form-control" id="filter_modal" name="modal">
                         <option value="0">Rp. - 0</option>
                         <option value="100000">Rp. - 100.000</option>
