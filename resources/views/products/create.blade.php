@@ -13,7 +13,7 @@
         </div>
         <div class="product-catagory-wrap">
             <div class="row g-3">
-                <h6 class="alert alert-warning"><i class="fas fa-info-circle"></i>NIKMATI PENAWARAN KHUSUS BALI</h6> 
+                <h6 class="alert alert-warning"><i class="fas fa-info-circle"></i>TULIS PENAWARAN KHUSUS BALI</h6> 
             </div> 
             <form action="{{ route('member.product.store') }}" method="post" enctype="multipart/form-data" >
             @csrf
