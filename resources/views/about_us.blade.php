@@ -45,7 +45,7 @@ Platform-Media dengan bentuk tabel baris berisi informasi & penawaran untuk memu
                 <p>
                 Dalam memaksimalkan pelayanan sebuah Media website JOINJOB senantiasa menerima saran & kritik anda sebagai landasan kami untuk memberikan pelayanan yang terbaik.
                 </p>  
-                <p>Email : cs@joinjob.id</p> 
+                <p>Email : <a href="mailto:cs@joinjob.id">cs@joinjob.id</a></p> 
                 <br> 
              </div>
         </div>

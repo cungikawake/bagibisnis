@@ -49,7 +49,7 @@
                                 <div class="form-group">
                                     <label for="name">Provinsi Khusus Bali</label>
                                     <select name="tag" class="form-control">
-                                        <option value="1">BALI</option>
+                                        <option value="Bali">BALI</option>
                                         <!-- @foreach ($provinces as $row)
                                         <option value="{{ $row->name }}" {{ old('tag') == $row->name ? 'selected':'' }}>{{ $row->name }}</option>
                                         @endforeach -->
